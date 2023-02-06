@@ -12,9 +12,7 @@ const Contact = () => {
             <div className="inner">
               <div className="section-title text-start">
                 <span className="subtitle bg-white-opacity">Επικοινωνησε</span>
-                <h2 className="title color-white">
-                  Επικοινώνησε με την ride with us
-                </h2>
+                <h2 className="title color-white">Επικοινώνησε μαζί μας</h2>
                 <p className="description has-medium-font-size mt--20 mb--0 color-white opacity-7">
                   Στείλε μας το μήνυμα σου και θα επικοινωνήσουμε μαζί σου το
                   συντομότερο δυνατό
@@ -25,7 +23,7 @@ const Contact = () => {
           <div className="col-lg-6">
             <div className="rbt-contact-form contact-form-style-1 w-100">
               <div className="section-title text-start"></div>
-              <h3 className="title mb--40">Γράψε μας</h3>
+              <h3 className="title mb--40">Στείλε μας</h3>
               <form id="contact-form" className="w-100">
                 <div className="form-group">
                   <input name="con_name" type="text" />
