@@ -2,7 +2,10 @@ import React from "react";
 
 const Events = () => {
   return (
-    <div className="rbt-course-card-area rbt-section-gap bg-color-white">
+    <div
+      className="rbt-course-card-area rbt-section-gap bg-color-white"
+      id={"events"}
+    >
       <div className="container">
         <div className="row align-items-center mb--60">
           <div className="col-lg-12">

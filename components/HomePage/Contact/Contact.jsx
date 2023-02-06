@@ -5,6 +5,7 @@ const Contact = () => {
     <div
       className="rbt-countdown-area bg_image contact-image bg_image_fixed rbt-section-gap"
       data-black-overlay={5}
+      id={"contact"}
     >
       <div className="container">
         <div className="row g-5 align-items-center">

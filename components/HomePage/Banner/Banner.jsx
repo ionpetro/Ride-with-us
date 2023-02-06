@@ -68,7 +68,10 @@ const Banner = () => {
                     </div>
                   </div>
                   <div className="rbt-button-group justify-content-start mt--30">
-                    <a className="rbt-btn btn-gradient rbt-switch-btn" href="#">
+                    <a
+                      className="rbt-btn btn-gradient rbt-switch-btn"
+                      href="/#activities"
+                    >
                       <span data-text="Όλες οι δραστηριότες">
                         Όλες οι δραστηριότες
                       </span>

@@ -13,7 +13,7 @@ const Footer = () => {
                     <div className="logo">
                       <a href="/">
                         <img
-                          src="assets/images/logo/logo1.svg"
+                          src="/assets/images/logo/logo1.svg"
                           alt="Ride with us"
                         />
                       </a>

@@ -1,55 +1,12 @@
 import Image from "next/image";
 import React from "react";
 
-const Navbar = () => {
+const ScrollableNavbar = () => {
   return (
-    <div className={"rbt-header-sticky"}>
+    <>
       {/* Start Header Area */}
-      <header className="rbt-header rbt-header-8 rbt-transparent-header">
+      <header className="rbt-header rbt-header-10">
         <div className="rbt-sticky-placeholder" />
-        {/* Start Header Top  */}
-        <div className="rbt-header-top rbt-header-top-1 variation-height-60 header-space-betwween bg-color-transparent top-expended-activation d-none d-xl-block">
-          <div className="container">
-            <div className="top-expended-wrapper">
-              <div className="top-expended-inner rbt-header-sec align-items-center ">
-                <div className="rbt-header-sec-col rbt-header-left">
-                  <div className="rbt-header-content">
-                    <div className="header-info d-none d-lg-block">
-                      <ul className="rbt-information-list">
-                        <li>
-                          <a href="/#contact">
-                            <i className="feather-help-circle" />
-                            Έχεις κάποια ερώτηση;
-                          </a>
-                        </li>
-                        <li>
-                          <a href="mailto:ridewithus2023@gmail.com">
-                            <i className="feather-mail" />
-                            ridewithus2023@gmail.com
-                          </a>
-                        </li>
-                        <li>
-                          <a href="tel:697 156 1249">
-                            <i className="feather-phone" />
-                            697 156 1249
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="header-info">
-                <div className="top-bar-expended d-block d-lg-none">
-                  <button className="topbar-expend-button rbt-round-btn">
-                    <i className="color-body feather-plus" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* End Header Top  */}
         <div className="rbt-header-wrapper  header-sticky">
           <div className="container">
             <div className="mainbar-row rbt-navigation-end align-items-center">
@@ -57,7 +14,7 @@ const Navbar = () => {
                 <div className="logo">
                   <a href="/">
                     <Image
-                      src="assets/images/logo/logo3.svg"
+                      src="/assets/images/logo/logo3.svg"
                       alt="Education Logo Images"
                       width={"140"}
                       height={"120"}
@@ -87,7 +44,7 @@ const Navbar = () => {
                 <div className="rbt-btn-wrapper d-none d-xl-block">
                   <a
                     className="rbt-btn btn-gradient btn-sm hover-transform-none"
-                    href="/#contact"
+                    href="#"
                   >
                     <span data-text="Join Now">Επικοινώνησε</span>
                   </a>
@@ -112,9 +69,9 @@ const Navbar = () => {
           <div className="inner-top">
             <div className="content">
               <div className="logo">
-                <a href="index.html">
+                <a href="/">
                   <Image
-                    src="assets/images/logo/logo3.svg"
+                    src="/assets/images/logo/logo3.svg"
                     alt="Ride with us logo"
                     width={"160"}
                     height={"70"}
@@ -189,8 +146,8 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default Navbar;
+export default ScrollableNavbar;

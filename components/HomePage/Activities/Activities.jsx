@@ -36,7 +36,10 @@ const Activities = () => {
   return (
     <>
       {/* Start Card Style */}
-      <div className="rbt-course-card-area rbt-section-gap bg-color-white">
+      <div
+        className="rbt-course-card-area rbt-section-gap bg-color-white"
+        id={"activities"}
+      >
         <div className="container">
           <div className="row align-items-center mb--60">
             <div className="col-lg-12">

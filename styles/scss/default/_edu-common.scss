@@ -179,7 +179,6 @@
 }
 
 .rbt-gradient-border {
-  background: linear-gradient(-145deg, #cfa2e8, #637fea) !important;
   z-index: 10;
   &::before {
     content: "";
@@ -524,7 +523,7 @@ hr {
 -------------------------------*/
 
 .rbt-shadow-box {
-  border-radius: var(--radius);
+  border-radius: var(--color-primary);
   background: var(--color-white);
   overflow: hidden;
   box-shadow: var(--shadow-1);
