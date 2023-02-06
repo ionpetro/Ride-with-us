@@ -788,7 +788,9 @@
 
     headerSticky: function () {
       $(window).on("scroll", function () {
-        if ($("body").hasClass("rbt-header-sticky")) {
+        console.log("runs");
+
+        if ($("div").hasClass("rbt-header-sticky")) {
           var stickyPlaceHolder = $(".rbt-sticky-placeholder"),
             headerConainer = $(".rbt-header-wrapper"),
             headerConainerH = headerConainer.outerHeight(),
