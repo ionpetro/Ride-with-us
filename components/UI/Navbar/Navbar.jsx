@@ -3,7 +3,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className={"rbt-header-sticky rbt-header-transpernt-active"}>
+    <div className={"rbt-header-sticky"}>
       {/* Start Header Area */}
       <header className="rbt-header rbt-header-8 rbt-transparent-header">
         <div className="rbt-sticky-placeholder" />
@@ -55,7 +55,7 @@ const Navbar = () => {
             <div className="mainbar-row rbt-navigation-end align-items-center">
               <div className="header-left">
                 <div className="logo">
-                  <a href="index.html">
+                  <a href="/">
                     <Image
                       src="assets/images/logo/logo3.svg"
                       alt="Education Logo Images"
@@ -213,7 +213,7 @@ const Navbar = () => {
               <div className="header-right">
                 <div className="rbt-btn-wrapper d-none d-xl-block">
                   <a
-                    className="rbt-btn rbt-switch-btn btn-gradient btn-sm hover-transform-none"
+                    className="rbt-btn btn-gradient btn-sm hover-transform-none"
                     href="#"
                   >
                     <span data-text="Join Now">Επικοινώνησε</span>
@@ -241,10 +241,10 @@ const Navbar = () => {
               <div className="logo">
                 <a href="index.html">
                   <Image
-                    src="assets/images/logo/logo1.svg"
+                    src="assets/images/logo/logo3.svg"
                     alt="Ride with us logo"
-                    width={"60"}
-                    height={"60"}
+                    width={"160"}
+                    height={"70"}
                   />
                 </a>
               </div>
