@@ -2,6 +2,7 @@ import React from "react";
 import Activity from "../../components/Activity/Activity";
 import Footer from "../../components/UI/Footer/Footer";
 import ScrollableNavbar from "../../components/UI/ScrollableNavbar/ScrollableNavbar";
+import { activities } from "../../data/activities";
 
 const ActivityPage = ({ data }) => {
   return (
@@ -15,24 +16,24 @@ const ActivityPage = ({ data }) => {
 
 export async function getStaticPaths() {
   return {
-    paths: ["/activities/parnassos"],
+    paths: [
+      "/activities/parnassos",
+      "/activities/kalavrita",
+      "/activities/vasilitsa",
+      "/activities/pavliani",
+      "/activities/karditsa",
+    ],
     fallback: true,
   };
 }
 
 export async function getStaticProps({ params }) {
-  const data = {
-    title: "Παρνασσός",
-    fullTitle: "Μονοήμερη στο χιονοδρομικό του Παρνασσού",
-    shortDescription: "Μονοήμερη στο χιονοδρομικό του Παρνασσού",
-    description:
-      "Are you new to PHP or need a refresher? Then this course will help you get all the fundamentals of Procedural PHP, Object Oriented PHP, MYSQLi and ending the course by building a CMS system similar to WordPress, Joomla or Drupal. Knowing PHP has allowed me to make enough money to stay home and make courses like this one for students all over the world.",
-    image_url: "/assets/images/sports/parnassos.jpg",
-    price: 50,
-  };
+  const activity = activities.find((e) => {
+    return e.slug === params.slug;
+  });
   return {
     props: {
-      data,
+      data: activity,
     },
   };
 }

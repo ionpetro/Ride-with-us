@@ -1,6 +1,22 @@
-import React from "react";
+import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
+import React, { useMemo } from "react";
 
 const Activity = ({ data }) => {
+  const mapCenter = useMemo(() => ({ lat: data.lat, lng: data.lng }), []);
+
+  const mapOptions =
+    useMemo >
+    (() => ({
+      disableDefaultUI: true,
+      clickableIcons: false,
+      scrollwheel: false,
+    }),
+    []);
+
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+  });
+
   return (
     <>
       {/* Start breadcrumb Area */}
@@ -78,13 +94,13 @@ const Activity = ({ data }) => {
                         </a>
                       </li>
                       <li>
-                        <a href="components/Activity/Activity#coursecontent">
-                          Πληροφορίες
+                        <a href="components/Activity/Activity#location">
+                          Τοποθεσία
                         </a>
                       </li>
                       <li>
-                        <a href="components/Activity/Activity#details">
-                          Τοποθεσία
+                        <a href="components/Activity/Activity#more">
+                          Πληροφορίες
                         </a>
                       </li>
                     </ul>
@@ -101,15 +117,41 @@ const Activity = ({ data }) => {
                         Περιγραφή δραστηριότητας
                       </h4>
                     </div>
-                    <p>{data?.description}</p>
+                    <div
+                      dangerouslySetInnerHTML={{ __html: data?.description }}
+                    ></div>
                   </div>
                   <div className="rbt-show-more-btn">Περισσότερα</div>
                 </div>
-                {/* End Course Feature Box  */}
-                {/* Start Course Content  */}
+                <div
+                  className="rbt-course-feature-box overview-wrapper rbt-shadow-box mt--30"
+                  id="location"
+                >
+                  <div className="rbt-course-feature-inner">
+                    <div className="section-title">
+                      <h4 className="rbt-title-style-3">Τοποθεσία</h4>
+                      {isLoaded ? (
+                        <GoogleMap
+                          options={mapOptions}
+                          zoom={14}
+                          center={mapCenter}
+                          mapTypeId={google.maps.MapTypeId.ROADMAP}
+                          mapContainerStyle={{
+                            width: "100%",
+                            height: "400px",
+                          }}
+                        >
+                          <Marker {...mapCenter} />
+                        </GoogleMap>
+                      ) : (
+                        <p>Φορτώνει ο χάρτης...</p>
+                      )}
+                    </div>
+                  </div>
+                </div>
                 <div
                   className="course-content rbt-shadow-box coursecontent-wrapper mt--30"
-                  id="coursecontent"
+                  id="more"
                 >
                   <div className="rbt-course-feature-inner">
                     <div className="section-title">
@@ -676,75 +718,6 @@ const Activity = ({ data }) => {
                     </div>
                   </div>
                 </div>
-                {/* End Course Content  */}
-                {/* Start Course Feature Box  */}
-                <div
-                  className="rbt-course-feature-box rbt-shadow-box details-wrapper mt--30"
-                  id="details"
-                >
-                  <div className="row g-5">
-                    {/* Start Feture Box  */}
-                    <div className="col-lg-6">
-                      <div className="section-title">
-                        <h4 className="rbt-title-style-3 mb--20">
-                          Requirements
-                        </h4>
-                      </div>
-                      <ul className="rbt-list-style-1">
-                        <li>
-                          <i className="feather-check" />
-                          Become an advanced, confident, and modern JavaScript
-                          developer from scratch.
-                        </li>
-                        <li>
-                          <i className="feather-check" />
-                          Have an intermediate skill level of Python
-                          programming.
-                        </li>
-                        <li>
-                          <i className="feather-check" />
-                          Have a portfolio of various data analysis projects.
-                        </li>
-                        <li>
-                          <i className="feather-check" />
-                          Use the numpy library to create and manipulate arrays.
-                        </li>
-                      </ul>
-                    </div>
-                    {/* End Feture Box  */}
-                    {/* Start Feture Box  */}
-                    <div className="col-lg-6">
-                      <div className="section-title">
-                        <h4 className="rbt-title-style-3 mb--20">
-                          Description
-                        </h4>
-                      </div>
-                      <ul className="rbt-list-style-1">
-                        <li>
-                          <i className="feather-check" />
-                          Use the Jupyter Notebook Environment. JavaScript
-                          developer from scratch.
-                        </li>
-                        <li>
-                          <i className="feather-check" />
-                          Use the pandas module with Python to create and
-                          structure data?.
-                        </li>
-                        <li>
-                          <i className="feather-check" />
-                          Have a portfolio of various data analysis projects.
-                        </li>
-                        <li>
-                          <i className="feather-check" />
-                          Create data visualizations using matplotlib and the
-                          seaborn.
-                        </li>
-                      </ul>
-                    </div>
-                    {/* End Feture Box  */}
-                  </div>
-                </div>
-                {/* End Course Feature Box  */}
               </div>
             </div>
             <div className="col-lg-4">
