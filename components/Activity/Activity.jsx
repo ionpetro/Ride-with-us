@@ -726,7 +726,7 @@ const Activity = ({ data }) => {
                   <div className="content-item-content">
                     <h4>{data?.title}</h4>
                     <div className="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-between">
-                      <div className="rbt-price">
+                      <div className="rbt-price mb-4">
                         από{" "}
                         <span className="current-price mx-2">
                           {data?.price}€
@@ -734,117 +734,76 @@ const Activity = ({ data }) => {
                         το άτομο
                       </div>
                     </div>
-                    <div className="add-to-card-button mt--15">
-                      <a
-                        className="rbt-btn btn-gradient icon-hover w-100 d-block text-center"
-                        href="components/Activity/Activity#"
-                      >
-                        <span className="btn-text">Add to Cart</span>
-                        <span className="btn-icon">
-                          <i className="feather-arrow-right" />
-                        </span>
-                      </a>
-                    </div>
-                    <div className="buy-now-btn mt--15">
-                      <a
-                        className="rbt-btn btn-border icon-hover w-100 d-block text-center"
-                        href="components/Activity/Activity#"
-                      >
-                        <span className="btn-text">Buy Now</span>
-                        <span className="btn-icon">
-                          <i className="feather-arrow-right" />
-                        </span>
-                      </a>
-                    </div>
-                    <span className="subtitle">
-                      <i className="feather-rotate-ccw" /> 30-Day Money-Back
-                      Guarantee
-                    </span>
-                    <div className="rbt-widget-details has-show-more">
-                      <ul className="has-show-more-inner-content rbt-course-details-list-wrapper">
-                        <li>
-                          <span>Start Date</span>
-                          <span className="rbt-feature-value rbt-badge-5">
-                            5 Hrs 20 Min
+                    <form id="contact-form" className="w-100">
+                      <div className="form-group">
+                        <input name="con_name" type="text" />
+                        <label>Ονοματεπώνυμο</label>
+                        <span className="focus-border" />
+                      </div>
+                      <div className="form-group">
+                        <input type="text" />
+                        <label>Τηλέφωνο</label>
+                        <span className="focus-border" />
+                      </div>
+                      <div className="form-group">
+                        <small>Άτομα</small>
+                        <div className="rbt-modern-select bg-transparent height-45">
+                          <select className="w-100">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9+</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div className="form-group mt-40">
+                        <button
+                          type="submit"
+                          className="rbt-btn btn-gradient hover-icon-reverse w-100"
+                        >
+                          <span className="icon-reverse-wrapper">
+                            <span className="btn-text">Αποστολή</span>
+                            <span className="btn-icon">
+                              <i className="feather-arrow-right" />
+                            </span>
+                            <span className="btn-icon">
+                              <i className="feather-arrow-right" />
+                            </span>
                           </span>
-                        </li>
-                        <li>
-                          <span>Enrolled</span>
-                          <span className="rbt-feature-value rbt-badge-5">
-                            100
-                          </span>
-                        </li>
-                        <li>
-                          <span>Lectures</span>
-                          <span className="rbt-feature-value rbt-badge-5">
-                            50
-                          </span>
-                        </li>
-                        <li>
-                          <span>Skill Level</span>
-                          <span className="rbt-feature-value rbt-badge-5">
-                            Basic
-                          </span>
-                        </li>
-                        <li>
-                          <span>Language</span>
-                          <span className="rbt-feature-value rbt-badge-5">
-                            English
-                          </span>
-                        </li>
-                        <li>
-                          <span>Quizzes</span>
-                          <span className="rbt-feature-value rbt-badge-5">
-                            10
-                          </span>
-                        </li>
-                        <li>
-                          <span>Certificate</span>
-                          <span className="rbt-feature-value rbt-badge-5">
-                            Yes
-                          </span>
-                        </li>
-                        <li>
-                          <span>Pass Percentage</span>
-                          <span className="rbt-feature-value rbt-badge-5">
-                            95%
-                          </span>
-                        </li>
-                      </ul>
-                      <div className="rbt-show-more-btn">Περισσότερα</div>
-                    </div>
+                        </button>
+                      </div>
+                      <small className="rbt-link-hover text-center text-lg-start">
+                        Με την αποστολή συμφωνώ με την{" "}
+                        <a href="/cancellation-policy">πολιτική ακύρωσης</a>
+                      </small>
+                    </form>
                     <div className="social-share-wrapper mt--30 text-center">
                       <div className="rbt-post-share d-flex align-items-center justify-content-center">
                         <ul className="social-icon social-default transparent-with-border justify-content-center">
                           <li>
-                            <a href="components/Activity/Activity">
+                            <a href="https://www.facebook.com/ridewithus2023">
                               <i className="feather-facebook" />
                             </a>
                           </li>
                           <li>
-                            <a href="https://www.twitter.com">
-                              <i className="feather-twitter" />
-                            </a>
-                          </li>
-                          <li>
-                            <a href="components/Activity/Activity">
+                            <a href="https://www.instagram.com/ride_withus_/">
                               <i className="feather-instagram" />
-                            </a>
-                          </li>
-                          <li>
-                            <a href="components/Activity/Activity">
-                              <i className="feather-linkedin" />
                             </a>
                           </li>
                         </ul>
                       </div>
                       <hr className="mt--20" />
                       <div className="contact-with-us text-center">
-                        <p>For details about the course</p>
+                        <p>Θέλετε περισσότερες πληροφορίες;</p>
                         <p className="rbt-badge-2 mt--10 justify-content-center w-100">
-                          <i className="feather-phone mr--5" /> Call Us:{" "}
-                          <a href="components/Activity/Activity#">
-                            <strong>+444 555 666 777</strong>
+                          <i className="feather-phone mr--5" /> Καλέστε μας:{" "}
+                          <a href="tel:697 156 1249">
+                            <strong>697 156 1249</strong>
                           </a>
                         </p>
                       </div>

@@ -88,7 +88,8 @@ export const activities = [
     title: "Καρδίτσα",
     fullTitle: "Μονοήμερη στην Καρδίτσα",
     shortDescription: "Μονοήμερη στην Καρδίτσα",
-    description: `<h2><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Κόστος εκδρομής 130ευρώ το άτομο (minimum 8 pax)</span></h2>
+    description: `
+<p><strong>Κόστος εκδρομής 130ευρώ το άτομο (minimum 8 pax)</span></p>
 <ul>
     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Μεταφορά από Αθήνα στη Καρδίτσα, Αθήνα</span></li>
     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Πεζοπορία </span></li>
@@ -97,7 +98,7 @@ export const activities = [
     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Αναχώρηση από το σημείο επιλογής σας </span></li>
     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Επιστροφή στο σημείο επιλογής σας </span></li>
 </ul>
-<h2><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Extra παροχές</span></h2>
+<p><strong>Extra παροχές</span></p>
 <ul>
     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Τοξοβολία (10 ευρώ-> 12 βέλη + μάθημα)</span></li>
     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Υδροποδήλατο ( 10 ευρώ </span>τα <span style="font-weight: 400;" data-mce-style="font-weight: 400;">30’ / 15 ευρώ η ώρα )</span></li>

@@ -71,11 +71,11 @@ const Navbar = () => {
                     <li className="with-megamenu has-menu-child-item position-static">
                       <a href="/">Αρχική</a>
                     </li>
-                    <li className="with-megamenu has-menu-child-item">
-                      <a href="/#activities">Δραστηριότητες</a>
-                    </li>
                     <li className="has-dropdown has-menu-child-item">
                       <a href="/#events">Εκδηλώσεις</a>
+                    </li>
+                    <li className="with-megamenu has-menu-child-item">
+                      <a href="/#activities">Δραστηριότητες</a>
                     </li>
                     <li className="with-megamenu has-menu-child-item position-static">
                       <a href="/about">Σχετικά με μας</a>
@@ -152,10 +152,10 @@ const Navbar = () => {
                 <a href="/">Αρχική</a>
               </li>
               <li className="">
-                <a href="/#activities">Δραστηριότητες</a>
+                <a href="/#events">Εκδηλώσεις</a>
               </li>
               <li className="">
-                <a href="/#events">Εκδηλώσεις</a>
+                <a href="/#activities">Δραστηριότητες</a>
               </li>
               <li className="">
                 <a href="/about">Σχετικά με μας</a>
