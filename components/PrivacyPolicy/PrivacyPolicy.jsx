@@ -9,7 +9,7 @@ const PrivacyPolicy = () => {
             <h1 className="title">Privacy Policy</h1>
             <ul className="page-list">
               <li className="rbt-breadcrumb-item">
-                <a href="/">Αρχική</a>
+                <a href="/pages">Αρχική</a>
               </li>
               <li>
                 <div className="icon-right">
@@ -37,7 +37,7 @@ const PrivacyPolicy = () => {
                 information in accordance with this Privacy Policy. This Privacy
                 Policy has been created with the help of the{" "}
                 <a
-                  href="https://www.freeprivacypolicy.com/free-privacy-policy-generator/"
+                  href="components/PrivacyPolicy/PrivacyPolicy"
                   target="_blank"
                 >
                   Free Privacy Policy Generator
@@ -232,7 +232,7 @@ const PrivacyPolicy = () => {
                 deleted as soon as You close Your web browser. Learn more about
                 cookies on the{" "}
                 <a
-                  href="https://www.freeprivacypolicy.com/blog/sample-privacy-policy-template/#Use_Of_Cookies_And_Tracking"
+                  href="components/PrivacyPolicy/PrivacyPolicy#Use_Of_Cookies_And_Tracking"
                   target="_blank"
                 >
                   Free Privacy Policy website

@@ -55,7 +55,7 @@ export default function Document() {
         <script src="/assets/js/vendor/easypie.js"></script>
         <script src="/assets/js/vendor/text-type.js"></script>
         <script src="/assets/js/vendor/jquery-one-page-nav.js"></script>
-        <script src="/assets/js/vendor/jqu  ery-ui.js"></script>
+        <script src="/assets/js/vendor/jquery-ui.js"></script>
         <script src="/assets/js/vendor/magnify-popup.min.js"></script>
         <script src="/assets/js/vendor/paralax-scroll.js"></script>
         <script src="/assets/js/vendor/paralax.min.js"></script>
