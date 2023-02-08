@@ -34,28 +34,12 @@ const About = () => {
           <div className="container">
             <div className="row g-5 align-items-center">
               <div className="col-lg-6">
-                <div className="thumbnail-wrapper">
-                  <div className="thumbnail image-1">
-                    <img
-                      data-parallax='{"x": 0, "y": -20}'
-                      src="/assets/images/about/logo.jpg"
-                      alt="Education Images"
-                    />
-                  </div>
-                  <div className="thumbnail image-2 d-none d-xl-block">
-                    <img
-                      data-parallax='{"x": 0, "y": 60}'
-                      src="/assets/images/about/snow.png"
-                      alt="Education Images"
-                    />
-                  </div>
-                  <div className="thumbnail image-3 d-none d-md-block">
-                    <img
-                      data-parallax='{"x": 0, "y": 80}'
-                      src="/assets/images/about/mountains.png"
-                      alt="Education Images"
-                    />
-                  </div>
+                <div className="thumbnail image-1">
+                  <img
+                    data-parallax='{"x": 0, "y": -20}'
+                    src="/assets/images/about/logo.jpg"
+                    alt="Education Images"
+                  />
                 </div>
               </div>
               <div className="col-lg-6">
@@ -70,7 +54,7 @@ const About = () => {
                     Οργάνωση μονοήμερων & 2ήμερων εκδρομών. Μεταφορά με πολυτελή
                     9θέσια van. Δυνατότητα επιλογής σημείου έναρξης. Αναχωρήσεις
                     καθημερινά από Αθήνα για χιονοδρομικά κέντρα Καλαβρύτων &
-                    Παρνασσού.
+                    Παρνασσού και άλλων προορισμών.
                   </p>
                   <div className="about-btn mt--40">
                     <a
