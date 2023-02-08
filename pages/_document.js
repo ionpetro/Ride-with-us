@@ -46,10 +46,8 @@ export default function Document() {
         <script src="/assets/js/vendor/magnify.min.js"></script>
         <script src="/assets/js/vendor/jquery-appear.js"></script>
         <script src="/assets/js/vendor/odometer.js"></script>
-        {/*<script src="/assets/js/vendor/backtotop.js"></script>*/}
         <script src="/assets/js/vendor/isotop.js"></script>
         <script src="/assets/js/vendor/imageloaded.js"></script>
-
         <script src="/assets/js/vendor/wow.js"></script>
         <script src="/assets/js/vendor/waypoint.min.js"></script>
         <script src="/assets/js/vendor/easypie.js"></script>

@@ -1,0 +1,5 @@
+.date {
+  :global(.react-datepicker-popper) {
+    z-index: 3;
+  }
+}

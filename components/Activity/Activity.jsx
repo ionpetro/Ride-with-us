@@ -1,8 +1,16 @@
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
-import React, { useMemo } from "react";
+import DatePicker, { registerLocale } from "react-datepicker";
+import styles from "./Activity.module.scss";
+import el from "date-fns/locale/el";
+registerLocale("el", el);
+
+import "react-datepicker/dist/react-datepicker.css";
+
+import React, { useMemo, useState } from "react";
 
 const Activity = ({ data }) => {
   const mapCenter = useMemo(() => ({ lat: data?.lat, lng: data?.lng }), []);
+  const [date, setDate] = useState();
 
   const mapOptions =
     useMemo >
@@ -183,6 +191,14 @@ const Activity = ({ data }) => {
                             <option>9+</option>
                           </select>
                         </div>
+                      </div>
+                      <div className={styles.date}>
+                        <small>Ημερομηνία</small>
+                        <DatePicker
+                          locale="gr"
+                          selected={date}
+                          onChange={(date) => setDate(date)}
+                        />
                       </div>
                       <div className="form-group mt-40">
                         <button
