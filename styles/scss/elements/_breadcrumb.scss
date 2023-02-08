@@ -116,7 +116,7 @@
     flex-direction: column;
     width: 100%;
     padding: 44px 140px 50px;
-    background: #fff;
+    background: var(--color-blue);
     border-radius: 4px 4px 0 0;
     margin: 120px auto 0;
     @media #{$md-layout} {

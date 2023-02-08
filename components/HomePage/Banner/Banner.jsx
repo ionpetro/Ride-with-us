@@ -10,7 +10,7 @@ const Banner = () => {
       <div className="wrapper w-100">
         <div className="container">
           <div
-            className={`row g-5 justify-content-between align-items-center ${styles.pad}`}
+            className={`row g-5 justify-content-between align-items-center ${styles.mobile}`}
           >
             <div className="col-lg-6 order-2 order-lg-1">
               <div className="content">

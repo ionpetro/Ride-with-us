@@ -2,6 +2,10 @@
   height: 497px;
 
   @media only screen and (max-width: 990px) {
+    img {
+      display: none;
+    }
+    height:0px;
     width: 100%;
   }
 }
