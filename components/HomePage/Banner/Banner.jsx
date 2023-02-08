@@ -28,7 +28,7 @@ const Banner = () => {
                   <div className="rbt-like-total">
                     <div className="profile-share">
                       <a
-                        href="#"
+                        href="/activities/parnassos"
                         className="avatar"
                         data-tooltip="Παρνασσός"
                         tabIndex={0}
@@ -40,7 +40,7 @@ const Banner = () => {
                         />
                       </a>
                       <a
-                        href="#"
+                        href="/activities/kalavrita"
                         className="avatar"
                         data-tooltip="Καλάβρυτα"
                         tabIndex={0}
@@ -52,7 +52,7 @@ const Banner = () => {
                         />
                       </a>
                       <a
-                        href="#"
+                        href="/activities/vasilitsa"
                         className="avatar"
                         data-tooltip="Βασιλίτσα"
                         tabIndex={0}
