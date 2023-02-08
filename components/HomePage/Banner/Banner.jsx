@@ -4,7 +4,7 @@ import styles from "./Banner.module.scss";
 
 const Banner = () => {
   return (
-    <div className="rbt-banner-area rbt-banner-7 bg-gradient-1 theme-shape header-transperent-spacer">
+    <div className="rbt-banner-area rbt-banner-7 bg-gradient-11 theme-shape header-transperent-spacer">
       <div className="wrapper w-100">
         <div className="container">
           <div className="row g-5 justify-content-between align-items-center">

@@ -354,7 +354,7 @@
 }
 
 .bg-gradient-11 {
-  background: linear-gradient(180deg, #eedefd 0%, #ffffff 100%) !important;
+  background: linear-gradient(180deg, var(--color-blue) 0%, #ffffff 100%) !important;
 }
 
 .bg-gradient-12 {
@@ -390,6 +390,10 @@
   background: linear-gradient(151.71deg, #30c4ff 0%, #7259ff 100%) !important;
 }
 
+.bg-gradient-18 {
+  background: linear-gradient(0deg, rgba(243,112,78,1) 0%, rgba(243,112,78,0) 100%) !important;
+}
+
 .theme-mainbg-gradient {
   background-color: var(--color-light);
   position: relative;
@@ -408,7 +412,7 @@
   color: var(--color-primary) !important;
 }
 .bg-secondary-opacity {
-  background: var(--secondary-opacity) !important;
+  background: rgba(#bce6f9, 0.4) !important;
   color: var(--color-secondary) !important;
 }
 .bg-coral-opacity {

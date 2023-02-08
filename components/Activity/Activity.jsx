@@ -24,7 +24,7 @@ const Activity = ({ data }) => {
         <div>
           <div
             className={
-              "rbt-banner-area rbt-banner-7 bg-gradient-1 theme-shape header-transperent-spacer"
+              "rbt-banner-area rbt-banner-7 bg-gradient-11 theme-shape header-transperent-spacer"
             }
             style={{
               height: "500px",
