@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import Activity from "../../components/Activity/Activity";
 import Footer from "../../components/UI/Footer/Footer";
@@ -6,11 +7,16 @@ import { activities } from "../../data/activities";
 
 const ActivityPage = ({ data }) => {
   return (
-    <div>
-      <ScrollableNavbar />
-      <Activity data={data} />
-      <Footer />
-    </div>
+    <>
+      <Head>
+        <title>{data?.title}</title>
+      </Head>
+      <div>
+        <ScrollableNavbar />
+        <Activity data={data} />
+        <Footer />
+      </div>
+    </>
   );
 };
 

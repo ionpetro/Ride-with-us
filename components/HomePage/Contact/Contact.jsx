@@ -42,9 +42,9 @@ const Contact = () => {
                   <span className="focus-border" />
                 </div>
                 <div className="form-group">
-                  <input type="text" />
+                  <textarea></textarea>
                   <label>Μήνυμα</label>
-                  <span className="focus-border" />
+                  <span className="focus-border"></span>
                 </div>
                 <div className="form-submit-group mt--40">
                   <button

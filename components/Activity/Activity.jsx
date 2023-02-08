@@ -778,26 +778,11 @@ const Activity = ({ data }) => {
                         </button>
                       </div>
                       <small className="rbt-link-hover text-center text-lg-start">
-                        Με την αποστολή συμφωνώ με την{" "}
+                        Πατώντας αποστολή συμφωνώ με την{" "}
                         <a href="/cancellation-policy">πολιτική ακύρωσης</a>
                       </small>
                     </form>
                     <div className="social-share-wrapper mt--30 text-center">
-                      <div className="rbt-post-share d-flex align-items-center justify-content-center">
-                        <ul className="social-icon social-default transparent-with-border justify-content-center">
-                          <li>
-                            <a href="https://www.facebook.com/ridewithus2023">
-                              <i className="feather-facebook" />
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://www.instagram.com/ride_withus_/">
-                              <i className="feather-instagram" />
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                      <hr className="mt--20" />
                       <div className="contact-with-us text-center">
                         <p>Θέλετε περισσότερες πληροφορίες;</p>
                         <p className="rbt-badge-2 mt--10 justify-content-center w-100">
