@@ -1,18 +1,18 @@
 /*! WOW wow.js - v1.3.0 - 2016-10-04
  * https://wowjs.uk
  * Copyright (c) 2016 Thomas Grainger; Licensed MIT */ !(function (a, b) {
-  if ("function" == typeof define && define.amd)
-    define(["module", "exports"], b);
-  else if ("undefined" != typeof exports) b(module, exports);
+  if ('function' == typeof define && define.amd)
+    define(['module', 'exports'], b);
+  else if ('undefined' != typeof exports) b(module, exports);
   else {
     var c = { exports: {} };
     b(c, c.exports), (a.WOW = c.exports);
   }
 })(this, function (a, b) {
-  "use strict";
+  'use strict';
   function c(a, b) {
     if (!(a instanceof b))
-      throw new TypeError("Cannot call a class as a function");
+      throw new TypeError('Cannot call a class as a function');
   }
   function d(a, b) {
     return b.indexOf(a) >= 0;
@@ -39,7 +39,7 @@
       e = void 0;
     return (
       null != document.createEvent
-        ? ((e = document.createEvent("CustomEvent")),
+        ? ((e = document.createEvent('CustomEvent')),
           e.initCustomEvent(a, b, c, d))
         : null != document.createEventObject
         ? ((e = document.createEventObject()), (e.eventType = a))
@@ -52,28 +52,28 @@
       ? a.dispatchEvent(b)
       : b in (null != a)
       ? a[b]()
-      : "on" + b in (null != a) && a["on" + b]();
+      : 'on' + b in (null != a) && a['on' + b]();
   }
   function i(a, b, c) {
     null != a.addEventListener
       ? a.addEventListener(b, c, !1)
       : null != a.attachEvent
-      ? a.attachEvent("on" + b, c)
+      ? a.attachEvent('on' + b, c)
       : (a[b] = c);
   }
   function j(a, b, c) {
     null != a.removeEventListener
       ? a.removeEventListener(b, c, !1)
       : null != a.detachEvent
-      ? a.detachEvent("on" + b, c)
+      ? a.detachEvent('on' + b, c)
       : delete a[b];
   }
   function k() {
-    return "innerHeight" in window
+    return 'innerHeight' in window
       ? window.innerHeight
       : document.documentElement.clientHeight;
   }
-  Object.defineProperty(b, "__esModule", { value: !0 });
+  Object.defineProperty(b, '__esModule', { value: !0 });
   var l,
     m,
     n = (function () {
@@ -82,7 +82,7 @@
           var d = b[c];
           (d.enumerable = d.enumerable || !1),
             (d.configurable = !0),
-            "value" in d && (d.writable = !0),
+            'value' in d && (d.writable = !0),
             Object.defineProperty(a, d.key, d);
         }
       }
@@ -100,7 +100,7 @@
         return (
           n(a, [
             {
-              key: "get",
+              key: 'get',
               value: function (a) {
                 for (var b = 0; b < this.keys.length; b++) {
                   var c = this.keys[b];
@@ -109,7 +109,7 @@
               },
             },
             {
-              key: "set",
+              key: 'set',
               value: function (a, b) {
                 for (var c = 0; c < this.keys.length; c++) {
                   var d = this.keys[c];
@@ -130,16 +130,16 @@
         (function () {
           function a() {
             c(this, a),
-              "undefined" != typeof console &&
+              'undefined' != typeof console &&
                 null !== console &&
                 (console.warn(
-                  "MutationObserver is not supported by your browser."
+                  'MutationObserver is not supported by your browser.'
                 ),
                 console.warn(
-                  "WOW.js cannot detect dom mutations, please call .sync() after loading new content."
+                  'WOW.js cannot detect dom mutations, please call .sync() after loading new content.'
                 ));
           }
-          return n(a, [{ key: "observe", value: function () {} }]), a;
+          return n(a, [{ key: 'observe', value: function () {} }]), a;
         })()),
       (l.notSupported = !0),
       m),
@@ -149,7 +149,7 @@
         var b = /(\-([a-z]){1})/g;
         return {
           getPropertyValue: function (c) {
-            "float" === c && (c = "styleFloat"),
+            'float' === c && (c = 'styleFloat'),
               b.test(c) &&
                 c.replace(b, function (a, b) {
                   return b.toUpperCase();
@@ -165,8 +165,8 @@
           arguments.length <= 0 || void 0 === arguments[0] ? {} : arguments[0];
         c(this, a),
           (this.defaults = {
-            boxClass: "wow",
-            animateClass: "animated",
+            boxClass: 'wow',
+            animateClass: 'animated',
             offset: 0,
             mobile: !0,
             live: !0,
@@ -175,7 +175,7 @@
             resetAnimation: !0,
           }),
           (this.animate = (function () {
-            return "requestAnimationFrame" in window
+            return 'requestAnimationFrame' in window
               ? function (a) {
                   return window.requestAnimationFrame(a);
                 }
@@ -183,7 +183,7 @@
                   return a();
                 };
           })()),
-          (this.vendors = ["moz", "webkit"]),
+          (this.vendors = ['moz', 'webkit']),
           (this.start = this.start.bind(this)),
           (this.resetAnimation = this.resetAnimation.bind(this)),
           (this.scrollHandler = this.scrollHandler.bind(this)),
@@ -200,23 +200,23 @@
       return (
         n(a, [
           {
-            key: "init",
+            key: 'init',
             value: function () {
               (this.element = window.document.documentElement),
-                d(document.readyState, ["interactive", "complete"])
+                d(document.readyState, ['interactive', 'complete'])
                   ? this.start()
-                  : i(document, "DOMContentLoaded", this.start),
+                  : i(document, 'DOMContentLoaded', this.start),
                 (this.finished = []);
             },
           },
           {
-            key: "start",
+            key: 'start',
             value: function () {
               var a = this;
               if (
                 ((this.stopped = !1),
                 (this.boxes = [].slice.call(
-                  this.element.querySelectorAll("." + this.config.boxClass)
+                  this.element.querySelectorAll('.' + this.config.boxClass)
                 )),
                 (this.all = this.boxes.slice(0)),
                 this.boxes.length)
@@ -231,10 +231,10 @@
                 (this.disabled() ||
                   (i(
                     this.config.scrollContainer || window,
-                    "scroll",
+                    'scroll',
                     this.scrollHandler
                   ),
-                  i(window, "resize", this.scrollHandler),
+                  i(window, 'resize', this.scrollHandler),
                   (this.interval = setInterval(this.scrollCallback, 50))),
                 this.config.live)
               ) {
@@ -250,34 +250,34 @@
             },
           },
           {
-            key: "stop",
+            key: 'stop',
             value: function () {
               (this.stopped = !0),
                 j(
                   this.config.scrollContainer || window,
-                  "scroll",
+                  'scroll',
                   this.scrollHandler
                 ),
-                j(window, "resize", this.scrollHandler),
+                j(window, 'resize', this.scrollHandler),
                 null != this.interval && clearInterval(this.interval);
             },
           },
           {
-            key: "sync",
+            key: 'sync',
             value: function () {
               p.notSupported && this.doSync(this.element);
             },
           },
           {
-            key: "doSync",
+            key: 'doSync',
             value: function (a) {
               if (
-                (("undefined" != typeof a && null !== a) || (a = this.element),
+                (('undefined' != typeof a && null !== a) || (a = this.element),
                 1 === a.nodeType)
               ) {
                 a = a.parentNode || a;
                 for (
-                  var b = a.querySelectorAll("." + this.config.boxClass), c = 0;
+                  var b = a.querySelectorAll('.' + this.config.boxClass), c = 0;
                   c < b.length;
                   c++
                 ) {
@@ -294,86 +294,86 @@
             },
           },
           {
-            key: "show",
+            key: 'show',
             value: function (a) {
               return (
                 this.applyStyle(a),
-                (a.className = a.className + " " + this.config.animateClass),
+                (a.className = a.className + ' ' + this.config.animateClass),
                 null != this.config.callback && this.config.callback(a),
                 h(a, this.wowEvent),
                 this.config.resetAnimation &&
-                  (i(a, "animationend", this.resetAnimation),
-                  i(a, "oanimationend", this.resetAnimation),
-                  i(a, "webkitAnimationEnd", this.resetAnimation),
-                  i(a, "MSAnimationEnd", this.resetAnimation)),
+                  (i(a, 'animationend', this.resetAnimation),
+                  i(a, 'oanimationend', this.resetAnimation),
+                  i(a, 'webkitAnimationEnd', this.resetAnimation),
+                  i(a, 'MSAnimationEnd', this.resetAnimation)),
                 a
               );
             },
           },
           {
-            key: "applyStyle",
+            key: 'applyStyle',
             value: function (a, b) {
               var c = this,
-                d = a.getAttribute("data-wow-duration"),
-                e = a.getAttribute("data-wow-delay"),
-                f = a.getAttribute("data-wow-iteration");
+                d = a.getAttribute('data-wow-duration'),
+                e = a.getAttribute('data-wow-delay'),
+                f = a.getAttribute('data-wow-iteration');
               return this.animate(function () {
                 return c.customStyle(a, b, d, e, f);
               });
             },
           },
           {
-            key: "resetStyle",
+            key: 'resetStyle',
             value: function () {
               for (var a = 0; a < this.boxes.length; a++) {
                 var b = this.boxes[a];
-                b.style.visibility = "visible";
+                b.style.visibility = 'visible';
               }
             },
           },
           {
-            key: "resetAnimation",
+            key: 'resetAnimation',
             value: function (a) {
-              if (a.type.toLowerCase().indexOf("animationend") >= 0) {
+              if (a.type.toLowerCase().indexOf('animationend') >= 0) {
                 var b = a.target || a.srcElement;
                 b.className = b.className
-                  .replace(this.config.animateClass, "")
+                  .replace(this.config.animateClass, '')
                   .trim();
               }
             },
           },
           {
-            key: "customStyle",
+            key: 'customStyle',
             value: function (a, b, c, d, e) {
               return (
                 b && this.cacheAnimationName(a),
-                (a.style.visibility = b ? "hidden" : "visible"),
+                (a.style.visibility = b ? 'hidden' : 'visible'),
                 c && this.vendorSet(a.style, { animationDuration: c }),
                 d && this.vendorSet(a.style, { animationDelay: d }),
                 e && this.vendorSet(a.style, { animationIterationCount: e }),
                 this.vendorSet(a.style, {
-                  animationName: b ? "none" : this.cachedAnimationName(a),
+                  animationName: b ? 'none' : this.cachedAnimationName(a),
                 }),
                 a
               );
             },
           },
           {
-            key: "vendorSet",
+            key: 'vendorSet',
             value: function (a, b) {
               for (var c in b)
                 if (b.hasOwnProperty(c)) {
                   var d = b[c];
-                  a["" + c] = d;
+                  a['' + c] = d;
                   for (var e = 0; e < this.vendors.length; e++) {
                     var f = this.vendors[e];
-                    a["" + f + c.charAt(0).toUpperCase() + c.substr(1)] = d;
+                    a['' + f + c.charAt(0).toUpperCase() + c.substr(1)] = d;
                   }
                 }
             },
           },
           {
-            key: "vendorCSS",
+            key: 'vendorCSS',
             value: function (a, b) {
               for (
                 var c = q(a), d = c.getPropertyCSSValue(b), e = 0;
@@ -381,43 +381,43 @@
                 e++
               ) {
                 var f = this.vendors[e];
-                d = d || c.getPropertyCSSValue("-" + f + "-" + b);
+                d = d || c.getPropertyCSSValue('-' + f + '-' + b);
               }
               return d;
             },
           },
           {
-            key: "animationName",
+            key: 'animationName',
             value: function (a) {
               var b = void 0;
               try {
-                b = this.vendorCSS(a, "animation-name").cssText;
+                b = this.vendorCSS(a, 'animation-name').cssText;
               } catch (c) {
-                b = q(a).getPropertyValue("animation-name");
+                b = q(a).getPropertyValue('animation-name');
               }
-              return "none" === b ? "" : b;
+              return 'none' === b ? '' : b;
             },
           },
           {
-            key: "cacheAnimationName",
+            key: 'cacheAnimationName',
             value: function (a) {
               return this.animationNameCache.set(a, this.animationName(a));
             },
           },
           {
-            key: "cachedAnimationName",
+            key: 'cachedAnimationName',
             value: function (a) {
               return this.animationNameCache.get(a);
             },
           },
           {
-            key: "scrollHandler",
+            key: 'scrollHandler',
             value: function () {
               this.scrolled = !0;
             },
           },
           {
-            key: "scrollCallback",
+            key: 'scrollCallback',
             value: function () {
               if (this.scrolled) {
                 this.scrolled = !1;
@@ -437,7 +437,7 @@
             },
           },
           {
-            key: "offsetTop",
+            key: 'offsetTop',
             value: function (a) {
               for (; void 0 === a.offsetTop; ) a = a.parentNode;
               for (var b = a.offsetTop; a.offsetParent; )
@@ -446,9 +446,9 @@
             },
           },
           {
-            key: "isVisible",
+            key: 'isVisible',
             value: function (a) {
-              var b = a.getAttribute("data-wow-offset") || this.config.offset,
+              var b = a.getAttribute('data-wow-offset') || this.config.offset,
                 c =
                   (this.config.scrollContainer &&
                     this.config.scrollContainer.scrollTop) ||
@@ -460,7 +460,7 @@
             },
           },
           {
-            key: "disabled",
+            key: 'disabled',
             value: function () {
               return !this.config.mobile && f(navigator.userAgent);
             },
@@ -469,5 +469,5 @@
         a
       );
     })();
-  (b["default"] = r), (a.exports = b["default"]);
+  (b['default'] = r), (a.exports = b['default']);
 });

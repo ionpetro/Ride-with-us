@@ -58,7 +58,6 @@ address {
   margin: 0 0 24px;
 }
 
-
 b,
 strong {
   font-weight: bold;
@@ -84,7 +83,7 @@ ins {
 }
 
 pre {
-  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-family: 'Courier 10 Pitch', Courier, monospace;
   font-size: var(--font-size-b3);
   margin: 10px 0;
   overflow: auto;
@@ -195,9 +194,9 @@ input {
 }
 
 button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
@@ -209,12 +208,12 @@ input[disabled] {
   cursor: default;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
   padding: 0;
 }
 
-input[type="search"] {
+input[type='search'] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
@@ -223,7 +222,7 @@ input[type="search"] {
   width: 270px;
 }
 
-input[type="search"]::-webkit-search-decoration {
+input[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
   appearance: none;
 }
@@ -308,7 +307,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 

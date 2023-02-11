@@ -1,44 +1,44 @@
-import React from "react";
+import React from 'react';
 
 const Activities = () => {
   const activities = [
     {
-      title: "Παρνασσός",
-      image_url: "/assets/images/sports/parnassos.jpg",
-      link: "/activities/parnassos",
+      title: 'Παρνασσός',
+      image_url: '/assets/images/sports/parnassos.jpg',
+      link: '/activities/parnassos',
       price: 50,
     },
     {
-      title: "Βασιλίτσα",
-      image_url: "/assets/images/sports/vasilitsa.jpg",
-      link: "/activities/vasilitsa",
+      title: 'Βασιλίτσα',
+      image_url: '/assets/images/sports/vasilitsa.jpg',
+      link: '/activities/vasilitsa',
       price: 165,
     },
     {
-      title: "Καλάβρυτα",
-      image_url: "/assets/images/sports/kalavrita.jpg",
-      link: "/activities/kalavrita",
+      title: 'Καλάβρυτα',
+      image_url: '/assets/images/sports/kalavrita.jpg',
+      link: '/activities/kalavrita',
       price: 50,
     },
-    {
-      title: "Παύλιανη",
-      image_url: "/assets/images/sports/pavliani.jpg",
-      link: "/activities/pavliani",
-      price: 50,
-    },
-    {
-      title: "Καρδίτσα",
-      image_url: "/assets/images/sports/karditsa.jpg",
-      link: "/activities/karditsa",
-      price: 130,
-    },
+    // {
+    //   title: 'Παύλιανη',
+    //   image_url: '/assets/images/sports/pavliani.jpg',
+    //   link: '/activities/pavliani',
+    //   price: 50,
+    // },
+    // {
+    //   title: 'Καρδίτσα',
+    //   image_url: '/assets/images/sports/karditsa.jpg',
+    //   link: '/activities/karditsa',
+    //   price: 130,
+    // },
   ];
   return (
     <>
       {/* Start Card Style */}
       <div
         className="rbt-course-card-area rbt-section-gap bg-color-white"
-        id={"activities"}
+        id={'activities'}
       >
         <div className="container">
           <div className="row align-items-center mb--60">

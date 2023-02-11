@@ -1,9 +1,9 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
+import React from 'react';
 
 const Navbar = () => {
   return (
-    <div className={"rbt-header-sticky"}>
+    <div className={'rbt-header-sticky'}>
       {/* Start Header Area */}
       <header className="rbt-header rbt-header-8 rbt-transparent-header">
         <div className="rbt-sticky-placeholder" />
@@ -65,8 +65,8 @@ const Navbar = () => {
                     <Image
                       src="assets/images/logo/logo3.svg"
                       alt="Education Logo Images"
-                      width={"140"}
-                      height={"120"}
+                      width={'140'}
+                      height={'120'}
                     />
                   </a>
                 </div>
@@ -122,8 +122,8 @@ const Navbar = () => {
                   <Image
                     src="assets/images/logo/logo3.svg"
                     alt="Ride with us logo"
-                    width={"160"}
-                    height={"70"}
+                    width={'160'}
+                    height={'70'}
                   />
                 </a>
               </div>

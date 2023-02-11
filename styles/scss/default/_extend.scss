@@ -46,7 +46,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    content: "";
+    content: '';
     z-index: -1;
   }
 }
@@ -290,7 +290,7 @@
 .rbt-gradient {
   position: relative;
   &::before {
-    content: "";
+    content: '';
     width: 100%;
     position: absolute;
     z-index: -1;
@@ -354,7 +354,7 @@
 }
 
 .bg-gradient-11 {
-  background: rgba(#bce6f9, .4) !important;
+  background: rgba(#bce6f9, 0.4) !important;
 }
 
 .bg-gradient-12 {
@@ -391,7 +391,11 @@
 }
 
 .bg-gradient-18 {
-  background: linear-gradient(0deg, rgba(243,112,78,1) 0%, rgba(243,112,78,0) 100%) !important;
+  background: linear-gradient(
+    0deg,
+    rgba(243, 112, 78, 1) 0%,
+    rgba(243, 112, 78, 0) 100%
+  ) !important;
 }
 
 .theme-mainbg-gradient {

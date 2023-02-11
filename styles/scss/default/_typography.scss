@@ -2,7 +2,7 @@
  * Typography
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap');
 
 /*
 	font-family: 'Source Serif Pro', serif; 
@@ -347,7 +347,7 @@ cite,
 }
 
 var {
-  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-family: 'Courier 10 Pitch', Courier, monospace;
 }
 
 /*---------------------------
@@ -377,7 +377,7 @@ ul {
 
         &::before {
           position: absolute;
-          content: "";
+          content: '';
           width: 6px;
           height: 6px;
           border-radius: 100%;

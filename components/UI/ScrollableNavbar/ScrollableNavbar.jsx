@@ -1,5 +1,5 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
+import React from 'react';
 
 const ScrollableNavbar = () => {
   return (
@@ -16,8 +16,8 @@ const ScrollableNavbar = () => {
                     <Image
                       src="/assets/images/logo/logo3.svg"
                       alt="Education Logo Images"
-                      width={"140"}
-                      height={"120"}
+                      width={'140'}
+                      height={'120'}
                     />
                   </a>
                 </div>
@@ -73,8 +73,8 @@ const ScrollableNavbar = () => {
                   <Image
                     src="/assets/images/logo/logo3.svg"
                     alt="Ride with us logo"
-                    width={"160"}
-                    height={"70"}
+                    width={'160'}
+                    height={'70'}
                   />
                 </a>
               </div>

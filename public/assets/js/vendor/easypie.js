@@ -11,26 +11,26 @@
  **/
 
 !(function (a, b) {
-  "function" == typeof define && define.amd
-    ? define(["jquery"], function (a) {
+  'function' == typeof define && define.amd
+    ? define(['jquery'], function (a) {
         return b(a);
       })
-    : "object" == typeof exports
-    ? (module.exports = b(require("jquery")))
+    : 'object' == typeof exports
+    ? (module.exports = b(require('jquery')))
     : b(jQuery);
 })(this, function (a) {
   var b = function (a, b) {
       var c,
-        d = document.createElement("canvas");
+        d = document.createElement('canvas');
       a.appendChild(d),
-        "object" == typeof G_vmlCanvasManager &&
+        'object' == typeof G_vmlCanvasManager &&
           G_vmlCanvasManager.initElement(d);
-      var e = d.getContext("2d");
+      var e = d.getContext('2d');
       d.width = d.height = b.size;
       var f = 1;
       window.devicePixelRatio > 1 &&
         ((f = window.devicePixelRatio),
-        (d.style.width = d.style.height = [b.size, "px"].join("")),
+        (d.style.width = d.style.height = [b.size, 'px'].join('')),
         (d.width = d.height = b.size * f),
         e.scale(f, f)),
         e.translate(b.size / 2, b.size / 2),
@@ -95,7 +95,7 @@
             : this.clear(),
             (e.lineCap = b.lineCap);
           var d;
-          (d = "function" == typeof b.barColor ? b.barColor(a) : b.barColor),
+          (d = 'function' == typeof b.barColor ? b.barColor(a) : b.barColor),
             h(d, b.lineWidth, a / 100);
         }.bind(this)),
         (this.animate = function (a, c) {
@@ -113,11 +113,11 @@
     },
     c = function (a, c) {
       var d = {
-        barColor: "#ef1e25",
-        trackColor: "#f9f9f9",
-        scaleColor: "#dfe0e0",
+        barColor: '#ef1e25',
+        trackColor: '#f9f9f9',
+        scaleColor: '#dfe0e0',
         scaleLength: 5,
-        lineCap: "round",
+        lineCap: 'round',
         lineWidth: 3,
         trackWidth: void 0,
         size: 110,
@@ -133,10 +133,10 @@
         onStep: function (a, b, c) {},
         onStop: function (a, b) {},
       };
-      if ("undefined" != typeof b) d.renderer = b;
+      if ('undefined' != typeof b) d.renderer = b;
       else {
-        if ("undefined" == typeof SVGRenderer)
-          throw new Error("Please load either the SVG- or the CanvasRenderer");
+        if ('undefined' == typeof SVGRenderer)
+          throw new Error('Please load either the SVG- or the CanvasRenderer');
         d.renderer = SVGRenderer;
       }
       var e = {},
@@ -145,16 +145,16 @@
           (this.el = a), (this.options = e);
           for (var b in d)
             d.hasOwnProperty(b) &&
-              ((e[b] = c && "undefined" != typeof c[b] ? c[b] : d[b]),
-              "function" == typeof e[b] && (e[b] = e[b].bind(this)));
-          "string" == typeof e.easing &&
-          "undefined" != typeof jQuery &&
+              ((e[b] = c && 'undefined' != typeof c[b] ? c[b] : d[b]),
+              'function' == typeof e[b] && (e[b] = e[b].bind(this)));
+          'string' == typeof e.easing &&
+          'undefined' != typeof jQuery &&
           jQuery.isFunction(jQuery.easing[e.easing])
             ? (e.easing = jQuery.easing[e.easing])
             : (e.easing = d.easing),
-            "number" == typeof e.animate &&
+            'number' == typeof e.animate &&
               (e.animate = { duration: e.animate, enabled: !0 }),
-            "boolean" != typeof e.animate ||
+            'boolean' != typeof e.animate ||
               e.animate ||
               (e.animate = { duration: 1e3, enabled: e.animate }),
             (this.renderer = new e.renderer(a, e)),
@@ -162,8 +162,8 @@
             a.dataset && a.dataset.percent
               ? this.update(parseFloat(a.dataset.percent))
               : a.getAttribute &&
-                a.getAttribute("data-percent") &&
-                this.update(parseFloat(a.getAttribute("data-percent")));
+                a.getAttribute('data-percent') &&
+                this.update(parseFloat(a.getAttribute('data-percent')));
         }.bind(this);
       (this.update = function (a) {
         return (
@@ -186,9 +186,9 @@
   a.fn.easyPieChart = function (b) {
     return this.each(function () {
       var d;
-      a.data(this, "easyPieChart") ||
+      a.data(this, 'easyPieChart') ||
         ((d = a.extend({}, b, a(this).data())),
-        a.data(this, "easyPieChart", new c(this, d)));
+        a.data(this, 'easyPieChart', new c(this, d)));
     });
   };
 });
@@ -207,12 +207,12 @@
  **/
 
 (function (root, factory) {
-  if (typeof exports === "object") {
+  if (typeof exports === 'object') {
     module.exports = factory();
-  } else if (typeof define === "function" && define.amd) {
-    define("EasyPieChart", [], factory);
+  } else if (typeof define === 'function' && define.amd) {
+    define('EasyPieChart', [], factory);
   } else {
-    root["EasyPieChart"] = factory();
+    root['EasyPieChart'] = factory();
   }
 })(this, function () {
   /**
@@ -222,15 +222,15 @@
    */
   var CanvasRenderer = function (el, options) {
     var cachedBackground;
-    var canvas = document.createElement("canvas");
+    var canvas = document.createElement('canvas');
 
     el.appendChild(canvas);
 
-    if (typeof G_vmlCanvasManager !== "undefined") {
+    if (typeof G_vmlCanvasManager !== 'undefined') {
       G_vmlCanvasManager.initElement(canvas);
     }
 
-    var ctx = canvas.getContext("2d");
+    var ctx = canvas.getContext('2d');
 
     canvas.width = canvas.height = options.size;
 
@@ -238,7 +238,7 @@
     var scaleBy = 1;
     if (window.devicePixelRatio > 1) {
       scaleBy = window.devicePixelRatio;
-      canvas.style.width = canvas.style.height = [options.size, "px"].join("");
+      canvas.style.width = canvas.style.height = [options.size, 'px'].join('');
       canvas.width = canvas.height = options.size * scaleBy;
       ctx.scale(scaleBy, scaleBy);
     }
@@ -387,7 +387,7 @@
 
       // if barcolor is a function execute it and pass the percent as a value
       var color;
-      if (typeof options.barColor === "function") {
+      if (typeof options.barColor === 'function') {
         color = options.barColor(percent);
       } else {
         color = options.barColor;
@@ -432,11 +432,11 @@
 
   var EasyPieChart = function (el, opts) {
     var defaultOptions = {
-      barColor: "#ef1e25",
-      trackColor: "#f9f9f9",
-      scaleColor: "#dfe0e0",
+      barColor: '#ef1e25',
+      trackColor: '#f9f9f9',
+      scaleColor: '#dfe0e0',
       scaleLength: 5,
-      lineCap: "round",
+      lineCap: 'round',
       lineWidth: 3,
       size: 110,
       rotate: 0,
@@ -464,12 +464,12 @@
     };
 
     // detect present renderer
-    if (typeof CanvasRenderer !== "undefined") {
+    if (typeof CanvasRenderer !== 'undefined') {
       defaultOptions.renderer = CanvasRenderer;
-    } else if (typeof SVGRenderer !== "undefined") {
+    } else if (typeof SVGRenderer !== 'undefined') {
       defaultOptions.renderer = SVGRenderer;
     } else {
-      throw new Error("Please load either the SVG- or the CanvasRenderer");
+      throw new Error('Please load either the SVG- or the CanvasRenderer');
     }
 
     var options = {};
@@ -486,10 +486,10 @@
       for (var i in defaultOptions) {
         if (defaultOptions.hasOwnProperty(i)) {
           options[i] =
-            opts && typeof opts[i] !== "undefined"
+            opts && typeof opts[i] !== 'undefined'
               ? opts[i]
               : defaultOptions[i];
-          if (typeof options[i] === "function") {
+          if (typeof options[i] === 'function') {
             options[i] = options[i].bind(this);
           }
         }
@@ -497,8 +497,8 @@
 
       // check for jQuery easing
       if (
-        typeof options.easing === "string" &&
-        typeof jQuery !== "undefined" &&
+        typeof options.easing === 'string' &&
+        typeof jQuery !== 'undefined' &&
         jQuery.isFunction(jQuery.easing[options.easing])
       ) {
         options.easing = jQuery.easing[options.easing];
@@ -507,14 +507,14 @@
       }
 
       // process earlier animate option to avoid bc breaks
-      if (typeof options.animate === "number") {
+      if (typeof options.animate === 'number') {
         options.animate = {
           duration: options.animate,
           enabled: true,
         };
       }
 
-      if (typeof options.animate === "boolean" && !options.animate) {
+      if (typeof options.animate === 'boolean' && !options.animate) {
         options.animate = {
           duration: 1000,
           enabled: options.animate,
@@ -530,8 +530,8 @@
       // initial update
       if (el.dataset && el.dataset.percent) {
         this.update(parseFloat(el.dataset.percent));
-      } else if (el.getAttribute && el.getAttribute("data-percent")) {
-        this.update(parseFloat(el.getAttribute("data-percent")));
+      } else if (el.getAttribute && el.getAttribute('data-percent')) {
+        this.update(parseFloat(el.getAttribute('data-percent')));
       }
     }.bind(this);
 

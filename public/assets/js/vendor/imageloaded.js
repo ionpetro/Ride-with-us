@@ -1,10 +1,10 @@
 !(function (e, t) {
-  "function" == typeof define && define.amd
-    ? define("ev-emitter/ev-emitter", t)
-    : "object" == typeof module && module.exports
+  'function' == typeof define && define.amd
+    ? define('ev-emitter/ev-emitter', t)
+    : 'object' == typeof module && module.exports
     ? (module.exports = t())
     : (e.EvEmitter = t());
-})("undefined" != typeof window ? window : this, function () {
+})('undefined' != typeof window ? window : this, function () {
   function e() {}
   var t = e.prototype;
   return (
@@ -51,15 +51,15 @@
   );
 }),
   (function (t, i) {
-    "use strict";
-    "function" == typeof define && define.amd
-      ? define(["ev-emitter/ev-emitter"], function (e) {
+    'use strict';
+    'function' == typeof define && define.amd
+      ? define(['ev-emitter/ev-emitter'], function (e) {
           return i(t, e);
         })
-      : "object" == typeof module && module.exports
-      ? (module.exports = i(t, require("ev-emitter")))
+      : 'object' == typeof module && module.exports
+      ? (module.exports = i(t, require('ev-emitter')))
       : (t.imagesLoaded = i(t, t.EvEmitter));
-  })("undefined" != typeof window ? window : this, function (t, e) {
+  })('undefined' != typeof window ? window : this, function (t, e) {
     function s(e, t) {
       for (var i in t) e[i] = t[i];
       return e;
@@ -68,21 +68,21 @@
       if (!(this instanceof r)) return new r(e, t, i);
       var n,
         o = e;
-      return (o = "string" == typeof e ? document.querySelectorAll(e) : o)
+      return (o = 'string' == typeof e ? document.querySelectorAll(e) : o)
         ? ((this.elements =
             ((n = o),
             Array.isArray(n)
               ? n
-              : "object" == typeof n && "number" == typeof n.length
+              : 'object' == typeof n && 'number' == typeof n.length
               ? d.call(n)
               : [n])),
           (this.options = s({}, this.options)),
-          "function" == typeof t ? (i = t) : s(this.options, t),
-          i && this.on("always", i),
+          'function' == typeof t ? (i = t) : s(this.options, t),
+          i && this.on('always', i),
           this.getImages(),
           h && (this.jqDeferred = new h.Deferred()),
           void setTimeout(this.check.bind(this)))
-        : void a.error("Bad element for imagesLoaded " + (o || e));
+        : void a.error('Bad element for imagesLoaded ' + (o || e));
     }
     function i(e) {
       this.img = e;
@@ -98,15 +98,15 @@
         (this.images = []), this.elements.forEach(this.addElementImages, this);
       }),
       (r.prototype.addElementImages = function (e) {
-        "IMG" == e.nodeName && this.addImage(e),
+        'IMG' == e.nodeName && this.addImage(e),
           !0 === this.options.background && this.addElementBackgroundImages(e);
         var t = e.nodeType;
         if (t && m[t]) {
-          for (var i = e.querySelectorAll("img"), n = 0; n < i.length; n++) {
+          for (var i = e.querySelectorAll('img'), n = 0; n < i.length; n++) {
             var o = i[n];
             this.addImage(o);
           }
-          if ("string" == typeof this.options.background)
+          if ('string' == typeof this.options.background)
             for (
               var s = e.querySelectorAll(this.options.background), n = 0;
               n < s.length;
@@ -151,7 +151,7 @@
           (this.hasAnyBroken = !1),
           this.images.length
             ? void this.images.forEach(function (e) {
-                e.once("progress", t), e.check();
+                e.once('progress', t), e.check();
               })
             : void this.complete()
         );
@@ -159,69 +159,69 @@
       (r.prototype.progress = function (e, t, i) {
         this.progressedCount++,
           (this.hasAnyBroken = this.hasAnyBroken || !e.isLoaded),
-          this.emitEvent("progress", [this, e, t]),
+          this.emitEvent('progress', [this, e, t]),
           this.jqDeferred &&
             this.jqDeferred.notify &&
             this.jqDeferred.notify(this, e),
           this.progressedCount == this.images.length && this.complete(),
-          this.options.debug && a && a.log("progress: " + i, e, t);
+          this.options.debug && a && a.log('progress: ' + i, e, t);
       }),
       (r.prototype.complete = function () {
-        var e = this.hasAnyBroken ? "fail" : "done";
+        var e = this.hasAnyBroken ? 'fail' : 'done';
         (this.isComplete = !0),
           this.emitEvent(e, [this]),
-          this.emitEvent("always", [this]),
+          this.emitEvent('always', [this]),
           this.jqDeferred &&
-            ((e = this.hasAnyBroken ? "reject" : "resolve"),
+            ((e = this.hasAnyBroken ? 'reject' : 'resolve'),
             this.jqDeferred[e](this));
       }),
       ((i.prototype = Object.create(e.prototype)).check = function () {
         return this.getIsImageComplete()
-          ? void this.confirm(0 !== this.img.naturalWidth, "naturalWidth")
+          ? void this.confirm(0 !== this.img.naturalWidth, 'naturalWidth')
           : ((this.proxyImage = new Image()),
-            this.proxyImage.addEventListener("load", this),
-            this.proxyImage.addEventListener("error", this),
-            this.img.addEventListener("load", this),
-            this.img.addEventListener("error", this),
+            this.proxyImage.addEventListener('load', this),
+            this.proxyImage.addEventListener('error', this),
+            this.img.addEventListener('load', this),
+            this.img.addEventListener('error', this),
             void (this.proxyImage.src = this.img.src));
       }),
       (i.prototype.getIsImageComplete = function () {
         return this.img.complete && this.img.naturalWidth;
       }),
       (i.prototype.confirm = function (e, t) {
-        (this.isLoaded = e), this.emitEvent("progress", [this, this.img, t]);
+        (this.isLoaded = e), this.emitEvent('progress', [this, this.img, t]);
       }),
       (i.prototype.handleEvent = function (e) {
-        var t = "on" + e.type;
+        var t = 'on' + e.type;
         this[t] && this[t](e);
       }),
       (i.prototype.onload = function () {
-        this.confirm(!0, "onload"), this.unbindEvents();
+        this.confirm(!0, 'onload'), this.unbindEvents();
       }),
       (i.prototype.onerror = function () {
-        this.confirm(!1, "onerror"), this.unbindEvents();
+        this.confirm(!1, 'onerror'), this.unbindEvents();
       }),
       (i.prototype.unbindEvents = function () {
-        this.proxyImage.removeEventListener("load", this),
-          this.proxyImage.removeEventListener("error", this),
-          this.img.removeEventListener("load", this),
-          this.img.removeEventListener("error", this);
+        this.proxyImage.removeEventListener('load', this),
+          this.proxyImage.removeEventListener('error', this),
+          this.img.removeEventListener('load', this),
+          this.img.removeEventListener('error', this);
       }),
       ((n.prototype = Object.create(i.prototype)).check = function () {
-        this.img.addEventListener("load", this),
-          this.img.addEventListener("error", this),
+        this.img.addEventListener('load', this),
+          this.img.addEventListener('error', this),
           (this.img.src = this.url),
           this.getIsImageComplete() &&
-            (this.confirm(0 !== this.img.naturalWidth, "naturalWidth"),
+            (this.confirm(0 !== this.img.naturalWidth, 'naturalWidth'),
             this.unbindEvents());
       }),
       (n.prototype.unbindEvents = function () {
-        this.img.removeEventListener("load", this),
-          this.img.removeEventListener("error", this);
+        this.img.removeEventListener('load', this),
+          this.img.removeEventListener('error', this);
       }),
       (n.prototype.confirm = function (e, t) {
         (this.isLoaded = e),
-          this.emitEvent("progress", [this, this.element, t]);
+          this.emitEvent('progress', [this, this.element, t]);
       }),
       (r.makeJQueryPlugin = function (e) {
         (e = e || t.jQuery) &&

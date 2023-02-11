@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const PrivacyPolicy = () => {
   return (
@@ -35,7 +35,7 @@ const PrivacyPolicy = () => {
                 We use Your Personal data to provide and improve the Service. By
                 using the Service, You agree to the collection and use of
                 information in accordance with this Privacy Policy. This Privacy
-                Policy has been created with the help of the{" "}
+                Policy has been created with the help of the{' '}
                 <a
                   href="components/PrivacyPolicy/PrivacyPolicy"
                   target="_blank"
@@ -130,7 +130,7 @@ const PrivacyPolicy = () => {
                 <li>
                   <p>
                     <strong>Website</strong> refers to Ride with us, accessible
-                    from{" "}
+                    from{' '}
                     <a
                       href="https://www.ridewithus.gr"
                       rel="external nofollow noopener"
@@ -230,13 +230,13 @@ const PrivacyPolicy = () => {
                 Cookies. Persistent Cookies remain on Your personal computer or
                 mobile device when You go offline, while Session Cookies are
                 deleted as soon as You close Your web browser. Learn more about
-                cookies on the{" "}
+                cookies on the{' '}
                 <a
                   href="components/PrivacyPolicy/PrivacyPolicy#Use_Of_Cookies_And_Tracking"
                   target="_blank"
                 >
                   Free Privacy Policy website
-                </a>{" "}
+                </a>{' '}
                 article.
               </p>
               <p>

@@ -109,7 +109,7 @@
   .img-wrapper {
     position: relative;
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       bottom: -40px;
       left: -75px;
@@ -118,7 +118,7 @@
       background: url(/public/assets/images/about-img/shape/shape-1.png);
     }
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       height: 87px;
       width: 95px;

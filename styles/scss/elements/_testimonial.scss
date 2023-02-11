@@ -20,7 +20,7 @@ Testimonial Styles
       left: -64px;
       top: -57px;
       background-image: url(/public/assets/images/testimonial/image-1.png);
-      content: "";
+      content: '';
       opacity: 1;
       background-repeat: no-repeat;
       z-index: -1;
@@ -204,7 +204,7 @@ ul {
 
         &::after {
           position: absolute;
-          content: "";
+          content: '';
           left: 0;
           top: 0;
           background-color: hsla(0, 0%, 100%, 0.5);
@@ -264,7 +264,7 @@ ul {
     background: -moz-linear-gradient(left, #fff 0, hsla(0, 0%, 100%, 0) 100%);
     background: linear-gradient(90deg, #fff 0, hsla(0, 0%, 100%, 0));
     z-index: 2;
-    content: "";
+    content: '';
     @media #{$sm-layout} {
       width: 50px;
     }
@@ -351,7 +351,7 @@ ul {
 
     &::before {
       position: absolute;
-      content: "";
+      content: '';
       right: 40px;
       top: 40px;
       z-index: -1;

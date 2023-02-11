@@ -2,7 +2,7 @@
   .about-page-title {
     position: relative;
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 67px;
       left: 167px;
@@ -12,7 +12,7 @@
       width: 92px;
     }
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: 63px;
       right: 312px;
@@ -42,7 +42,7 @@
       position: relative;
       z-index: 2;
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         bottom: -60px;
         left: -43px;
@@ -59,7 +59,7 @@
     .inner-content {
       position: relative;
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         bottom: 0;
         right: -150px;
@@ -152,7 +152,7 @@
       position: relative;
       z-index: 2;
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         bottom: -40px;
         right: -43px;

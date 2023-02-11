@@ -1,20 +1,20 @@
-import React, { useState } from "react";
-import Calendar from "react-calendar";
-import styles from "./ActivityModal.module.scss";
-import "react-calendar/dist/Calendar.css";
+import React, { useState } from 'react';
+import Calendar from 'react-calendar';
+import styles from './ActivityModal.module.scss';
+import 'react-calendar/dist/Calendar.css';
 
 const ActivityModal = ({ data, setShowModal }) => {
   const [date, setDate] = useState(new Date());
 
   return (
     <>
-      <div className={styles.compWrap} id={"modal"}>
+      <div className={styles.compWrap} id={'modal'}>
         <div className={styles.title}>
           <div>{data?.title}</div>
           <div>από {data?.price}€ το άτομο</div>
         </div>
-        <form className={"mt-3"}>
-          <h4 className={"mt-4"}>Στοιχεία κράτησης</h4>
+        <form className={'mt-3'}>
+          <h4 className={'mt-4'}>Στοιχεία κράτησης</h4>
           <div className="form-group">
             <input name="con_name" type="text" />
             <label>Ονοματεπώνυμο</label>
@@ -50,7 +50,7 @@ const ActivityModal = ({ data, setShowModal }) => {
             <small>Ημερομηνία</small>
             <Calendar
               minDate={new Date()}
-              locale={"el"}
+              locale={'el'}
               onChange={setDate}
               value={date}
             />
@@ -71,8 +71,8 @@ const ActivityModal = ({ data, setShowModal }) => {
               </span>
             </button>
             <small className="rbt-link-hover text-center text-lg-start">
-              Πατώντας αποστολή συμφωνώ με την{" "}
-              <a href="/cancellation-policy" target={"_blank"}>
+              Πατώντας αποστολή συμφωνώ με την{' '}
+              <a href="/cancellation-policy" target={'_blank'}>
                 πολιτική ακύρωσης
               </a>
             </small>

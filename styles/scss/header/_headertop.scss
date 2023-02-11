@@ -127,7 +127,7 @@
       & + p {
         &::before {
           position: absolute;
-          content: "";
+          content: '';
           height: 20px;
           width: 2px;
           background: var(--color-border);
@@ -233,7 +233,7 @@
     }
     &::before {
       position: absolute;
-      content: "";
+      content: '';
       height: 20px;
       width: 2px;
       background: var(--color-border);

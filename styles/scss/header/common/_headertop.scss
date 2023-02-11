@@ -21,7 +21,7 @@
         height: 85%;
         display: block;
         z-index: 1;
-        content: "";
+        content: '';
         background: linear-gradient(
           to bottom,
           rgba(0, 0, 0, 0),
@@ -110,7 +110,7 @@
         .topbar-expend-button {
           i {
             &::before {
-              content: "\e996";
+              content: '\e996';
             }
           }
         }
@@ -170,7 +170,7 @@
       & + p {
         &::before {
           position: absolute;
-          content: "";
+          content: '';
           height: 20px;
           width: 2px;
           background: var(--color-border);
@@ -275,7 +275,7 @@
     }
     &::before {
       position: absolute;
-      content: "";
+      content: '';
       height: 20px;
       width: 2px;
       background: var(--color-border);

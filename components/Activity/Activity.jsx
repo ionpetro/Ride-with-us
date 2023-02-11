@@ -1,7 +1,7 @@
-import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
+import { GoogleMap, Marker, useLoadScript } from '@react-google-maps/api';
 
-import React, { useMemo, useState } from "react";
-import ActivityModal from "./ActivityModal/ActivityModal";
+import React, { useMemo, useState } from 'react';
+import ActivityModal from './ActivityModal/ActivityModal';
 
 const Activity = ({ data }) => {
   const mapCenter = useMemo(() => ({ lat: data?.lat, lng: data?.lng }), []);
@@ -26,12 +26,12 @@ const Activity = ({ data }) => {
       <div className="rbt-breadcrumb-default rbt-breadcrumb-style-3">
         <div>
           <div
-            className={"bg-gradient-11"}
+            className={'bg-gradient-11'}
             style={{
-              height: "500px",
-              width: "100%",
-              position: "absolute",
-              top: "0",
+              height: '500px',
+              width: '100%',
+              position: 'absolute',
+              top: '0',
             }}
           />
         </div>
@@ -95,6 +95,11 @@ const Activity = ({ data }) => {
                         </a>
                       </li>
                       <li>
+                        <a href="components/Activity/Activity#extra">
+                          Extra Παροχές
+                        </a>
+                      </li>
+                      <li>
                         <a href="components/Activity/Activity#location">
                           Τοποθεσία
                         </a>
@@ -119,6 +124,19 @@ const Activity = ({ data }) => {
                   </div>
                 </div>
                 <div
+                  className="rbt-course-feature-box overview-wrapper rbt-shadow-box mt--30 has-show-more"
+                  id="extra"
+                >
+                  <div className="rbt-course-feature-inner">
+                    <div className="section-title">
+                      <h4 className="rbt-title-style-3">Extra παροχές</h4>
+                    </div>
+                    <div
+                      dangerouslySetInnerHTML={{ __html: data?.extra }}
+                    ></div>
+                  </div>
+                </div>
+                <div
                   className="rbt-course-feature-box overview-wrapper rbt-shadow-box mt--30"
                   id="location"
                 >
@@ -132,8 +150,8 @@ const Activity = ({ data }) => {
                           center={mapCenter}
                           mapTypeId={google.maps.MapTypeId.ROADMAP}
                           mapContainerStyle={{
-                            width: "100%",
-                            height: "400px",
+                            width: '100%',
+                            height: '400px',
                           }}
                         >
                           <Marker {...mapCenter} />
@@ -153,10 +171,10 @@ const Activity = ({ data }) => {
                     <h4>{data?.title}</h4>
                     <div className="rbt-price-wrapper d-flex flex-wrap align-items-center justify-content-between">
                       <div className="rbt-price mb-4">
-                        από{" "}
+                        από{' '}
                         <span className="current-price mx-2">
                           {data?.price}€
-                        </span>{" "}
+                        </span>{' '}
                         το άτομο
                       </div>
                     </div>
@@ -188,7 +206,7 @@ const Activity = ({ data }) => {
                       <div className="contact-with-us text-center">
                         <p>Θέλετε περισσότερες πληροφορίες;</p>
                         <p className="rbt-badge-2 mt--10 justify-content-center w-100">
-                          <i className="feather-phone mr--5" /> Καλέστε μας:{" "}
+                          <i className="feather-phone mr--5" /> Καλέστε μας:{' '}
                           <a href="tel:697 156 1249">
                             <strong>697 156 1249</strong>
                           </a>

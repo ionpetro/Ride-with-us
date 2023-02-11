@@ -37,13 +37,13 @@
     (n =
       '<span class="odometer-ribbon"><span class="odometer-ribbon-inner">' +
       q +
-      "</span></span>"),
+      '</span></span>'),
     (d =
       '<span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner">' +
       n +
-      "</span></span>"),
+      '</span></span>'),
     (g = '<span class="odometer-formatting-mark"></span>'),
-    (c = "(,ddd).dd"),
+    (c = '(,ddd).dd'),
     (h = /^\(?([^)]*)\)?(?:(.)(d+))?$/),
     (i = 30),
     (f = 2e3),
@@ -53,8 +53,8 @@
     (k = 1e3 / i),
     (b = 1e3 / a),
     (o =
-      "transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd"),
-    (y = document.createElement("div").style),
+      'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd'),
+    (y = document.createElement('div').style),
     (p =
       null != y.transition ||
       null != y.webkitTransition ||
@@ -72,22 +72,22 @@
     (s = function (a) {
       var b;
       return (
-        (b = document.createElement("div")), (b.innerHTML = a), b.children[0]
+        (b = document.createElement('div')), (b.innerHTML = a), b.children[0]
       );
     }),
     (v = function (a, b) {
       return (a.className = a.className.replace(
-        new RegExp("(^| )" + b.split(" ").join("|") + "( |$)", "gi"),
-        " "
+        new RegExp('(^| )' + b.split(' ').join('|') + '( |$)', 'gi'),
+        ' '
       ));
     }),
     (r = function (a, b) {
-      return v(a, b), (a.className += " " + b);
+      return v(a, b), (a.className += ' ' + b);
     }),
     (z = function (a, b) {
       var c;
       return null != document.createEvent
-        ? ((c = document.createEvent("HTMLEvents")),
+        ? ((c = document.createEvent('HTMLEvents')),
           c.initEvent(b, !0, !0),
           a.dispatchEvent(c))
         : void 0;
@@ -96,7 +96,7 @@
       var a, b;
       return null !=
         (a =
-          null != (b = window.performance) && "function" == typeof b.now
+          null != (b = window.performance) && 'function' == typeof b.now
             ? b.now()
             : void 0)
         ? a
@@ -124,7 +124,7 @@
       var a, b, c, d, e;
       if (!C && null != window.jQuery) {
         for (
-          C = !0, d = ["html", "text"], e = [], b = 0, c = d.length;
+          C = !0, d = ['html', 'text'], e = [], b = 0, c = d.length;
           c > b;
           b++
         )
@@ -174,13 +174,13 @@
           (this.MAX_VALUES = (this.options.duration / k / j) | 0),
           this.resetFormat(),
           (this.value = this.cleanValue(
-            null != (n = this.options.value) ? n : ""
+            null != (n = this.options.value) ? n : ''
           )),
           this.renderInside(),
           this.render();
         try {
           for (
-            o = ["innerHTML", "innerText", "textContent"], i = 0, l = o.length;
+            o = ['innerHTML', 'innerText', 'textContent'], i = 0, l = o.length;
             l > i;
             i++
           )
@@ -190,7 +190,7 @@
                   return Object.defineProperty(p.el, a, {
                     get: function () {
                       var b;
-                      return "innerHTML" === a
+                      return 'innerHTML' === a
                         ? p.inside.outerHTML
                         : null != (b = p.inside.innerText)
                         ? b
@@ -208,9 +208,9 @@
       return (
         (a.prototype.renderInside = function () {
           return (
-            (this.inside = document.createElement("div")),
-            (this.inside.className = "odometer-inside"),
-            (this.el.innerHTML = ""),
+            (this.inside = document.createElement('div')),
+            (this.inside.className = 'odometer-inside'),
+            (this.el.innerHTML = ''),
             this.el.appendChild(this.inside)
           );
         }),
@@ -249,13 +249,13 @@
         (a.prototype.cleanValue = function (a) {
           var b;
           return (
-            "string" == typeof a &&
+            'string' == typeof a &&
               ((a = a.replace(
-                null != (b = this.format.radix) ? b : ".",
-                "<radix>"
+                null != (b = this.format.radix) ? b : '.',
+                '<radix>'
               )),
-              (a = a.replace(/[.,]/g, "")),
-              (a = a.replace("<radix>", ".")),
+              (a = a.replace(/[.,]/g, '')),
+              (a = a.replace('<radix>', '.')),
               (a = parseFloat(a, 10) || 0)),
             x(a, this.format.precision)
           );
@@ -272,7 +272,7 @@
             for (
               this.transitionEndBound = !0,
                 b = !1,
-                e = o.split(" "),
+                e = o.split(' '),
                 f = [],
                 c = 0,
                 d = e.length;
@@ -289,7 +289,7 @@
                         : ((b = !0),
                           setTimeout(function () {
                             return (
-                              g.render(), (b = !1), z(g.el, "odometerdone")
+                              g.render(), (b = !1), z(g.el, 'odometerdone')
                             );
                           }, 0),
                           !0);
@@ -304,11 +304,11 @@
           var a, b, d, e, f, g, i, j;
           if (
             ((a = null != (i = this.options.format) ? i : c),
-            a || (a = "d"),
+            a || (a = 'd'),
             (d = h.exec(a)),
             !d)
           )
-            throw new Error("Odometer: Unparsable digit format");
+            throw new Error('Odometer: Unparsable digit format');
           return (
             (j = d.slice(1, 4)),
             (g = j[0]),
@@ -324,9 +324,9 @@
             null == a && (a = this.value),
               this.stopWatchingMutations(),
               this.resetFormat(),
-              this.inside.innerHTML = "",
+              this.inside.innerHTML = '',
               f = this.options.theme,
-              b = this.el.className.split(" "),
+              b = this.el.className.split(' '),
               e = [],
               g = 0,
               h = b.length;
@@ -339,10 +339,10 @@
                   ? (f = d[1])
                   : /^odometer(-|$)/.test(c) || e.push(c));
           return (
-            e.push("odometer"),
-            p || e.push("odometer-no-transitions"),
-            f ? e.push("odometer-theme-" + f) : e.push("odometer-auto-theme"),
-            (this.el.className = e.join(" ")),
+            e.push('odometer'),
+            p || e.push('odometer-no-transitions'),
+            f ? e.push('odometer-theme-' + f) : e.push('odometer-auto-theme'),
+            (this.el.className = e.join(' ')),
             (this.ribbons = {}),
             this.formatDigits(a),
             this.startWatchingMutations()
@@ -353,7 +353,7 @@
           if (((this.digits = []), this.options.formatFunction))
             for (
               d = this.options.formatFunction(a),
-                j = d.split("").reverse(),
+                j = d.split('').reverse(),
                 f = 0,
                 h = j.length;
               h > f;
@@ -362,20 +362,20 @@
               (c = j[f]),
                 c.match(/0-9/)
                   ? ((b = this.renderDigit()),
-                    (b.querySelector(".odometer-value").innerHTML = c),
+                    (b.querySelector('.odometer-value').innerHTML = c),
                     this.digits.push(b),
                     this.insertDigit(b))
                   : this.addSpacer(c);
           else
             for (
               e = !this.format.precision || !t(a) || !1,
-                k = a.toString().split("").reverse(),
+                k = a.toString().split('').reverse(),
                 g = 0,
                 i = k.length;
               i > g;
               g++
             )
-              (b = k[g]), "." === b && (e = !0), this.addDigit(b, e);
+              (b = k[g]), '.' === b && (e = !0), this.addDigit(b, e);
         }),
         (a.prototype.update = function (a) {
           var b,
@@ -385,16 +385,16 @@
             (b = a - this.value)
               ? (v(
                   this.el,
-                  "odometer-animating-up odometer-animating-down odometer-animating"
+                  'odometer-animating-up odometer-animating-down odometer-animating'
                 ),
                 b > 0
-                  ? r(this.el, "odometer-animating-up")
-                  : r(this.el, "odometer-animating-down"),
+                  ? r(this.el, 'odometer-animating-up')
+                  : r(this.el, 'odometer-animating-down'),
                 this.stopWatchingMutations(),
                 this.animate(a),
                 this.startWatchingMutations(),
                 setTimeout(function () {
-                  return c.el.offsetHeight, r(c.el, "odometer-animating");
+                  return c.el.offsetHeight, r(c.el, 'odometer-animating');
                 }, 0),
                 (this.value = a))
               : void 0
@@ -418,18 +418,18 @@
         }),
         (a.prototype.addDigit = function (a, b) {
           var c, d, e, f;
-          if ((null == b && (b = !0), "-" === a))
-            return this.addSpacer(a, null, "odometer-negation-mark");
-          if ("." === a)
+          if ((null == b && (b = !0), '-' === a))
+            return this.addSpacer(a, null, 'odometer-negation-mark');
+          if ('.' === a)
             return this.addSpacer(
-              null != (f = this.format.radix) ? f : ".",
+              null != (f = this.format.radix) ? f : '.',
               null,
-              "odometer-radix-mark"
+              'odometer-radix-mark'
             );
           if (b)
             for (e = !1; ; ) {
               if (!this.format.repeating.length) {
-                if (e) throw new Error("Bad odometer format without digits");
+                if (e) throw new Error('Bad odometer format without digits');
                 this.resetFormat(), (e = !0);
               }
               if (
@@ -438,20 +438,20 @@
                   0,
                   this.format.repeating.length - 1
                 )),
-                "d" === c)
+                'd' === c)
               )
                 break;
               this.addSpacer(c);
             }
           return (
             (d = this.renderDigit()),
-            (d.querySelector(".odometer-value").innerHTML = a),
+            (d.querySelector('.odometer-value').innerHTML = a),
             this.digits.push(d),
             this.insertDigit(d)
           );
         }),
         (a.prototype.animate = function (a) {
-          return p && "count" !== this.options.animation
+          return p && 'count' !== this.options.animation
             ? this.animateSlide(a)
             : this.animateCount(a);
         }),
@@ -469,7 +469,7 @@
               (g = function () {
                 var i, j, k;
                 return u() - f > h.options.duration
-                  ? ((h.value = a), h.render(), void z(h.el, "odometerdone"))
+                  ? ((h.value = a), h.render(), void z(h.el, 'odometerdone'))
                   : ((i = u() - e),
                     i > b &&
                       ((e = u()),
@@ -516,7 +516,7 @@
           return (
             (this.digits = []),
             (this.ribbons = []),
-            (this.inside.innerHTML = ""),
+            (this.inside.innerHTML = ''),
             this.resetFormat()
           );
         }),
@@ -596,12 +596,12 @@
             )
               for (
                 l = D[m],
-                  this.digits[m] || this.addDigit(" ", m >= j),
+                  this.digits[m] || this.addDigit(' ', m >= j),
                   null == (u = this.ribbons)[m] &&
                     (u[m] = this.digits[m].querySelector(
-                      ".odometer-ribbon-inner"
+                      '.odometer-ribbon-inner'
                     )),
-                  this.ribbons[m].innerHTML = "",
+                  this.ribbons[m].innerHTML = '',
                   0 > d && (l = l.reverse()),
                   o = C = 0,
                   B = l.length;
@@ -609,21 +609,21 @@
                 o = ++C
               )
                 (k = l[o]),
-                  (q = document.createElement("div")),
-                  (q.className = "odometer-value"),
+                  (q = document.createElement('div')),
+                  (q.className = 'odometer-value'),
                   (q.innerHTML = k),
                   this.ribbons[m].appendChild(q),
-                  o === l.length - 1 && r(q, "odometer-last-value"),
-                  0 === o && r(q, "odometer-first-value");
+                  o === l.length - 1 && r(q, 'odometer-last-value'),
+                  0 === o && r(q, 'odometer-first-value');
             return (
-              0 > t && this.addDigit("-"),
-              (p = this.inside.querySelector(".odometer-radix-mark")),
+              0 > t && this.addDigit('-'),
+              (p = this.inside.querySelector('.odometer-radix-mark')),
               null != p && p.parent.removeChild(p),
               j
                 ? this.addSpacer(
                     this.format.radix,
                     this.digits[j - 1],
-                    "odometer-radix-mark"
+                    'odometer-radix-mark'
                   )
                 : void 0
             );
@@ -649,7 +649,7 @@
       var a, b, c, d, e, f;
       if (null != document.querySelectorAll) {
         for (
-          b = document.querySelectorAll(m.options.selector || ".odometer"),
+          b = document.querySelectorAll(m.options.selector || '.odometer'),
             f = [],
             c = 0,
             d = b.length;
@@ -671,24 +671,24 @@
       ? ((D = document.onreadystatechange),
         (document.onreadystatechange = function () {
           return (
-            "complete" === document.readyState &&
+            'complete' === document.readyState &&
               m.options.auto !== !1 &&
               m.init(),
             null != D ? D.apply(this, arguments) : void 0
           );
         }))
       : document.addEventListener(
-          "DOMContentLoaded",
+          'DOMContentLoaded',
           function () {
             return m.options.auto !== !1 ? m.init() : void 0;
           },
           !1
         ),
-    "function" == typeof define && define.amd
+    'function' == typeof define && define.amd
       ? define([], function () {
           return m;
         })
-      : "undefined" != typeof exports && null !== exports
+      : 'undefined' != typeof exports && null !== exports
       ? (module.exports = m)
       : (window.Odometer = m);
 }).call(this);

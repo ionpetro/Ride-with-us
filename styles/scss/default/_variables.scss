@@ -125,9 +125,9 @@
   --transition-4: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 
   //Font Family
-  --font-primary: "Roboto";
-  --font-secondary: "Roboto";
-  --font-alt: "Source Serif Pro", serif;
+  --font-primary: 'Roboto';
+  --font-secondary: 'Roboto';
+  --font-alt: 'Source Serif Pro', serif;
 
   //Fonts Size
   --font-size-b1: 24px;
@@ -180,12 +180,12 @@
 }
 
 // Layouts Variation
-$smlg-device: "only screen and (max-width: 1199px)";
-$lgtolp-device: "only screen and (min-width: 1200px)";
-$extra-device: "only screen and (min-width: 1600px) and (max-width: 1919px)";
-$laptop-device: "only screen and (min-width: 1200px) and (max-width: 1599px)";
-$lg-layout: "only screen and (min-width: 992px) and (max-width: 1199px)";
-$md-layout: "only screen and (min-width: 768px) and (max-width: 991px)";
-$sm-layout: "only screen and (max-width: 767px)";
-$large-mobile: "only screen and (max-width: 575px)";
-$small-mobile: "only screen and (max-width: 479px)";
+$smlg-device: 'only screen and (max-width: 1199px)';
+$lgtolp-device: 'only screen and (min-width: 1200px)';
+$extra-device: 'only screen and (min-width: 1600px) and (max-width: 1919px)';
+$laptop-device: 'only screen and (min-width: 1200px) and (max-width: 1599px)';
+$lg-layout: 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$md-layout: 'only screen and (min-width: 768px) and (max-width: 991px)';
+$sm-layout: 'only screen and (max-width: 767px)';
+$large-mobile: 'only screen and (max-width: 575px)';
+$small-mobile: 'only screen and (max-width: 479px)';

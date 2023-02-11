@@ -100,7 +100,7 @@
     p.testimonial-text {
       position: relative;
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         background: url(/public/assets/images/testimonials-img/comma.png);
         background-size: cover;
@@ -147,7 +147,7 @@
       position: relative;
       margin-bottom: 30px;
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         background: url(/public/assets/images/testimonials-img/comma.png);
         background-size: cover;

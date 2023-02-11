@@ -373,7 +373,7 @@ ul {
         top: 50%;
         transform: translateY(-50%);
         position: absolute;
-        content: "";
+        content: '';
         @media #{$large-mobile} {
           display: none;
         }
@@ -413,7 +413,7 @@ ul {
     &::after {
       background: var(--color-border);
       position: absolute;
-      content: "";
+      content: '';
       height: 25px;
       right: 0;
       top: 50%;
@@ -499,7 +499,7 @@ ul {
 
 .rbt-search-with-category {
   @media #{$sm-layout} {
-    .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(
+    .bootstrap-select:not([class*='col-']):not([class*='form-control']):not(
         .input-group-btn
       ) {
       width: 139px;
@@ -545,8 +545,8 @@ ul {
         font-size: 13px;
       }
       &::before {
-        content: "\e930";
-        font-family: "feather" !important;
+        content: '\e930';
+        font-family: 'feather' !important;
         font-style: normal;
         font-weight: 400;
         margin-right: 2px;

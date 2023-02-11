@@ -4,7 +4,7 @@
 .popup-mobile-menu {
   z-index: 9999;
   position: fixed;
-  content: "";
+  content: '';
   width: 100%;
   height: 100%;
   position: fixed;
@@ -145,8 +145,8 @@
         position: relative;
         &::after {
           position: absolute;
-          content: "\e9b1";
-          font-family: "feather" !important;
+          content: '\e9b1';
+          font-family: 'feather' !important;
           right: 0;
           top: 50%;
           transform: translateY(-50%);
@@ -154,7 +154,7 @@
         }
         &.open {
           &::after {
-            content: "\e996";
+            content: '\e996';
           }
         }
       }

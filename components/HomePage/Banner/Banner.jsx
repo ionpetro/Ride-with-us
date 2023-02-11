@@ -1,6 +1,6 @@
-import Image from "next/image";
-import React from "react";
-import styles from "./Banner.module.scss";
+import Image from 'next/image';
+import React from 'react';
+import styles from './Banner.module.scss';
 
 const Banner = () => {
   return (
@@ -21,8 +21,8 @@ const Banner = () => {
                     </span>
                   </div>
                   <h1 className="title">
-                    An engaged{" "}
-                    <span className="theme-gradient">X-treme sports</span>{" "}
+                    An engaged{' '}
+                    <span className="theme-gradient">X-treme sports</span>{' '}
                     community
                   </h1>
                   <div className="rbt-like-total">
@@ -36,7 +36,7 @@ const Banner = () => {
                         <img
                           src="/assets/images/sports/parnassos.jpg"
                           alt="education"
-                          style={{ height: "60px" }}
+                          style={{ height: '60px' }}
                         />
                       </a>
                       <a
@@ -48,7 +48,7 @@ const Banner = () => {
                         <img
                           src="/assets/images/sports/kalavrita.jpg"
                           alt="education"
-                          style={{ height: "60px" }}
+                          style={{ height: '60px' }}
                         />
                       </a>
                       <a
@@ -60,7 +60,7 @@ const Banner = () => {
                         <img
                           src="/assets/images/sports/vasilitsa.jpg"
                           alt="education"
-                          style={{ height: "60px" }}
+                          style={{ height: '60px' }}
                         />
                       </a>
                       <div className="more-author-text">

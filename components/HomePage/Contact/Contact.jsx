@@ -1,5 +1,5 @@
-import { createClient } from "@supabase/supabase-js";
-import React, { useState } from "react";
+import { createClient } from '@supabase/supabase-js';
+import React, { useState } from 'react';
 
 const Contact = () => {
   const [data, setData] = useState({});
@@ -14,7 +14,7 @@ const Contact = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      await supabase.from("contact").insert(data);
+      await supabase.from('contact').insert(data);
       setLoading(false);
       setIsSubmitted(true);
     } catch (e) {
@@ -26,7 +26,7 @@ const Contact = () => {
     <div
       className="rbt-countdown-area bg_image contact-image bg_image_fixed rbt-section-gap"
       data-black-overlay={5}
-      id={"contact"}
+      id={'contact'}
     >
       <div className="container">
         <div className="row g-5 align-items-center">
@@ -113,7 +113,7 @@ const Contact = () => {
                     >
                       <span className="icon-reverse-wrapper">
                         <span className="btn-text">
-                          {loading ? "Παρακαλώ περιμένετε..." : "Αποστολή"}
+                          {loading ? 'Παρακαλώ περιμένετε...' : 'Αποστολή'}
                         </span>
                         {!loading && (
                           <>

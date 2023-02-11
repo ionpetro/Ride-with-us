@@ -1,14 +1,14 @@
 !(function (e, t) {
-  "object" == typeof exports && "object" == typeof module
+  'object' == typeof exports && 'object' == typeof module
     ? (module.exports = t())
-    : "function" == typeof define && define.amd
+    : 'function' == typeof define && define.amd
     ? define([], t)
-    : "object" == typeof exports
+    : 'object' == typeof exports
     ? (exports.sal = t())
     : (e.sal = t());
 })(this, function () {
   return (() => {
-    "use strict";
+    'use strict';
     var e = {
         d: (t, n) => {
           for (var r in n)
@@ -64,18 +64,18 @@
       );
     }
     e.d(t, { default: () => j });
-    var a = "Sal was not initialised! Probably it is used in SSR.",
+    var a = 'Sal was not initialised! Probably it is used in SSR.',
       s =
-        "Your browser does not support IntersectionObserver!\nGet a polyfill from here:\nhttps://github.com/w3c/IntersectionObserver/tree/master/polyfill",
+        'Your browser does not support IntersectionObserver!\nGet a polyfill from here:\nhttps://github.com/w3c/IntersectionObserver/tree/master/polyfill',
       i = {
         root: null,
-        rootMargin: "0% 50%",
+        rootMargin: '0% 50%',
         threshold: 0.5,
-        animateClassName: "sal-animate",
-        disabledClassName: "sal-disabled",
-        enterEventName: "sal:in",
-        exitEventName: "sal:out",
-        selector: "[data-sal]",
+        animateClassName: 'sal-animate',
+        disabledClassName: 'sal-disabled',
+        enterEventName: 'sal:in',
+        exitEventName: 'sal:out',
+        selector: '[data-sal]',
         once: !0,
         disabled: !1,
       },
@@ -98,7 +98,7 @@
         c.disconnect(), (c = null);
       },
       m = function () {
-        return i.disabled || ("function" == typeof i.disabled && i.disabled());
+        return i.disabled || ('function' == typeof i.disabled && i.disabled());
       },
       v = function (e, t) {
         e.forEach(function (e) {
@@ -161,7 +161,7 @@
     const j = function () {
       var e =
         arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : i;
-      if ((u(e), "undefined" == typeof window))
+      if ((u(e), 'undefined' == typeof window))
         return (
           console.warn(a),
           { elements: l, disable: O, enable: h, reset: g, update: w }

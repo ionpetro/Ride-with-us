@@ -105,7 +105,7 @@
     padding: 0 30px;
   }
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: -1px;
     left: 0;
@@ -539,7 +539,7 @@
     z-index: -1;
     bottom: 0;
     right: 0;
-    background-image: url("/public/assets/images/banner/histudy-text.png");
+    background-image: url('/public/assets/images/banner/histudy-text.png');
     background-repeat: repeat-x;
     background-size: auto;
     height: 206px;
@@ -1458,7 +1458,7 @@
 
   &::after {
     --translate-y: calc(-1 * var(--arrow-size));
-    content: "";
+    content: '';
     border: var(--arrow-size) solid transparent;
     border-top-color: var(--color-primary);
   }
@@ -1528,7 +1528,7 @@
     transition: 0.4s;
 
     &::before {
-      content: "";
+      content: '';
       z-index: -1;
       top: 0;
       left: 0;
@@ -1540,7 +1540,7 @@
     }
 
     &::after {
-      content: "";
+      content: '';
       z-index: -1;
       top: 0;
       left: 0;

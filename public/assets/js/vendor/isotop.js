@@ -3,7 +3,7 @@
   function i(a) {
     if (a) {
       var u =
-        "undefined" == typeof console
+        'undefined' == typeof console
           ? e
           : function (t) {
               console.error(t);
@@ -19,7 +19,7 @@
             (r = t),
             (s = e),
             (a.fn[r] = function (e) {
-              if ("string" != typeof e)
+              if ('string' != typeof e)
                 return this.each(function () {
                   var t = a.data(this, r);
                   t
@@ -34,13 +34,13 @@
                 var n = this[i],
                   n = a.data(n, r);
                 if (n)
-                  if (a.isFunction(n[e]) && "_" !== e.charAt(0)) {
+                  if (a.isFunction(n[e]) && '_' !== e.charAt(0)) {
                     n = n[e].apply(n, t);
                     if (void 0 !== n) return n;
-                  } else u("no such method '" + e + "' for " + r + " instance");
+                  } else u("no such method '" + e + "' for " + r + ' instance');
                 else
                   u(
-                    "cannot call methods on " +
+                    'cannot call methods on ' +
                       r +
                       " prior to initialization; attempted to call '" +
                       e +
@@ -55,10 +55,10 @@
     }
   }
   var p = Array.prototype.slice;
-  "function" == typeof define && define.amd
-    ? define("jquery-bridget/jquery.bridget", ["jquery"], i)
-    : "object" == typeof exports
-    ? i(require("jquery"))
+  'function' == typeof define && define.amd
+    ? define('jquery-bridget/jquery.bridget', ['jquery'], i)
+    : 'object' == typeof exports
+    ? i(require('jquery'))
     : i(t.jQuery);
 })(window),
   (function (i) {
@@ -83,7 +83,7 @@
                 var t = o(e);
                 i.call(e, t);
               }),
-            e.attachEvent("on" + t, e[t + i]);
+            e.attachEvent('on' + t, e[t + i]);
         });
     var n = function () {};
     t.removeEventListener
@@ -92,7 +92,7 @@
         })
       : t.detachEvent &&
         (n = function (e, i, o) {
-          e.detachEvent("on" + i, e[i + o]);
+          e.detachEvent('on' + i, e[i + o]);
           try {
             delete e[i + o];
           } catch (t) {
@@ -100,9 +100,9 @@
           }
         });
     n = { bind: e, unbind: n };
-    "function" == typeof define && define.amd
-      ? define("eventie/eventie", n)
-      : "object" == typeof exports
+    'function' == typeof define && define.amd
+      ? define('eventie/eventie', n)
+      : 'object' == typeof exports
       ? (module.exports = n)
       : (i.eventie = n);
   })(window),
@@ -142,18 +142,18 @@
       (i.addListener = function (t, e) {
         var i,
           o = this.getListenersAsObject(t),
-          n = "object" == typeof e;
+          n = 'object' == typeof e;
         for (i in o)
           o.hasOwnProperty(i) &&
             -1 === r(o[i], e) &&
             o[i].push(n ? e : { listener: e, once: !1 });
         return this;
       }),
-      (i.on = e("addListener")),
+      (i.on = e('addListener')),
       (i.addOnceListener = function (t, e) {
         return this.addListener(t, { listener: e, once: !0 });
       }),
-      (i.once = e("addOnceListener")),
+      (i.once = e('addOnceListener')),
       (i.defineEvent = function (t) {
         return this.getListeners(t), this;
       }),
@@ -170,7 +170,7 @@
             ((i = r(n[o], e)), -1 !== i && n[o].splice(i, 1));
         return this;
       }),
-      (i.off = e("removeListener")),
+      (i.off = e('removeListener')),
       (i.addListeners = function (t, e) {
         return this.manipulateListeners(!1, t, e);
       }),
@@ -182,26 +182,26 @@
           n,
           r = t ? this.removeListener : this.addListener,
           s = t ? this.removeListeners : this.addListeners;
-        if ("object" != typeof e || e instanceof RegExp)
+        if ('object' != typeof e || e instanceof RegExp)
           for (o = i.length; o--; ) r.call(this, e, i[o]);
         else
           for (o in e)
             e.hasOwnProperty(o) &&
               (n = e[o]) &&
-              ("function" == typeof n ? r : s).call(this, o, n);
+              ('function' == typeof n ? r : s).call(this, o, n);
         return this;
       }),
       (i.removeEvent = function (t) {
         var e,
           i = typeof t,
           o = this._getEvents();
-        if ("string" == i) delete o[t];
+        if ('string' == i) delete o[t];
         else if (t instanceof RegExp)
           for (e in o) o.hasOwnProperty(e) && t.test(e) && delete o[e];
         else delete this._events;
         return this;
       }),
-      (i.removeAllListeners = e("removeEvent")),
+      (i.removeAllListeners = e('removeEvent')),
       (i.emitEvent = function (t, e) {
         var i,
           o,
@@ -218,7 +218,7 @@
                   this.removeListener(t, i.listener);
         return this;
       }),
-      (i.trigger = e("emitEvent")),
+      (i.trigger = e('emitEvent')),
       (i.emit = function (t) {
         var e = Array.prototype.slice.call(arguments, 1);
         return this.emitEvent(t, e);
@@ -228,7 +228,7 @@
       }),
       (i._getOnceReturnValue = function () {
         return (
-          !this.hasOwnProperty("_onceReturnValue") || this._onceReturnValue
+          !this.hasOwnProperty('_onceReturnValue') || this._onceReturnValue
         );
       }),
       (i._getEvents = function () {
@@ -237,37 +237,37 @@
       (t.noConflict = function () {
         return (o.EventEmitter = n), t;
       }),
-      "function" == typeof define && define.amd
-        ? define("eventEmitter/EventEmitter", [], function () {
+      'function' == typeof define && define.amd
+        ? define('eventEmitter/EventEmitter', [], function () {
             return t;
           })
-        : "object" == typeof module && module.exports
+        : 'object' == typeof module && module.exports
         ? (module.exports = t)
         : (o.EventEmitter = t);
   }.call(this),
   (function (t) {
     function e(t) {
       if (t) {
-        if ("string" == typeof r[t]) return t;
+        if ('string' == typeof r[t]) return t;
         t = t.charAt(0).toUpperCase() + t.slice(1);
         for (var e, i = 0, o = n.length; i < o; i++)
-          if (((e = n[i] + t), "string" == typeof r[e])) return e;
+          if (((e = n[i] + t), 'string' == typeof r[e])) return e;
       }
     }
-    var n = "Webkit Moz ms Ms O".split(" "),
+    var n = 'Webkit Moz ms Ms O'.split(' '),
       r = document.documentElement.style;
-    "function" == typeof define && define.amd
-      ? define("get-style-property/get-style-property", [], function () {
+    'function' == typeof define && define.amd
+      ? define('get-style-property/get-style-property', [], function () {
           return e;
         })
-      : "object" == typeof exports
+      : 'object' == typeof exports
       ? (module.exports = e)
       : (t.getStyleProperty = e);
   })(window),
   (function (L) {
     function x(t) {
       var e = parseFloat(t);
-      return -1 === t.indexOf("%") && !isNaN(e) && e;
+      return -1 === t.indexOf('%') && !isNaN(e) && e;
     }
     function t(g) {
       var v,
@@ -291,29 +291,29 @@
               return (
                 t ||
                   E(
-                    "Style returned " +
+                    'Style returned ' +
                       t +
-                      ". Are you running this code in a hidden iframe on Firefox? See http://bit.ly/getsizebug1"
+                      '. Are you running this code in a hidden iframe on Firefox? See http://bit.ly/getsizebug1'
                   ),
                 t
               );
             }),
-            (_ = g("boxSizing")) &&
-              (((c = document.createElement("div")).style.width = "200px"),
-              (c.style.padding = "1px 2px 3px 4px"),
-              (c.style.borderStyle = "solid"),
-              (c.style.borderWidth = "1px 2px 3px 4px"),
-              (c.style[_] = "border-box"),
+            (_ = g('boxSizing')) &&
+              (((c = document.createElement('div')).style.width = '200px'),
+              (c.style.padding = '1px 2px 3px 4px'),
+              (c.style.borderStyle = 'solid'),
+              (c.style.borderWidth = '1px 2px 3px 4px'),
+              (c.style[_] = 'border-box'),
               (l = document.body || document.documentElement).appendChild(c),
               (f = v(c)),
               (I = 200 === x(f.width)),
               l.removeChild(c))),
-          (t = "string" == typeof t ? document.querySelector(t) : t) &&
-            "object" == typeof t &&
+          (t = 'string' == typeof t ? document.querySelector(t) : t) &&
+            'object' == typeof t &&
             t.nodeType)
         ) {
           var e = v(t);
-          if ("none" === e.display)
+          if ('none' === e.display)
             return (function () {
               for (
                 var t = {
@@ -335,7 +335,7 @@
           var i = {};
           (i.width = t.offsetWidth), (i.height = t.offsetHeight);
           for (
-            var o = (i.isBorderBox = !(!_ || !e[_] || "border-box" !== e[_])),
+            var o = (i.isBorderBox = !(!_ || !e[_] || 'border-box' !== e[_])),
               n = 0,
               r = b.length;
             n < r;
@@ -343,7 +343,7 @@
           ) {
             var s = b[n],
               a = (function (t, e) {
-                if (L.getComputedStyle || -1 === e.indexOf("%")) return e;
+                if (L.getComputedStyle || -1 === e.indexOf('%')) return e;
                 var i = t.style,
                   o = i.left,
                   n = t.runtimeStyle,
@@ -383,41 +383,41 @@
       };
     }
     var E =
-        "undefined" == typeof console
+        'undefined' == typeof console
           ? function () {}
           : function (t) {
               console.error(t);
             },
       b = [
-        "paddingLeft",
-        "paddingRight",
-        "paddingTop",
-        "paddingBottom",
-        "marginLeft",
-        "marginRight",
-        "marginTop",
-        "marginBottom",
-        "borderLeftWidth",
-        "borderRightWidth",
-        "borderTopWidth",
-        "borderBottomWidth",
+        'paddingLeft',
+        'paddingRight',
+        'paddingTop',
+        'paddingBottom',
+        'marginLeft',
+        'marginRight',
+        'marginTop',
+        'marginBottom',
+        'borderLeftWidth',
+        'borderRightWidth',
+        'borderTopWidth',
+        'borderBottomWidth',
       ];
-    "function" == typeof define && define.amd
+    'function' == typeof define && define.amd
       ? define(
-          "get-size/get-size",
-          ["get-style-property/get-style-property"],
+          'get-size/get-size',
+          ['get-style-property/get-style-property'],
           t
         )
-      : "object" == typeof exports
-      ? (module.exports = t(require("desandro-get-style-property")))
+      : 'object' == typeof exports
+      ? (module.exports = t(require('desandro-get-style-property')))
       : (L.getSize = t(L.getStyleProperty));
   })(window),
   (function (e) {
     function i(t) {
-      "function" == typeof t && (i.isReady ? t() : s.push(t));
+      'function' == typeof t && (i.isReady ? t() : s.push(t));
     }
     function o(t) {
-      t = "readystatechange" === t.type && "complete" !== r.readyState;
+      t = 'readystatechange' === t.type && 'complete' !== r.readyState;
       i.isReady || t || n();
     }
     function n() {
@@ -426,21 +426,21 @@
     }
     function t(t) {
       return (
-        "complete" === r.readyState
+        'complete' === r.readyState
           ? n()
-          : (t.bind(r, "DOMContentLoaded", o),
-            t.bind(r, "readystatechange", o),
-            t.bind(e, "load", o)),
+          : (t.bind(r, 'DOMContentLoaded', o),
+            t.bind(r, 'readystatechange', o),
+            t.bind(e, 'load', o)),
         i
       );
     }
     var r = e.document,
       s = [];
     (i.isReady = !1),
-      "function" == typeof define && define.amd
-        ? define("doc-ready/doc-ready", ["eventie/eventie"], t)
-        : "object" == typeof exports
-        ? (module.exports = t(require("eventie")))
+      'function' == typeof define && define.amd
+        ? define('doc-ready/doc-ready', ['eventie/eventie'], t)
+        : 'object' == typeof exports
+        ? (module.exports = t(require('eventie')))
         : (e.docReady = t(e.eventie));
   })(window),
   (function (n) {
@@ -452,19 +452,19 @@
     }
     var t,
       o = (function () {
-        if (n.matches) return "matches";
-        if (n.matchesSelector) return "matchesSelector";
+        if (n.matches) return 'matches';
+        if (n.matchesSelector) return 'matchesSelector';
         for (
-          var t = ["webkit", "moz", "ms", "o"], e = 0, i = t.length;
+          var t = ['webkit', 'moz', 'ms', 'o'], e = 0, i = t.length;
           e < i;
           e++
         ) {
-          var o = t[e] + "MatchesSelector";
+          var o = t[e] + 'MatchesSelector';
           if (n[o]) return o;
         }
       })();
     (t = o
-      ? i(document.createElement("div"), "div")
+      ? i(document.createElement('div'), 'div')
         ? i
         : function (t, e) {
             return r(t), i(t, e);
@@ -479,28 +479,28 @@
             if (i[o] === t) return !0;
           return !1;
         }),
-      "function" == typeof define && define.amd
-        ? define("matches-selector/matches-selector", [], function () {
+      'function' == typeof define && define.amd
+        ? define('matches-selector/matches-selector', [], function () {
             return t;
           })
-        : "object" == typeof exports
+        : 'object' == typeof exports
         ? (module.exports = t)
         : (window.matchesSelector = t);
   })(Element.prototype),
   (function (i, o) {
-    "function" == typeof define && define.amd
+    'function' == typeof define && define.amd
       ? define(
-          "fizzy-ui-utils/utils",
-          ["doc-ready/doc-ready", "matches-selector/matches-selector"],
+          'fizzy-ui-utils/utils',
+          ['doc-ready/doc-ready', 'matches-selector/matches-selector'],
           function (t, e) {
             return o(i, t, e);
           }
         )
-      : "object" == typeof exports
+      : 'object' == typeof exports
       ? (module.exports = o(
           i,
-          require("doc-ready"),
-          require("desandro-matches-selector")
+          require('doc-ready'),
+          require('desandro-matches-selector')
         ))
       : (i.fizzyUIUtils = o(i, i.docReady, i.matchesSelector));
   })(window, function (d, t, p) {
@@ -516,12 +516,12 @@
       },
       e = Object.prototype.toString;
     (f.isArray = function (t) {
-      return "[object Array]" == e.call(t);
+      return '[object Array]' == e.call(t);
     }),
       (f.makeArray = function (t) {
         var e = [];
         if (f.isArray(t)) e = t;
-        else if (t && "number" == typeof t.length)
+        else if (t && 'number' == typeof t.length)
           for (var i = 0, o = t.length; i < o; i++) e.push(t[i]);
         else e.push(t);
         return e;
@@ -539,16 +539,16 @@
         -1 != e && t.splice(e, 1);
       }),
       (f.isElement =
-        "function" == typeof HTMLElement || "object" == typeof HTMLElement
+        'function' == typeof HTMLElement || 'object' == typeof HTMLElement
           ? function (t) {
               return t instanceof HTMLElement;
             }
           : function (t) {
               return (
                 t &&
-                "object" == typeof t &&
+                'object' == typeof t &&
                 1 == t.nodeType &&
-                "string" == typeof t.nodeName
+                'string' == typeof t.nodeName
               );
             }),
       (f.setText = function (t, e) {
@@ -556,8 +556,8 @@
           (i =
             i ||
             (void 0 !== document.documentElement.textContent
-              ? "textContent"
-              : "innerText"))
+              ? 'textContent'
+              : 'innerText'))
         ] = e;
       }),
       (f.getParent = function (t, e) {
@@ -565,10 +565,10 @@
           if (((t = t.parentNode), p(t, e))) return t;
       }),
       (f.getQueryElement = function (t) {
-        return "string" == typeof t ? document.querySelector(t) : t;
+        return 'string' == typeof t ? document.querySelector(t) : t;
       }),
       (f.handleEvent = function (t) {
-        var e = "on" + t.type;
+        var e = 'on' + t.type;
         this[e] && this[e](t);
       }),
       (f.filterFindElements = function (t, e) {
@@ -589,7 +589,7 @@
       }),
       (f.debounceMethod = function (t, e, o) {
         var n = t.prototype[e],
-          r = e + "Timeout";
+          r = e + 'Timeout';
         t.prototype[e] = function () {
           var t = this[r];
           t && clearTimeout(t);
@@ -603,7 +603,7 @@
       (f.toDashed = function (t) {
         return t
           .replace(/(.)([A-Z])/g, function (t, e, i) {
-            return e + "-" + i;
+            return e + '-' + i;
           })
           .toLowerCase();
       });
@@ -613,8 +613,8 @@
         t(function () {
           for (
             var t = f.toDashed(h),
-              e = document.querySelectorAll(".js-" + t),
-              i = "data-" + t + "-options",
+              e = document.querySelectorAll('.js-' + t),
+              i = 'data-' + t + '-options',
               o = 0,
               n = e.length;
             o < n;
@@ -628,12 +628,12 @@
             } catch (t) {
               l &&
                 l.error(
-                  "Error parsing " +
+                  'Error parsing ' +
                     i +
-                    " on " +
+                    ' on ' +
                     s.nodeName.toLowerCase() +
-                    (s.id ? "#" + s.id : "") +
-                    ": " +
+                    (s.id ? '#' + s.id : '') +
+                    ': ' +
                     t
                 );
               continue;
@@ -648,26 +648,26 @@
     );
   }),
   (function (n, r) {
-    "function" == typeof define && define.amd
+    'function' == typeof define && define.amd
       ? define(
-          "outlayer/item",
+          'outlayer/item',
           [
-            "eventEmitter/EventEmitter",
-            "get-size/get-size",
-            "get-style-property/get-style-property",
-            "fizzy-ui-utils/utils",
+            'eventEmitter/EventEmitter',
+            'get-size/get-size',
+            'get-style-property/get-style-property',
+            'fizzy-ui-utils/utils',
           ],
           function (t, e, i, o) {
             return r(n, t, e, i, o);
           }
         )
-      : "object" == typeof exports
+      : 'object' == typeof exports
       ? (module.exports = r(
           n,
-          require("wolfy87-eventemitter"),
-          require("get-size"),
-          require("desandro-get-style-property"),
-          require("fizzy-ui-utils")
+          require('wolfy87-eventemitter'),
+          require('get-size'),
+          require('desandro-get-style-property'),
+          require('fizzy-ui-utils')
         ))
       : ((n.Outlayer = {}),
         (n.Outlayer.Item = r(
@@ -693,21 +693,21 @@
         : function (t) {
             return t.currentStyle;
           },
-      u = r("transition"),
-      p = r("transform"),
+      u = r('transition'),
+      p = r('transform'),
       h = u && p,
-      t = !!r("perspective"),
+      t = !!r('perspective'),
       d = {
-        WebkitTransition: "webkitTransitionEnd",
-        MozTransition: "transitionend",
-        OTransition: "otransitionend",
-        transition: "transitionend",
+        WebkitTransition: 'webkitTransitionEnd',
+        MozTransition: 'transitionend',
+        OTransition: 'otransitionend',
+        transition: 'transitionend',
       }[u],
       f = [
-        "transform",
-        "transition",
-        "transitionDuration",
-        "transitionProperty",
+        'transform',
+        'transition',
+        'transitionDuration',
+        'transitionProperty',
       ],
       l = (function () {
         for (var t = {}, e = 0, i = f.length; e < i; e++) {
@@ -720,10 +720,10 @@
     o.extend(n.prototype, e.prototype),
       (n.prototype._create = function () {
         (this._transn = { ingProperties: {}, clean: {}, onEnd: {} }),
-          this.css({ position: "absolute" });
+          this.css({ position: 'absolute' });
       }),
       (n.prototype.handleEvent = function (t) {
-        var e = "on" + t.type;
+        var e = 'on' + t.type;
         this[e] && this[e](t);
       }),
       (n.prototype.getSize = function () {
@@ -739,8 +739,8 @@
           e = this.layout.options,
           i = e.isOriginLeft,
           o = e.isOriginTop,
-          n = parseInt(t[i ? "left" : "right"], 10),
-          e = parseInt(t[o ? "top" : "bottom"], 10),
+          n = parseInt(t[i ? 'left' : 'right'], 10),
+          e = parseInt(t[o ? 'top' : 'bottom'], 10),
           n = isNaN(n) ? 0 : n,
           e = isNaN(e) ? 0 : e,
           t = this.layout.size;
@@ -753,31 +753,31 @@
         var t = this.layout.size,
           e = this.layout.options,
           i = {},
-          o = e.isOriginLeft ? "paddingLeft" : "paddingRight",
-          n = e.isOriginLeft ? "left" : "right",
-          r = e.isOriginLeft ? "right" : "left",
+          o = e.isOriginLeft ? 'paddingLeft' : 'paddingRight',
+          n = e.isOriginLeft ? 'left' : 'right',
+          r = e.isOriginLeft ? 'right' : 'left',
           o = this.position.x + t[o],
           o =
             e.percentPosition && !e.isHorizontal
-              ? (o / t.width) * 100 + "%"
-              : o + "px";
-        (i[n] = o), (i[r] = "");
-        (n = e.isOriginTop ? "paddingTop" : "paddingBottom"),
-          (o = e.isOriginTop ? "top" : "bottom"),
-          (r = e.isOriginTop ? "bottom" : "top"),
+              ? (o / t.width) * 100 + '%'
+              : o + 'px';
+        (i[n] = o), (i[r] = '');
+        (n = e.isOriginTop ? 'paddingTop' : 'paddingBottom'),
+          (o = e.isOriginTop ? 'top' : 'bottom'),
+          (r = e.isOriginTop ? 'bottom' : 'top'),
           (n = this.position.y + t[n]),
           (n =
             e.percentPosition && e.isHorizontal
-              ? (n / t.height) * 100 + "%"
-              : n + "px");
-        (i[o] = n), (i[r] = ""), this.css(i), this.emitEvent("layout", [this]);
+              ? (n / t.height) * 100 + '%'
+              : n + 'px');
+        (i[o] = n), (i[r] = ''), this.css(i), this.emitEvent('layout', [this]);
       });
     var c = t
       ? function (t, e) {
-          return "translate3d(" + t + "px, " + e + "px, 0)";
+          return 'translate3d(' + t + 'px, ' + e + 'px, 0)';
         }
       : function (t, e) {
-          return "translate(" + t + "px, " + e + "px)";
+          return 'translate(' + t + 'px, ' + e + 'px)';
         };
     (n.prototype._transitionTo = function (t, e) {
       this.getPosition();
@@ -827,7 +827,7 @@
             (this.isTransitioning = !0);
         } else this._nonTransition(t);
       });
-    var y = p && o.toDashed(p) + ",opacity";
+    var y = p && o.toDashed(p) + ',opacity';
     (n.prototype.enableTransition = function () {
       this.isTransitioning ||
         (this.css({
@@ -837,7 +837,7 @@
         this.element.addEventListener(d, this, !1));
     }),
       (n.prototype.transition =
-        n.prototype[u ? "_transition" : "_nonTransition"]),
+        n.prototype[u ? '_transition' : '_nonTransition']),
       (n.prototype.onwebkitTransitionEnd = function (t) {
         this.ontransitionend(t);
       }),
@@ -845,9 +845,9 @@
         this.ontransitionend(t);
       });
     var m = {
-      "-webkit-transform": "transform",
-      "-moz-transform": "transform",
-      "-o-transform": "transform",
+      '-webkit-transform': 'transform',
+      '-moz-transform': 'transform',
+      '-o-transform': 'transform',
     };
     (n.prototype.ontransitionend = function (t) {
       var e, i;
@@ -860,9 +860,9 @@
           return 1;
         })(e.ingProperties) && this.disableTransition(),
         i in e.clean &&
-          ((this.element.style[t.propertyName] = ""), delete e.clean[i]),
+          ((this.element.style[t.propertyName] = ''), delete e.clean[i]),
         i in e.onEnd && (e.onEnd[i].call(this), delete e.onEnd[i]),
-        this.emitEvent("transitionEnd", [this]));
+        this.emitEvent('transitionEnd', [this]));
     }),
       (n.prototype.disableTransition = function () {
         this.removeTransitionStyles(),
@@ -872,33 +872,33 @@
       (n.prototype._removeStyles = function (t) {
         var e,
           i = {};
-        for (e in t) i[e] = "";
+        for (e in t) i[e] = '';
         this.css(i);
       });
-    var g = { transitionProperty: "", transitionDuration: "" };
+    var g = { transitionProperty: '', transitionDuration: '' };
     return (
       (n.prototype.removeTransitionStyles = function () {
         this.css(g);
       }),
       (n.prototype.removeElem = function () {
         this.element.parentNode.removeChild(this.element),
-          this.css({ display: "" }),
-          this.emitEvent("remove", [this]);
+          this.css({ display: '' }),
+          this.emitEvent('remove', [this]);
       }),
       (n.prototype.remove = function () {
         var t;
         u && parseFloat(this.layout.options.transitionDuration)
-          ? ((t = this).once("transitionEnd", function () {
+          ? ((t = this).once('transitionEnd', function () {
               t.removeElem();
             }),
             this.hide())
           : this.removeElem();
       }),
       (n.prototype.reveal = function () {
-        delete this.isHidden, this.css({ display: "" });
+        delete this.isHidden, this.css({ display: '' });
         var t = this.layout.options,
           e = {};
-        (e[this.getHideRevealTransitionEndProperty("visibleStyle")] =
+        (e[this.getHideRevealTransitionEndProperty('visibleStyle')] =
           this.onRevealTransitionEnd),
           this.transition({
             from: t.hiddenStyle,
@@ -908,19 +908,19 @@
           });
       }),
       (n.prototype.onRevealTransitionEnd = function () {
-        this.isHidden || this.emitEvent("reveal");
+        this.isHidden || this.emitEvent('reveal');
       }),
       (n.prototype.getHideRevealTransitionEndProperty = function (t) {
         var e,
           t = this.layout.options[t];
-        if (t.opacity) return "opacity";
+        if (t.opacity) return 'opacity';
         for (e in t) return e;
       }),
       (n.prototype.hide = function () {
-        (this.isHidden = !0), this.css({ display: "" });
+        (this.isHidden = !0), this.css({ display: '' });
         var t = this.layout.options,
           e = {};
-        (e[this.getHideRevealTransitionEndProperty("hiddenStyle")] =
+        (e[this.getHideRevealTransitionEndProperty('hiddenStyle')] =
           this.onHideTransitionEnd),
           this.transition({
             from: t.visibleStyle,
@@ -931,45 +931,45 @@
       }),
       (n.prototype.onHideTransitionEnd = function () {
         this.isHidden &&
-          (this.css({ display: "none" }), this.emitEvent("hide"));
+          (this.css({ display: 'none' }), this.emitEvent('hide'));
       }),
       (n.prototype.destroy = function () {
         this.css({
-          position: "",
-          left: "",
-          right: "",
-          top: "",
-          bottom: "",
-          transition: "",
-          transform: "",
+          position: '',
+          left: '',
+          right: '',
+          top: '',
+          bottom: '',
+          transition: '',
+          transform: '',
         });
       }),
       n
     );
   }),
   (function (r, s) {
-    "function" == typeof define && define.amd
+    'function' == typeof define && define.amd
       ? define(
-          "outlayer/outlayer",
+          'outlayer/outlayer',
           [
-            "eventie/eventie",
-            "eventEmitter/EventEmitter",
-            "get-size/get-size",
-            "fizzy-ui-utils/utils",
-            "./item",
+            'eventie/eventie',
+            'eventEmitter/EventEmitter',
+            'get-size/get-size',
+            'fizzy-ui-utils/utils',
+            './item',
           ],
           function (t, e, i, o, n) {
             return s(r, t, e, i, o, n);
           }
         )
-      : "object" == typeof exports
+      : 'object' == typeof exports
       ? (module.exports = s(
           r,
-          require("eventie"),
-          require("wolfy87-eventemitter"),
-          require("get-size"),
-          require("fizzy-ui-utils"),
-          require("./item")
+          require('eventie'),
+          require('wolfy87-eventemitter'),
+          require('get-size'),
+          require('fizzy-ui-utils'),
+          require('./item')
         ))
       : (r.Outlayer = s(
           r,
@@ -993,7 +993,7 @@
           this.options.isInitLayout && this.layout())
         : u &&
           u.error(
-            "Bad element for " + this.constructor.namespace + ": " + (i || t)
+            'Bad element for ' + this.constructor.namespace + ': ' + (i || t)
           );
     }
     function a() {}
@@ -1002,18 +1002,18 @@
       h = 0,
       d = {};
     return (
-      (s.namespace = "outlayer"),
+      (s.namespace = 'outlayer'),
       (s.Item = o),
       (s.defaults = {
-        containerStyle: { position: "relative" },
+        containerStyle: { position: 'relative' },
         isInitLayout: !0,
         isOriginLeft: !0,
         isOriginTop: !0,
         isResizeBound: !0,
         isResizingContainer: !0,
-        transitionDuration: "0.4s",
-        hiddenStyle: { opacity: 0, transform: "scale(0.001)" },
-        visibleStyle: { opacity: 1, transform: "scale(1)" },
+        transitionDuration: '0.4s',
+        hiddenStyle: { opacity: 0, transform: 'scale(0.001)' },
+        visibleStyle: { opacity: 1, transform: 'scale(1)' },
       }),
       r.extend(s.prototype, i.prototype),
       (s.prototype.option = function (t) {
@@ -1071,7 +1071,7 @@
         var i,
           o = this.options[t];
         o
-          ? ("string" == typeof o
+          ? ('string' == typeof o
               ? (i = this.element.querySelector(o))
               : r.isElement(o) && (i = o),
             (this[t] = i ? n(i)[e] : o))
@@ -1090,7 +1090,7 @@
         return e;
       }),
       (s.prototype._layoutItems = function (t, e) {
-        if ((this._emitCompleteOnItems("layout", t), t && t.length)) {
+        if ((this._emitCompleteOnItems('layout', t), t && t.length)) {
           for (var i = [], o = 0, n = t.length; o < n; o++) {
             var r = t[o],
               s = this._getItemLayoutPosition(r);
@@ -1136,11 +1136,11 @@
                 i.borderTopWidth +
                 i.borderBottomWidth),
           (t = Math.max(t, 0)),
-          (this.element.style[e ? "width" : "height"] = t + "px"));
+          (this.element.style[e ? 'width' : 'height'] = t + 'px'));
       }),
       (s.prototype._emitCompleteOnItems = function (t, e) {
         function i() {
-          n.emitEvent(t + "Complete", [e]);
+          n.emitEvent(t + 'Complete', [e]);
         }
         function o() {
           ++s === r && i();
@@ -1177,7 +1177,7 @@
       }),
       (s.prototype._find = function (t) {
         return t
-          ? ("string" == typeof t && (t = this.element.querySelectorAll(t)),
+          ? ('string' == typeof t && (t = this.element.querySelectorAll(t)),
             r.makeArray(t))
           : void 0;
       }),
@@ -1213,15 +1213,15 @@
         };
       }),
       (s.prototype.handleEvent = function (t) {
-        var e = "on" + t.type;
+        var e = 'on' + t.type;
         this[e] && this[e](t);
       }),
       (s.prototype.bindResize = function () {
         this.isResizeBound ||
-          (e.bind(t, "resize", this), (this.isResizeBound = !0));
+          (e.bind(t, 'resize', this), (this.isResizeBound = !0));
       }),
       (s.prototype.unbindResize = function () {
-        this.isResizeBound && e.unbind(t, "resize", this),
+        this.isResizeBound && e.unbind(t, 'resize', this),
           (this.isResizeBound = !1);
       }),
       (s.prototype.onresize = function () {
@@ -1258,11 +1258,11 @@
           this.layoutItems(t));
       }),
       (s.prototype.reveal = function (t) {
-        this._emitCompleteOnItems("reveal", t);
+        this._emitCompleteOnItems('reveal', t);
         for (var e = t && t.length, i = 0; e && i < e; i++) t[i].reveal();
       }),
       (s.prototype.hide = function (t) {
-        this._emitCompleteOnItems("hide", t);
+        this._emitCompleteOnItems('hide', t);
         for (var e = t && t.length, i = 0; e && i < e; i++) t[i].hide();
       }),
       (s.prototype.revealItemElements = function (t) {
@@ -1289,7 +1289,7 @@
       }),
       (s.prototype.remove = function (t) {
         var e = this.getItems(t);
-        if ((this._emitCompleteOnItems("remove", e), e && e.length))
+        if ((this._emitCompleteOnItems('remove', e), e && e.length))
           for (var i = 0, o = e.length; i < o; i++) {
             var n = e[i];
             n.remove(), r.removeFrom(this.items, n);
@@ -1297,7 +1297,7 @@
       }),
       (s.prototype.destroy = function () {
         var t = this.element.style;
-        (t.height = ""), (t.position = ""), (t.width = "");
+        (t.height = ''), (t.position = ''), (t.width = '');
         for (var e = 0, i = this.items.length; e < i; e++)
           this.items[e].destroy();
         this.unbindResize();
@@ -1336,10 +1336,10 @@
     );
   }),
   (function (t, e) {
-    "function" == typeof define && define.amd
-      ? define("isotope/js/item", ["outlayer/outlayer"], e)
-      : "object" == typeof exports
-      ? (module.exports = e(require("outlayer")))
+    'function' == typeof define && define.amd
+      ? define('isotope/js/item', ['outlayer/outlayer'], e)
+      : 'object' == typeof exports
+      ? (module.exports = e(require('outlayer')))
       : ((t.Isotope = t.Isotope || {}), (t.Isotope.Item = e(t.Outlayer)));
   })(window, function (t) {
     function e() {
@@ -1353,7 +1353,7 @@
       (e.prototype.updateSortData = function () {
         if (!this.isIgnored) {
           (this.sortData.id = this.id),
-            (this.sortData["original-order"] = this.id),
+            (this.sortData['original-order'] = this.id),
             (this.sortData.random = Math.random());
           var t,
             e = this.layout.options.getSortData,
@@ -1367,20 +1367,20 @@
     var i = e.prototype.destroy;
     return (
       (e.prototype.destroy = function () {
-        i.apply(this, arguments), this.css({ display: "" });
+        i.apply(this, arguments), this.css({ display: '' });
       }),
       e
     );
   }),
   (function (t, e) {
-    "function" == typeof define && define.amd
+    'function' == typeof define && define.amd
       ? define(
-          "isotope/js/layout-mode",
-          ["get-size/get-size", "outlayer/outlayer"],
+          'isotope/js/layout-mode',
+          ['get-size/get-size', 'outlayer/outlayer'],
           e
         )
-      : "object" == typeof exports
-      ? (module.exports = e(require("get-size"), require("outlayer")))
+      : 'object' == typeof exports
+      ? (module.exports = e(require('get-size'), require('outlayer')))
       : ((t.Isotope = t.Isotope || {}),
         (t.Isotope.LayoutMode = e(t.getSize, t.Outlayer)));
   })(window, function (e, n) {
@@ -1395,12 +1395,12 @@
       (function () {
         for (
           var t = [
-              "_resetLayout",
-              "_getItemLayoutPosition",
-              "_manageStamp",
-              "_getContainerSize",
-              "_getElementOffset",
-              "needsResizeLayout",
+              '_resetLayout',
+              '_getItemLayoutPosition',
+              '_manageStamp',
+              '_getContainerSize',
+              '_getElementOffset',
+              'needsResizeLayout',
             ],
             e = 0,
             i = t.length;
@@ -1427,18 +1427,18 @@
         this.isotope._getMeasurement.apply(this, arguments);
       }),
       (r.prototype.getColumnWidth = function () {
-        this.getSegmentSize("column", "Width");
+        this.getSegmentSize('column', 'Width');
       }),
       (r.prototype.getRowHeight = function () {
-        this.getSegmentSize("row", "Height");
+        this.getSegmentSize('row', 'Height');
       }),
       (r.prototype.getSegmentSize = function (t, e) {
         var i = t + e,
-          o = "outer" + e;
+          o = 'outer' + e;
         this._getMeasurement(i, o),
           this[i] ||
             ((t = this.getFirstItemSize()),
-            (this[i] = (t && t[o]) || this.isotope.size["inner" + e]));
+            (this[i] = (t && t[o]) || this.isotope.size['inner' + e]));
       }),
       (r.prototype.getFirstItemSize = function () {
         var t = this.isotope.filteredItems[0];
@@ -1465,26 +1465,26 @@
     );
   }),
   (function (t, e) {
-    "function" == typeof define && define.amd
+    'function' == typeof define && define.amd
       ? define(
-          "masonry/masonry",
-          ["outlayer/outlayer", "get-size/get-size", "fizzy-ui-utils/utils"],
+          'masonry/masonry',
+          ['outlayer/outlayer', 'get-size/get-size', 'fizzy-ui-utils/utils'],
           e
         )
-      : "object" == typeof exports
+      : 'object' == typeof exports
       ? (module.exports = e(
-          require("outlayer"),
-          require("get-size"),
-          require("fizzy-ui-utils")
+          require('outlayer'),
+          require('get-size'),
+          require('fizzy-ui-utils')
         ))
       : (t.Masonry = e(t.Outlayer, t.getSize, t.fizzyUIUtils));
   })(window, function (t, a, u) {
-    t = t.create("masonry");
+    t = t.create('masonry');
     return (
       (t.prototype._resetLayout = function () {
         this.getSize(),
-          this._getMeasurement("columnWidth", "outerWidth"),
-          this._getMeasurement("gutter", "outerWidth"),
+          this._getMeasurement('columnWidth', 'outerWidth'),
+          this._getMeasurement('gutter', 'outerWidth'),
           this.measureColumns();
         var t = this.cols;
         for (this.colYs = []; t--; ) this.colYs.push(0);
@@ -1499,7 +1499,7 @@
           e = this.containerWidth + this.gutter,
           i = e / t,
           t = t - (e % t),
-          i = Math[t && t < 1 ? "round" : "floor"](i);
+          i = Math[t && t < 1 ? 'round' : 'floor'](i);
         this.cols = Math.max(i, 1);
       }),
       (t.prototype.getContainerWidth = function () {
@@ -1513,7 +1513,7 @@
         t.getSize();
         for (
           var e = t.size.outerWidth % this.columnWidth,
-            i = Math[e && e < 1 ? "round" : "ceil"](
+            i = Math[e && e < 1 ? 'round' : 'ceil'](
               t.size.outerWidth / this.columnWidth
             ),
             i = Math.min(i, this.cols),
@@ -1575,20 +1575,20 @@
     );
   }),
   (function (t, e) {
-    "function" == typeof define && define.amd
+    'function' == typeof define && define.amd
       ? define(
-          "isotope/js/layout-modes/masonry",
-          ["../layout-mode", "masonry/masonry"],
+          'isotope/js/layout-modes/masonry',
+          ['../layout-mode', 'masonry/masonry'],
           e
         )
-      : "object" == typeof exports
+      : 'object' == typeof exports
       ? (module.exports = e(
-          require("../layout-mode"),
-          require("masonry-layout")
+          require('../layout-mode'),
+          require('masonry-layout')
         ))
       : e(t.Isotope.LayoutMode, t.Masonry);
   })(window, function (t, e) {
-    var i = t.create("masonry"),
+    var i = t.create('masonry'),
       o = i.prototype._getElementOffset,
       n = i.prototype.layout,
       t = i.prototype._getMeasurement;
@@ -1613,19 +1613,19 @@
     );
   }),
   (function (t, e) {
-    "function" == typeof define && define.amd
-      ? define("isotope/js/layout-modes/fit-rows", ["../layout-mode"], e)
-      : "object" == typeof exports
-      ? (module.exports = e(require("../layout-mode")))
+    'function' == typeof define && define.amd
+      ? define('isotope/js/layout-modes/fit-rows', ['../layout-mode'], e)
+      : 'object' == typeof exports
+      ? (module.exports = e(require('../layout-mode')))
       : e(t.Isotope.LayoutMode);
   })(window, function (t) {
-    t = t.create("fitRows");
+    t = t.create('fitRows');
     return (
       (t.prototype._resetLayout = function () {
         (this.x = 0),
           (this.y = 0),
           (this.maxY = 0),
-          this._getMeasurement("gutter", "outerWidth");
+          this._getMeasurement('gutter', 'outerWidth');
       }),
       (t.prototype._getItemLayoutPosition = function (t) {
         t.getSize();
@@ -1646,13 +1646,13 @@
     );
   }),
   (function (t, e) {
-    "function" == typeof define && define.amd
-      ? define("isotope/js/layout-modes/vertical", ["../layout-mode"], e)
-      : "object" == typeof exports
-      ? (module.exports = e(require("../layout-mode")))
+    'function' == typeof define && define.amd
+      ? define('isotope/js/layout-modes/vertical', ['../layout-mode'], e)
+      : 'object' == typeof exports
+      ? (module.exports = e(require('../layout-mode')))
       : e(t.Isotope.LayoutMode);
   })(window, function (t) {
-    t = t.create("vertical", { horizontalAlignment: 0 });
+    t = t.create('vertical', { horizontalAlignment: 0 });
     return (
       (t.prototype._resetLayout = function () {
         this.y = 0;
@@ -1672,35 +1672,35 @@
     );
   }),
   (function (s, a) {
-    "function" == typeof define && define.amd
+    'function' == typeof define && define.amd
       ? define(
           [
-            "outlayer/outlayer",
-            "get-size/get-size",
-            "matches-selector/matches-selector",
-            "fizzy-ui-utils/utils",
-            "isotope/js/item",
-            "isotope/js/layout-mode",
-            "isotope/js/layout-modes/masonry",
-            "isotope/js/layout-modes/fit-rows",
-            "isotope/js/layout-modes/vertical",
+            'outlayer/outlayer',
+            'get-size/get-size',
+            'matches-selector/matches-selector',
+            'fizzy-ui-utils/utils',
+            'isotope/js/item',
+            'isotope/js/layout-mode',
+            'isotope/js/layout-modes/masonry',
+            'isotope/js/layout-modes/fit-rows',
+            'isotope/js/layout-modes/vertical',
           ],
           function (t, e, i, o, n, r) {
             return a(s, t, 0, i, o, n, r);
           }
         )
-      : "object" == typeof exports
+      : 'object' == typeof exports
       ? (module.exports = a(
           s,
-          require("outlayer"),
-          require("get-size"),
-          require("desandro-matches-selector"),
-          require("fizzy-ui-utils"),
-          require("./item"),
-          require("./layout-mode"),
-          require("./layout-modes/masonry"),
-          require("./layout-modes/fit-rows"),
-          require("./layout-modes/vertical")
+          require('outlayer'),
+          require('get-size'),
+          require('desandro-matches-selector'),
+          require('fizzy-ui-utils'),
+          require('./item'),
+          require('./layout-mode'),
+          require('./layout-modes/masonry'),
+          require('./layout-modes/fit-rows'),
+          require('./layout-modes/vertical')
         ))
       : (s.Isotope = a(
           s,
@@ -1718,7 +1718,7 @@
             return t.trim();
           }
         : function (t) {
-            return t.replace(/^\s+|\s+$/g, "");
+            return t.replace(/^\s+|\s+$/g, '');
           },
       p = document.documentElement.textContent
         ? function (t) {
@@ -1727,8 +1727,8 @@
         : function (t) {
             return t.innerText;
           },
-      h = o.create("isotope", {
-        layoutMode: "masonry",
+      h = o.create('isotope', {
+        layoutMode: 'masonry',
         isJQueryFiltering: !0,
         sortAscending: !0,
       });
@@ -1741,7 +1741,7 @@
         o.prototype._create.call(this),
         (this.modes = {}),
         (this.filteredItems = this.items),
-        (this.sortHistory = ["original-order"]),
+        (this.sortHistory = ['original-order']),
         s.modes))
           this._initLayoutMode(t);
       }),
@@ -1800,19 +1800,19 @@
       }),
       (h.prototype._bindArrangeComplete = function () {
         function t() {
-          e && i && o && n.emitEvent("arrangeComplete", [n.filteredItems]);
+          e && i && o && n.emitEvent('arrangeComplete', [n.filteredItems]);
         }
         var e,
           i,
           o,
           n = this;
-        this.once("layoutComplete", function () {
+        this.once('layoutComplete', function () {
           (e = !0), t();
         }),
-          this.once("hideComplete", function () {
+          this.once('hideComplete', function () {
             (i = !0), t();
           }),
-          this.once("revealComplete", function () {
+          this.once('revealComplete', function () {
             (o = !0), t();
           });
       }),
@@ -1822,7 +1822,7 @@
             i = [],
             o = [],
             n = [],
-            r = this._getFilterTest((e = e || "*")),
+            r = this._getFilterTest((e = e || '*')),
             s = 0,
             a = t.length;
           s < a;
@@ -1841,7 +1841,7 @@
           ? function (t) {
               return a(t.element).is(e);
             }
-          : "function" == typeof e
+          : 'function' == typeof e
           ? function (t) {
               return e(t.element);
             }
@@ -1866,10 +1866,10 @@
           t[i].updateSortData();
       });
     var d = function (t) {
-      if ("string" != typeof t) return t;
+      if ('string' != typeof t) return t;
       var e,
         i,
-        o = u(t).split(" "),
+        o = u(t).split(' '),
         n = o[0],
         t = (t = n.match(/^\[(.+)\]$/)) && t[1],
         r =
@@ -1925,7 +1925,7 @@
       (h.prototype._mode = function () {
         var t = this.options.layoutMode,
           e = this.modes[t];
-        if (!e) throw Error("No layout mode: " + t);
+        if (!e) throw Error('No layout mode: ' + t);
         return (e.options = this.options[t]), e;
       }),
       (h.prototype._resetLayout = function () {
@@ -1995,7 +1995,7 @@
       (h.prototype.shuffle = function () {
         for (var t = 0, e = this.items.length; t < e; t++)
           this.items[t].sortData.random = Math.random();
-        (this.options.sortBy = "random"), this._sort(), this._layout();
+        (this.options.sortBy = 'random'), this._sort(), this._layout();
       }),
       (h.prototype._noTransition = function (t) {
         var e = this.options.transitionDuration;

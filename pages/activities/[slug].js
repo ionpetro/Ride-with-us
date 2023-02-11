@@ -1,9 +1,9 @@
 // import Head from "next/head";
-import React from "react";
-import Activity from "../../components/Activity/Activity";
-import Footer from "../../components/UI/Footer/Footer";
-import ScrollableNavbar from "../../components/UI/ScrollableNavbar/ScrollableNavbar";
-import { activities } from "../../data/activities";
+import React from 'react';
+import Activity from '../../components/Activity/Activity';
+import Footer from '../../components/UI/Footer/Footer';
+import ScrollableNavbar from '../../components/UI/ScrollableNavbar/ScrollableNavbar';
+import { activities } from '../../data/activities';
 
 const ActivityPage = ({ data }) => {
   return (
@@ -23,11 +23,11 @@ const ActivityPage = ({ data }) => {
 export async function getStaticPaths() {
   return {
     paths: [
-      "/activities/parnassos",
-      "/activities/kalavrita",
-      "/activities/vasilitsa",
-      "/activities/pavliani",
-      "/activities/karditsa",
+      '/activities/parnassos',
+      '/activities/kalavrita',
+      '/activities/vasilitsa',
+      '/activities/pavliani',
+      '/activities/karditsa',
     ],
     fallback: true,
   };

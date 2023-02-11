@@ -42,7 +42,7 @@
       position: relative;
       z-index: 2;
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: -50px;
         left: -50px;
@@ -61,7 +61,7 @@
           .rbt-counterup {
             position: relative;
             &::after {
-              content: "";
+              content: '';
               position: absolute;
               top: 0;
               right: 0;

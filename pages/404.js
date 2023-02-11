@@ -1,6 +1,6 @@
-import React from "react";
-import Footer from "../components/UI/Footer/Footer";
-import ScrollableNavbar from "../components/UI/ScrollableNavbar/ScrollableNavbar";
+import React from 'react';
+import Footer from '../components/UI/Footer/Footer';
+import ScrollableNavbar from '../components/UI/ScrollableNavbar/ScrollableNavbar';
 
 const Page404 = () => {
   return (

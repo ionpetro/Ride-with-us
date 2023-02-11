@@ -267,7 +267,7 @@ Primary style
 
 .cd-headline.type .cd-words-wrapper::after {
   /* vertical bar */
-  content: "";
+  content: '';
   position: absolute;
   right: 0;
   top: 50%;
@@ -605,7 +605,7 @@ Primary style
 
 .cd-headline.loading-bar .cd-words-wrapper::after {
   /* loading bar */
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: 0;
@@ -813,7 +813,7 @@ Primary style
 
 .cd-headline.clip .cd-words-wrapper::after {
   /* line */
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   right: 0;

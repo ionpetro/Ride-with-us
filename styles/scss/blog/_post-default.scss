@@ -37,7 +37,7 @@ figcaption {
     line-height: 1;
     height: auto;
     &::before {
-      content: "\00b7 \00b7 \00b7";
+      content: '\00b7 \00b7 \00b7';
       padding-left: 21px;
       color: var(--color-dark-alt);
       font-size: 21px;

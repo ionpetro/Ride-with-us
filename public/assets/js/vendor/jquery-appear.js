@@ -33,7 +33,7 @@
 
       if (!fn) {
         //trigger the custom event
-        t.trigger("appear", settings.data);
+        t.trigger('appear', settings.data);
         return;
       }
 
@@ -42,7 +42,7 @@
       //fires the appear event when appropriate
       var check = function () {
         //is the element hidden?
-        if (!t.is(":visible")) {
+        if (!t.is(':visible')) {
           //it became hidden
           t.appeared = false;
           return;
@@ -69,7 +69,7 @@
           x <= a + ww + ax
         ) {
           //trigger the custom event
-          if (!t.appeared) t.trigger("appear", settings.data);
+          if (!t.appeared) t.trigger('appear', settings.data);
         } else {
           //it scrolled out of view
           t.appeared = false;
@@ -84,7 +84,7 @@
         //is this supposed to happen only once?
         if (settings.one) {
           //remove the check
-          w.unbind("scroll", check);
+          w.unbind('scroll', check);
           var i = $.inArray(check, $.fn.appear.checks);
           if (i >= 0) $.fn.appear.checks.splice(i, 1);
         }
@@ -94,8 +94,8 @@
       };
 
       //bind the modified fn to the element
-      if (settings.one) t.one("appear", settings.data, modifiedFn);
-      else t.bind("appear", settings.data, modifiedFn);
+      if (settings.one) t.one('appear', settings.data, modifiedFn);
+      else t.bind('appear', settings.data, modifiedFn);
 
       //check whenever the window scrolls
       w.scroll(check);
@@ -129,19 +129,19 @@
   //run checks when these methods are called
   $.each(
     [
-      "append",
-      "prepend",
-      "after",
-      "before",
-      "attr",
-      "removeAttr",
-      "addClass",
-      "removeClass",
-      "toggleClass",
-      "remove",
-      "css",
-      "show",
-      "hide",
+      'append',
+      'prepend',
+      'after',
+      'before',
+      'attr',
+      'removeAttr',
+      'addClass',
+      'removeClass',
+      'toggleClass',
+      'remove',
+      'css',
+      'show',
+      'hide',
     ],
     function (i, n) {
       var old = $.fn[n];

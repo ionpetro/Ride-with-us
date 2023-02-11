@@ -4,22 +4,22 @@
  * Copyright jQuery Foundation and other contributors; Licensed MIT */
 
 (function (e) {
-  "function" == typeof define && define.amd ? define(["jquery"], e) : e(jQuery);
+  'function' == typeof define && define.amd ? define(['jquery'], e) : e(jQuery);
 })(function (e) {
   function t(t, s) {
     var n,
       a,
       o,
       r = t.nodeName.toLowerCase();
-    return "area" === r
+    return 'area' === r
       ? ((n = t.parentNode),
         (a = n.name),
-        t.href && a && "map" === n.nodeName.toLowerCase()
+        t.href && a && 'map' === n.nodeName.toLowerCase()
           ? ((o = e("img[usemap='#" + a + "']")[0]), !!o && i(o))
           : !1)
       : (/^(input|select|textarea|button|object)$/.test(r)
           ? !t.disabled
-          : "a" === r
+          : 'a' === r
           ? t.href || s
           : s) && i(t);
   }
@@ -30,13 +30,13 @@
         .parents()
         .addBack()
         .filter(function () {
-          return "hidden" === e.css(this, "visibility");
+          return 'hidden' === e.css(this, 'visibility');
         }).length
     );
   }
   (e.ui = e.ui || {}),
     e.extend(e.ui, {
-      version: "1.11.4",
+      version: '1.11.4',
       keyCode: {
         BACKSPACE: 8,
         COMMA: 188,
@@ -58,22 +58,22 @@
     }),
     e.fn.extend({
       scrollParent: function (t) {
-        var i = this.css("position"),
-          s = "absolute" === i,
+        var i = this.css('position'),
+          s = 'absolute' === i,
           n = t ? /(auto|scroll|hidden)/ : /(auto|scroll)/,
           a = this.parents()
             .filter(function () {
               var t = e(this);
-              return s && "static" === t.css("position")
+              return s && 'static' === t.css('position')
                 ? !1
                 : n.test(
-                    t.css("overflow") +
-                      t.css("overflow-y") +
-                      t.css("overflow-x")
+                    t.css('overflow') +
+                      t.css('overflow-y') +
+                      t.css('overflow-x')
                   );
             })
             .eq(0);
-        return "fixed" !== i && a.length
+        return 'fixed' !== i && a.length
           ? a
           : e(this[0].ownerDocument || document);
       },
@@ -81,17 +81,17 @@
         var e = 0;
         return function () {
           return this.each(function () {
-            this.id || (this.id = "ui-id-" + ++e);
+            this.id || (this.id = 'ui-id-' + ++e);
           });
         };
       })(),
       removeUniqueId: function () {
         return this.each(function () {
-          /^ui-id-\d+$/.test(this.id) && e(this).removeAttr("id");
+          /^ui-id-\d+$/.test(this.id) && e(this).removeAttr('id');
         });
       },
     }),
-    e.extend(e.expr[":"], {
+    e.extend(e.expr[':'], {
       data: e.expr.createPseudo
         ? e.expr.createPseudo(function (t) {
             return function (i) {
@@ -102,28 +102,28 @@
             return !!e.data(t, s[3]);
           },
       focusable: function (i) {
-        return t(i, !isNaN(e.attr(i, "tabindex")));
+        return t(i, !isNaN(e.attr(i, 'tabindex')));
       },
       tabbable: function (i) {
-        var s = e.attr(i, "tabindex"),
+        var s = e.attr(i, 'tabindex'),
           n = isNaN(s);
         return (n || s >= 0) && t(i, !n);
       },
     }),
-    e("<a>").outerWidth(1).jquery ||
-      e.each(["Width", "Height"], function (t, i) {
+    e('<a>').outerWidth(1).jquery ||
+      e.each(['Width', 'Height'], function (t, i) {
         function s(t, i, s, a) {
           return (
             e.each(n, function () {
-              (i -= parseFloat(e.css(t, "padding" + this)) || 0),
+              (i -= parseFloat(e.css(t, 'padding' + this)) || 0),
                 s &&
-                  (i -= parseFloat(e.css(t, "border" + this + "Width")) || 0),
-                a && (i -= parseFloat(e.css(t, "margin" + this)) || 0);
+                  (i -= parseFloat(e.css(t, 'border' + this + 'Width')) || 0),
+                a && (i -= parseFloat(e.css(t, 'margin' + this)) || 0);
             }),
             i
           );
         }
-        var n = "Width" === i ? ["Left", "Right"] : ["Top", "Bottom"],
+        var n = 'Width' === i ? ['Left', 'Right'] : ['Top', 'Bottom'],
           a = i.toLowerCase(),
           o = {
             innerWidth: e.fn.innerWidth,
@@ -131,18 +131,18 @@
             outerWidth: e.fn.outerWidth,
             outerHeight: e.fn.outerHeight,
           };
-        (e.fn["inner" + i] = function (t) {
+        (e.fn['inner' + i] = function (t) {
           return void 0 === t
-            ? o["inner" + i].call(this)
+            ? o['inner' + i].call(this)
             : this.each(function () {
-                e(this).css(a, s(this, t) + "px");
+                e(this).css(a, s(this, t) + 'px');
               });
         }),
-          (e.fn["outer" + i] = function (t, n) {
-            return "number" != typeof t
-              ? o["outer" + i].call(this, t)
+          (e.fn['outer' + i] = function (t, n) {
+            return 'number' != typeof t
+              ? o['outer' + i].call(this, t)
               : this.each(function () {
-                  e(this).css(a, s(this, t, !0, n) + "px");
+                  e(this).css(a, s(this, t, !0, n) + 'px');
                 });
           });
       }),
@@ -152,7 +152,7 @@
           null == e ? this.prevObject : this.prevObject.filter(e)
         );
       }),
-    e("<a>").data("a-b", "a").removeData("a-b").data("a-b") &&
+    e('<a>').data('a-b', 'a').removeData('a-b').data('a-b') &&
       (e.fn.removeData = (function (t) {
         return function (i) {
           return arguments.length ? t.call(this, e.camelCase(i)) : t.call(this);
@@ -162,7 +162,7 @@
     e.fn.extend({
       focus: (function (t) {
         return function (i, s) {
-          return "number" == typeof i
+          return 'number' == typeof i
             ? this.each(function () {
                 var t = this;
                 setTimeout(function () {
@@ -174,26 +174,26 @@
       })(e.fn.focus),
       disableSelection: (function () {
         var e =
-          "onselectstart" in document.createElement("div")
-            ? "selectstart"
-            : "mousedown";
+          'onselectstart' in document.createElement('div')
+            ? 'selectstart'
+            : 'mousedown';
         return function () {
-          return this.bind(e + ".ui-disableSelection", function (e) {
+          return this.bind(e + '.ui-disableSelection', function (e) {
             e.preventDefault();
           });
         };
       })(),
       enableSelection: function () {
-        return this.unbind(".ui-disableSelection");
+        return this.unbind('.ui-disableSelection');
       },
       zIndex: function (t) {
-        if (void 0 !== t) return this.css("zIndex", t);
+        if (void 0 !== t) return this.css('zIndex', t);
         if (this.length)
           for (var i, s, n = e(this[0]); n.length && n[0] !== document; ) {
             if (
-              ((i = n.css("position")),
-              ("absolute" === i || "relative" === i || "fixed" === i) &&
-                ((s = parseInt(n.css("zIndex"), 10)), !isNaN(s) && 0 !== s))
+              ((i = n.css('position')),
+              ('absolute' === i || 'relative' === i || 'fixed' === i) &&
+                ((s = parseInt(n.css('zIndex'), 10)), !isNaN(s) && 0 !== s))
             )
               return s;
             n = n.parent();
@@ -228,8 +228,8 @@
       var s, n, a;
       for (a = 0; null != (n = i[a]); a++)
         try {
-          (s = e._data(n, "events")),
-            s && s.remove && e(n).triggerHandler("remove");
+          (s = e._data(n, 'events')),
+            s && s.remove && e(n).triggerHandler('remove');
         } catch (o) {}
       t(i);
     };
@@ -240,12 +240,12 @@
         o,
         r,
         h = {},
-        l = t.split(".")[0];
+        l = t.split('.')[0];
       return (
-        (t = t.split(".")[1]),
-        (n = l + "-" + t),
+        (t = t.split('.')[1]),
+        (n = l + '-' + t),
         s || ((s = i), (i = e.Widget)),
-        (e.expr[":"][n.toLowerCase()] = function (t) {
+        (e.expr[':'][n.toLowerCase()] = function (t) {
           return !!e.data(t, n);
         }),
         (e[l] = e[l] || {}),
@@ -298,7 +298,7 @@
         a
           ? (e.each(a._childConstructors, function (t, i) {
               var s = i.prototype;
-              e.widget(s.namespace + "." + s.widgetName, o, i._proto);
+              e.widget(s.namespace + '.' + s.widgetName, o, i._proto);
             }),
             delete a._childConstructors)
           : i._childConstructors.push(o),
@@ -322,7 +322,7 @@
     (e.widget.bridge = function (t, i) {
       var s = i.prototype.widgetFullName || t;
       e.fn[t] = function (a) {
-        var o = "string" == typeof a,
+        var o = 'string' == typeof a,
           r = n.call(arguments, 1),
           h = this;
         return (
@@ -330,10 +330,10 @@
             ? this.each(function () {
                 var i,
                   n = e.data(this, s);
-                return "instance" === a
+                return 'instance' === a
                   ? ((h = n), !1)
                   : n
-                  ? e.isFunction(n[a]) && "_" !== a.charAt(0)
+                  ? e.isFunction(n[a]) && '_' !== a.charAt(0)
                     ? ((i = n[a].apply(n, r)),
                       i !== n && void 0 !== i
                         ? ((h = i && i.jquery ? h.pushStack(i.get()) : i), !1)
@@ -343,12 +343,12 @@
                           a +
                           "' for " +
                           t +
-                          " widget instance"
+                          ' widget instance'
                       )
                   : e.error(
-                      "cannot call methods on " +
+                      'cannot call methods on ' +
                         t +
-                        " prior to initialization; " +
+                        ' prior to initialization; ' +
                         "attempted to call method '" +
                         a +
                         "'"
@@ -368,15 +368,15 @@
     (e.Widget = function () {}),
     (e.Widget._childConstructors = []),
     (e.Widget.prototype = {
-      widgetName: "widget",
-      widgetEventPrefix: "",
-      defaultElement: "<div>",
+      widgetName: 'widget',
+      widgetEventPrefix: '',
+      defaultElement: '<div>',
       options: { disabled: !1, create: null },
       _createWidget: function (t, i) {
         (i = e(i || this.defaultElement || this)[0]),
           (this.element = e(i)),
           (this.uuid = s++),
-          (this.eventNamespace = "." + this.widgetName + this.uuid),
+          (this.eventNamespace = '.' + this.widgetName + this.uuid),
           (this.bindings = e()),
           (this.hoverable = e()),
           (this.focusable = e()),
@@ -398,7 +398,7 @@
             t
           )),
           this._create(),
-          this._trigger("create", null, this._getCreateEventData()),
+          this._trigger('create', null, this._getCreateEventData()),
           this._init();
       },
       _getCreateOptions: e.noop,
@@ -413,13 +413,13 @@
             .removeData(e.camelCase(this.widgetFullName)),
           this.widget()
             .unbind(this.eventNamespace)
-            .removeAttr("aria-disabled")
+            .removeAttr('aria-disabled')
             .removeClass(
-              this.widgetFullName + "-disabled " + "ui-state-disabled"
+              this.widgetFullName + '-disabled ' + 'ui-state-disabled'
             ),
           this.bindings.unbind(this.eventNamespace),
-          this.hoverable.removeClass("ui-state-hover"),
-          this.focusable.removeClass("ui-state-focus");
+          this.hoverable.removeClass('ui-state-hover'),
+          this.focusable.removeClass('ui-state-focus');
       },
       _destroy: e.noop,
       widget: function () {
@@ -431,8 +431,8 @@
           a,
           o = t;
         if (0 === arguments.length) return e.widget.extend({}, this.options);
-        if ("string" == typeof t)
-          if (((o = {}), (s = t.split(".")), (t = s.shift()), s.length)) {
+        if ('string' == typeof t)
+          if (((o = {}), (s = t.split('.')), (t = s.shift()), s.length)) {
             for (
               n = o[t] = e.widget.extend({}, this.options[t]), a = 0;
               s.length - 1 > a;
@@ -457,11 +457,11 @@
       _setOption: function (e, t) {
         return (
           (this.options[e] = t),
-          "disabled" === e &&
-            (this.widget().toggleClass(this.widgetFullName + "-disabled", !!t),
+          'disabled' === e &&
+            (this.widget().toggleClass(this.widgetFullName + '-disabled', !!t),
             t &&
-              (this.hoverable.removeClass("ui-state-hover"),
-              this.focusable.removeClass("ui-state-focus"))),
+              (this.hoverable.removeClass('ui-state-hover'),
+              this.focusable.removeClass('ui-state-focus'))),
           this
         );
       },
@@ -474,7 +474,7 @@
       _on: function (t, i, s) {
         var n,
           a = this;
-        "boolean" != typeof t && ((s = i), (i = t), (t = !1)),
+        'boolean' != typeof t && ((s = i), (i = t), (t = !1)),
           s
             ? ((i = n = e(i)), (this.bindings = this.bindings.add(i)))
             : ((s = i), (i = this.element), (n = this.widget())),
@@ -482,11 +482,11 @@
             function r() {
               return t ||
                 (a.options.disabled !== !0 &&
-                  !e(this).hasClass("ui-state-disabled"))
-                ? ("string" == typeof o ? a[o] : o).apply(a, arguments)
+                  !e(this).hasClass('ui-state-disabled'))
+                ? ('string' == typeof o ? a[o] : o).apply(a, arguments)
                 : void 0;
             }
-            "string" != typeof o &&
+            'string' != typeof o &&
               (r.guid = o.guid = o.guid || r.guid || e.guid++);
             var h = s.match(/^([\w:-]*)\s*(.*)$/),
               l = h[1] + a.eventNamespace,
@@ -496,7 +496,7 @@
       },
       _off: function (t, i) {
         (i =
-          (i || "").split(" ").join(this.eventNamespace + " ") +
+          (i || '').split(' ').join(this.eventNamespace + ' ') +
           this.eventNamespace),
           t.unbind(i).undelegate(i),
           (this.bindings = e(this.bindings.not(t).get())),
@@ -505,7 +505,7 @@
       },
       _delay: function (e, t) {
         function i() {
-          return ("string" == typeof e ? s[e] : e).apply(s, arguments);
+          return ('string' == typeof e ? s[e] : e).apply(s, arguments);
         }
         var s = this;
         return setTimeout(i, t || 0);
@@ -514,10 +514,10 @@
         (this.hoverable = this.hoverable.add(t)),
           this._on(t, {
             mouseenter: function (t) {
-              e(t.currentTarget).addClass("ui-state-hover");
+              e(t.currentTarget).addClass('ui-state-hover');
             },
             mouseleave: function (t) {
-              e(t.currentTarget).removeClass("ui-state-hover");
+              e(t.currentTarget).removeClass('ui-state-hover');
             },
           });
       },
@@ -525,10 +525,10 @@
         (this.focusable = this.focusable.add(t)),
           this._on(t, {
             focusin: function (t) {
-              e(t.currentTarget).addClass("ui-state-focus");
+              e(t.currentTarget).addClass('ui-state-focus');
             },
             focusout: function (t) {
-              e(t.currentTarget).removeClass("ui-state-focus");
+              e(t.currentTarget).removeClass('ui-state-focus');
             },
           });
       },
@@ -556,13 +556,13 @@
         );
       },
     }),
-    e.each({ show: "fadeIn", hide: "fadeOut" }, function (t, i) {
-      e.Widget.prototype["_" + t] = function (s, n, a) {
-        "string" == typeof n && (n = { effect: n });
+    e.each({ show: 'fadeIn', hide: 'fadeOut' }, function (t, i) {
+      e.Widget.prototype['_' + t] = function (s, n, a) {
+        'string' == typeof n && (n = { effect: n });
         var o,
-          r = n ? (n === !0 || "number" == typeof n ? i : n.effect || i) : t;
+          r = n ? (n === !0 || 'number' == typeof n ? i : n.effect || i) : t;
         (n = n || {}),
-          "number" == typeof n && (n = { duration: n }),
+          'number' == typeof n && (n = { duration: n }),
           (o = !e.isEmptyObject(n)),
           (n.complete = a),
           n.delay && s.delay(n.delay),
@@ -580,22 +580,22 @@
   e(document).mouseup(function () {
     a = !1;
   }),
-    e.widget("ui.mouse", {
-      version: "1.11.4",
+    e.widget('ui.mouse', {
+      version: '1.11.4',
       options: {
-        cancel: "input,textarea,button,select,option",
+        cancel: 'input,textarea,button,select,option',
         distance: 1,
         delay: 0,
       },
       _mouseInit: function () {
         var t = this;
         this.element
-          .bind("mousedown." + this.widgetName, function (e) {
+          .bind('mousedown.' + this.widgetName, function (e) {
             return t._mouseDown(e);
           })
-          .bind("click." + this.widgetName, function (i) {
-            return !0 === e.data(i.target, t.widgetName + ".preventClickEvent")
-              ? (e.removeData(i.target, t.widgetName + ".preventClickEvent"),
+          .bind('click.' + this.widgetName, function (i) {
+            return !0 === e.data(i.target, t.widgetName + '.preventClickEvent')
+              ? (e.removeData(i.target, t.widgetName + '.preventClickEvent'),
                 i.stopImmediatePropagation(),
                 !1)
               : void 0;
@@ -603,11 +603,11 @@
           (this.started = !1);
       },
       _mouseDestroy: function () {
-        this.element.unbind("." + this.widgetName),
+        this.element.unbind('.' + this.widgetName),
           this._mouseMoveDelegate &&
             this.document
-              .unbind("mousemove." + this.widgetName, this._mouseMoveDelegate)
-              .unbind("mouseup." + this.widgetName, this._mouseUpDelegate);
+              .unbind('mousemove.' + this.widgetName, this._mouseMoveDelegate)
+              .unbind('mouseup.' + this.widgetName, this._mouseUpDelegate);
       },
       _mouseDown: function (t) {
         if (!a) {
@@ -617,7 +617,7 @@
           var i = this,
             s = 1 === t.which,
             n =
-              "string" == typeof this.options.cancel && t.target.nodeName
+              'string' == typeof this.options.cancel && t.target.nodeName
                 ? e(t.target).closest(this.options.cancel).length
                 : !1;
           return s && !n && this._mouseCapture(t)
@@ -632,10 +632,10 @@
               !this._mouseStarted)
                 ? (t.preventDefault(), !0)
                 : (!0 ===
-                    e.data(t.target, this.widgetName + ".preventClickEvent") &&
+                    e.data(t.target, this.widgetName + '.preventClickEvent') &&
                     e.removeData(
                       t.target,
-                      this.widgetName + ".preventClickEvent"
+                      this.widgetName + '.preventClickEvent'
                     ),
                   (this._mouseMoveDelegate = function (e) {
                     return i._mouseMove(e);
@@ -645,10 +645,10 @@
                   }),
                   this.document
                     .bind(
-                      "mousemove." + this.widgetName,
+                      'mousemove.' + this.widgetName,
                       this._mouseMoveDelegate
                     )
-                    .bind("mouseup." + this.widgetName, this._mouseUpDelegate),
+                    .bind('mouseup.' + this.widgetName, this._mouseUpDelegate),
                   t.preventDefault(),
                   (a = !0),
                   !0))
@@ -680,12 +680,12 @@
       _mouseUp: function (t) {
         return (
           this.document
-            .unbind("mousemove." + this.widgetName, this._mouseMoveDelegate)
-            .unbind("mouseup." + this.widgetName, this._mouseUpDelegate),
+            .unbind('mousemove.' + this.widgetName, this._mouseMoveDelegate)
+            .unbind('mouseup.' + this.widgetName, this._mouseUpDelegate),
           this._mouseStarted &&
             ((this._mouseStarted = !1),
             t.target === this._mouseDownEvent.target &&
-              e.data(t.target, this.widgetName + ".preventClickEvent", !0),
+              e.data(t.target, this.widgetName + '.preventClickEvent', !0),
             this._mouseStop(t)),
           (a = !1),
           !1
@@ -709,15 +709,15 @@
         return !0;
       },
     }),
-    e.widget("ui.slider", e.ui.mouse, {
-      version: "1.11.4",
-      widgetEventPrefix: "slide",
+    e.widget('ui.slider', e.ui.mouse, {
+      version: '1.11.4',
+      widgetEventPrefix: 'slide',
       options: {
         animate: !1,
         distance: 0,
         max: 100,
         min: 0,
-        orientation: "horizontal",
+        orientation: 'horizontal',
         range: !1,
         step: 1,
         value: 0,
@@ -737,14 +737,14 @@
           this._mouseInit(),
           this._calculateNewMax(),
           this.element.addClass(
-            "ui-slider ui-slider-" +
+            'ui-slider ui-slider-' +
               this.orientation +
-              " ui-widget" +
-              " ui-widget-content" +
-              " ui-corner-all"
+              ' ui-widget' +
+              ' ui-widget-content' +
+              ' ui-corner-all'
           ),
           this._refresh(),
-          this._setOption("disabled", this.options.disabled),
+          this._setOption('disabled', this.options.disabled),
           (this._animateOff = !1);
       },
       _refresh: function () {
@@ -758,8 +758,8 @@
           i,
           s = this.options,
           n = this.element
-            .find(".ui-slider-handle")
-            .addClass("ui-state-default ui-corner-all"),
+            .find('.ui-slider-handle')
+            .addClass('ui-state-default ui-corner-all'),
           a =
             "<span class='ui-slider-handle ui-state-default ui-corner-all' tabindex='0'></span>",
           o = [];
@@ -771,15 +771,15 @@
           t++
         )
           o.push(a);
-        (this.handles = n.add(e(o.join("")).appendTo(this.element))),
+        (this.handles = n.add(e(o.join('')).appendTo(this.element))),
           (this.handle = this.handles.eq(0)),
           this.handles.each(function (t) {
-            e(this).data("ui-slider-handle-index", t);
+            e(this).data('ui-slider-handle-index', t);
           });
       },
       _createRange: function () {
         var t = this.options,
-          i = "";
+          i = '';
         t.range
           ? (t.range === !0 &&
               (t.values
@@ -789,15 +789,15 @@
                 : (t.values = [this._valueMin(), this._valueMin()])),
             this.range && this.range.length
               ? this.range
-                  .removeClass("ui-slider-range-min ui-slider-range-max")
-                  .css({ left: "", bottom: "" })
-              : ((this.range = e("<div></div>").appendTo(this.element)),
-                (i = "ui-slider-range ui-widget-header ui-corner-all")),
+                  .removeClass('ui-slider-range-min ui-slider-range-max')
+                  .css({ left: '', bottom: '' })
+              : ((this.range = e('<div></div>').appendTo(this.element)),
+                (i = 'ui-slider-range ui-widget-header ui-corner-all')),
             this.range.addClass(
               i +
-                ("min" === t.range || "max" === t.range
-                  ? " ui-slider-range-" + t.range
-                  : "")
+                ('min' === t.range || 'max' === t.range
+                  ? ' ui-slider-range-' + t.range
+                  : '')
             ))
           : (this.range && this.range.remove(), (this.range = null));
       },
@@ -811,7 +811,7 @@
         this.handles.remove(),
           this.range && this.range.remove(),
           this.element.removeClass(
-            "ui-slider ui-slider-horizontal ui-slider-vertical ui-widget ui-widget-content ui-corner-all"
+            'ui-slider ui-slider-horizontal ui-slider-vertical ui-widget ui-widget-content ui-corner-all'
           ),
           this._mouseDestroy();
       },
@@ -848,9 +848,9 @@
               ? !1
               : ((this._mouseSliding = !0),
                 (this._handleIndex = o),
-                a.addClass("ui-state-active").focus(),
+                a.addClass('ui-state-active').focus(),
                 (h = a.offset()),
-                (l = !e(t.target).parents().addBack().is(".ui-slider-handle")),
+                (l = !e(t.target).parents().addBack().is('.ui-slider-handle')),
                 (this._clickOffset = l
                   ? { left: 0, top: 0 }
                   : {
@@ -859,11 +859,11 @@
                         t.pageY -
                         h.top -
                         a.height() / 2 -
-                        (parseInt(a.css("borderTopWidth"), 10) || 0) -
-                        (parseInt(a.css("borderBottomWidth"), 10) || 0) +
-                        (parseInt(a.css("marginTop"), 10) || 0),
+                        (parseInt(a.css('borderTopWidth'), 10) || 0) -
+                        (parseInt(a.css('borderBottomWidth'), 10) || 0) +
+                        (parseInt(a.css('marginTop'), 10) || 0),
                     }),
-                this.handles.hasClass("ui-state-hover") || this._slide(t, o, s),
+                this.handles.hasClass('ui-state-hover') || this._slide(t, o, s),
                 (this._animateOff = !0),
                 !0));
       },
@@ -877,7 +877,7 @@
       },
       _mouseStop: function (e) {
         return (
-          this.handles.removeClass("ui-state-active"),
+          this.handles.removeClass('ui-state-active'),
           (this._mouseSliding = !1),
           this._stop(e, this._handleIndex),
           this._change(e, this._handleIndex),
@@ -889,12 +889,12 @@
       },
       _detectOrientation: function () {
         this.orientation =
-          "vertical" === this.options.orientation ? "vertical" : "horizontal";
+          'vertical' === this.options.orientation ? 'vertical' : 'horizontal';
       },
       _normValueFromMouse: function (e) {
         var t, i, s, n, a;
         return (
-          "horizontal" === this.orientation
+          'horizontal' === this.orientation
             ? ((t = this.elementSize.width),
               (i =
                 e.x -
@@ -908,7 +908,7 @@
           (s = i / t),
           s > 1 && (s = 1),
           0 > s && (s = 0),
-          "vertical" === this.orientation && (s = 1 - s),
+          'vertical' === this.orientation && (s = 1 - s),
           (n = this._valueMax() - this._valueMin()),
           (a = this._valueMin() + s * n),
           this._trimAlignValue(a)
@@ -920,7 +920,7 @@
           this.options.values &&
             this.options.values.length &&
             ((i.value = this.values(t)), (i.values = this.values())),
-          this._trigger("start", e, i)
+          this._trigger('start', e, i)
         );
       },
       _slide: function (e, t, i) {
@@ -934,7 +934,7 @@
             i !== this.values(t) &&
               ((n = this.values()),
               (n[t] = i),
-              (a = this._trigger("slide", e, {
+              (a = this._trigger('slide', e, {
                 handle: this.handles[t],
                 value: i,
                 values: n,
@@ -942,7 +942,7 @@
               (s = this.values(t ? 0 : 1)),
               a !== !1 && this.values(t, i)))
           : i !== this.value() &&
-            ((a = this._trigger("slide", e, {
+            ((a = this._trigger('slide', e, {
               handle: this.handles[t],
               value: i,
             })),
@@ -953,7 +953,7 @@
         this.options.values &&
           this.options.values.length &&
           ((i.value = this.values(t)), (i.values = this.values())),
-          this._trigger("stop", e, i);
+          this._trigger('stop', e, i);
       },
       _change: function (e, t) {
         if (!this._keySliding && !this._mouseSliding) {
@@ -962,7 +962,7 @@
             this.options.values.length &&
             ((i.value = this.values(t)), (i.values = this.values())),
             (this._lastChangedValue = t),
-            this._trigger("change", e, i);
+            this._trigger('change', e, i);
         }
       },
       value: function (e) {
@@ -999,37 +999,37 @@
         var s,
           n = 0;
         switch (
-          ("range" === t &&
+          ('range' === t &&
             this.options.range === !0 &&
-            ("min" === i
+            ('min' === i
               ? ((this.options.value = this._values(0)),
                 (this.options.values = null))
-              : "max" === i &&
+              : 'max' === i &&
                 ((this.options.value = this._values(
                   this.options.values.length - 1
                 )),
                 (this.options.values = null))),
           e.isArray(this.options.values) && (n = this.options.values.length),
-          "disabled" === t &&
-            this.element.toggleClass("ui-state-disabled", !!i),
+          'disabled' === t &&
+            this.element.toggleClass('ui-state-disabled', !!i),
           this._super(t, i),
           t)
         ) {
-          case "orientation":
+          case 'orientation':
             this._detectOrientation(),
               this.element
-                .removeClass("ui-slider-horizontal ui-slider-vertical")
-                .addClass("ui-slider-" + this.orientation),
+                .removeClass('ui-slider-horizontal ui-slider-vertical')
+                .addClass('ui-slider-' + this.orientation),
               this._refreshValue(),
-              this.handles.css("horizontal" === i ? "bottom" : "left", "");
+              this.handles.css('horizontal' === i ? 'bottom' : 'left', '');
             break;
-          case "value":
+          case 'value':
             (this._animateOff = !0),
               this._refreshValue(),
               this._change(null, 0),
               (this._animateOff = !1);
             break;
-          case "values":
+          case 'values':
             for (
               this._animateOff = !0, this._refreshValue(), s = 0;
               n > s;
@@ -1038,15 +1038,15 @@
               this._change(null, s);
             this._animateOff = !1;
             break;
-          case "step":
-          case "min":
-          case "max":
+          case 'step':
+          case 'min':
+          case 'max':
             (this._animateOff = !0),
               this._calculateNewMax(),
               this._refreshValue(),
               (this._animateOff = !1);
             break;
-          case "range":
+          case 'range':
             (this._animateOff = !0), this._refresh(), (this._animateOff = !1);
         }
       },
@@ -1092,8 +1092,8 @@
         );
       },
       _precisionOf: function (e) {
-        var t = "" + e,
-          i = t.indexOf(".");
+        var t = '' + e,
+          i = t.indexOf('.');
         return -1 === i ? 0 : t.length - i - 1;
       },
       _valueMin: function () {
@@ -1119,30 +1119,30 @@
                 100 *
                 ((h.values(s) - h._valueMin()) /
                   (h._valueMax() - h._valueMin()))),
-                (u["horizontal" === h.orientation ? "left" : "bottom"] =
-                  i + "%"),
-                e(this).stop(1, 1)[l ? "animate" : "css"](u, r.animate),
+                (u['horizontal' === h.orientation ? 'left' : 'bottom'] =
+                  i + '%'),
+                e(this).stop(1, 1)[l ? 'animate' : 'css'](u, r.animate),
                 h.options.range === !0 &&
-                  ("horizontal" === h.orientation
+                  ('horizontal' === h.orientation
                     ? (0 === s &&
                         h.range
                           .stop(1, 1)
-                          [l ? "animate" : "css"]({ left: i + "%" }, r.animate),
+                          [l ? 'animate' : 'css']({ left: i + '%' }, r.animate),
                       1 === s &&
-                        h.range[l ? "animate" : "css"](
-                          { width: i - t + "%" },
+                        h.range[l ? 'animate' : 'css'](
+                          { width: i - t + '%' },
                           { queue: !1, duration: r.animate }
                         ))
                     : (0 === s &&
                         h.range
                           .stop(1, 1)
-                          [l ? "animate" : "css"](
-                            { bottom: i + "%" },
+                          [l ? 'animate' : 'css'](
+                            { bottom: i + '%' },
                             r.animate
                           ),
                       1 === s &&
-                        h.range[l ? "animate" : "css"](
-                          { height: i - t + "%" },
+                        h.range[l ? 'animate' : 'css'](
+                          { height: i - t + '%' },
                           { queue: !1, duration: r.animate }
                         ))),
                 (t = i);
@@ -1151,29 +1151,29 @@
             (n = this._valueMin()),
             (a = this._valueMax()),
             (i = a !== n ? 100 * ((s - n) / (a - n)) : 0),
-            (u["horizontal" === this.orientation ? "left" : "bottom"] =
-              i + "%"),
-            this.handle.stop(1, 1)[l ? "animate" : "css"](u, r.animate),
-            "min" === o &&
-              "horizontal" === this.orientation &&
+            (u['horizontal' === this.orientation ? 'left' : 'bottom'] =
+              i + '%'),
+            this.handle.stop(1, 1)[l ? 'animate' : 'css'](u, r.animate),
+            'min' === o &&
+              'horizontal' === this.orientation &&
               this.range
                 .stop(1, 1)
-                [l ? "animate" : "css"]({ width: i + "%" }, r.animate),
-            "max" === o &&
-              "horizontal" === this.orientation &&
-              this.range[l ? "animate" : "css"](
-                { width: 100 - i + "%" },
+                [l ? 'animate' : 'css']({ width: i + '%' }, r.animate),
+            'max' === o &&
+              'horizontal' === this.orientation &&
+              this.range[l ? 'animate' : 'css'](
+                { width: 100 - i + '%' },
                 { queue: !1, duration: r.animate }
               ),
-            "min" === o &&
-              "vertical" === this.orientation &&
+            'min' === o &&
+              'vertical' === this.orientation &&
               this.range
                 .stop(1, 1)
-                [l ? "animate" : "css"]({ height: i + "%" }, r.animate),
-            "max" === o &&
-              "vertical" === this.orientation &&
-              this.range[l ? "animate" : "css"](
-                { height: 100 - i + "%" },
+                [l ? 'animate' : 'css']({ height: i + '%' }, r.animate),
+            'max' === o &&
+              'vertical' === this.orientation &&
+              this.range[l ? 'animate' : 'css'](
+                { height: 100 - i + '%' },
                 { queue: !1, duration: r.animate }
               ));
       },
@@ -1183,7 +1183,7 @@
             s,
             n,
             a,
-            o = e(t.target).data("ui-slider-handle-index");
+            o = e(t.target).data('ui-slider-handle-index');
           switch (t.keyCode) {
             case e.ui.keyCode.HOME:
             case e.ui.keyCode.END:
@@ -1197,7 +1197,7 @@
                 (t.preventDefault(),
                 !this._keySliding &&
                   ((this._keySliding = !0),
-                  e(t.target).addClass("ui-state-active"),
+                  e(t.target).addClass('ui-state-active'),
                   (i = this._start(t, o)),
                   i === !1))
               )
@@ -1240,12 +1240,12 @@
           this._slide(t, o, n);
         },
         keyup: function (t) {
-          var i = e(t.target).data("ui-slider-handle-index");
+          var i = e(t.target).data('ui-slider-handle-index');
           this._keySliding &&
             ((this._keySliding = !1),
             this._stop(t, i),
             this._change(t, i),
-            e(t.target).removeClass("ui-state-active"));
+            e(t.target).removeClass('ui-state-active'));
         },
       },
     });

@@ -55,7 +55,7 @@
   &::after {
     background: var(--color-gray-light);
     position: absolute;
-    content: "";
+    content: '';
     width: 100%;
     height: 100%;
     left: 0;
@@ -110,7 +110,7 @@
   a {
     position: relative;
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       width: 100%;
       height: 2px;
@@ -181,7 +181,7 @@
 .rbt-gradient-border {
   z-index: 10;
   &::before {
-    content: "";
+    content: '';
     z-index: -1;
     top: 3px;
     left: 3px;
@@ -256,7 +256,7 @@
     );
     opacity: 0.2;
     filter: blur(100px);
-    content: "";
+    content: '';
   }
   &::after {
     position: absolute;
@@ -266,7 +266,7 @@
     border-radius: 1000px;
     opacity: 0.2;
     filter: blur(100px);
-    content: "";
+    content: '';
     left: auto;
     top: -250px;
     right: -250px;
@@ -283,7 +283,7 @@
   position: relative;
   z-index: 1;
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: -2px;
     left: 0;
@@ -456,7 +456,7 @@ hr {
   position: relative;
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     height: 20px;
     width: 1px;
     background: var(--color-border);

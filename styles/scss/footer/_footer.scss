@@ -38,11 +38,11 @@
         right: 0;
         top: 50%;
         transform: translateY(-50%);
-        font-family: "feather" !important;
+        font-family: 'feather' !important;
       }
       &.icon-email {
         &::after {
-          content: "\e98a";
+          content: '\e98a';
         }
       }
     }
@@ -65,7 +65,7 @@
         display: inline-block;
         position: relative;
         &:after {
-          content: "";
+          content: '';
           position: absolute;
           width: 100%;
           height: 2px;

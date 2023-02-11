@@ -3,7 +3,7 @@
 =================================*/
 .clearfix:before,
 .clearfix:after {
-  content: " ";
+  content: ' ';
   display: table;
 }
 .clearfix:after {
@@ -42,19 +42,19 @@
 =================================*/
 
 @include config-bg-colors(
-  "bg-color-",
-  "primary" var(--color-primary) !important,
-  "primary-alt" var(--color-primary-alt) !important,
-  "secondary" var(--color-secondary) !important,
-  "secondary-alt" var(--color-secondary-alt) !important,
-  "light" var(--color-light) !important,
-  "extra2" var(--color-extra2) !important,
-  "dark" var(--color-dark) !important,
-  "heading" var(--color-heading) !important,
-  "darker" var(--color-darker) !important,
-  "white" var(--color-white) !important,
-  "1" #010001 !important,
-  "black" #111113 !important
+  'bg-color-',
+  'primary' var(--color-primary) !important,
+  'primary-alt' var(--color-primary-alt) !important,
+  'secondary' var(--color-secondary) !important,
+  'secondary-alt' var(--color-secondary-alt) !important,
+  'light' var(--color-light) !important,
+  'extra2' var(--color-extra2) !important,
+  'dark' var(--color-dark) !important,
+  'heading' var(--color-heading) !important,
+  'darker' var(--color-darker) !important,
+  'white' var(--color-white) !important,
+  '1' #010001 !important,
+  'black' #111113 !important
 );
 
 /*---------------------
@@ -72,7 +72,7 @@ Custom Row
   margin-left: -0px;
   margin-right: -0px;
 
-  & > [class*="col"] {
+  & > [class*='col'] {
     padding-left: 0px;
     padding-right: 0px;
   }
@@ -82,7 +82,7 @@ Custom Row
   margin-left: -5px;
   margin-right: -5px;
 
-  & > [class*="col"] {
+  & > [class*='col'] {
     padding-left: 5px;
     padding-right: 5px;
   }
@@ -92,7 +92,7 @@ Custom Row
   margin-left: -10px;
   margin-right: -10px;
 
-  & > [class*="col"] {
+  & > [class*='col'] {
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -102,7 +102,7 @@ Custom Row
   margin-left: -15px;
   margin-right: -15px;
 
-  & > [class*="col"] {
+  & > [class*='col'] {
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -133,8 +133,8 @@ Custom Row
     margin-right: -15px !important;
   }
 
-  & > [class*="col"],
-  & > [class*="col-"] {
+  & > [class*='col'],
+  & > [class*='col-'] {
     padding-left: 20px;
     padding-right: 20px;
 
@@ -186,8 +186,8 @@ Custom Row
     margin-right: -15px !important;
   }
 
-  & > [class*="col"],
-  & > [class*="col-"] {
+  & > [class*='col'],
+  & > [class*='col-'] {
     padding-left: 25px;
     padding-right: 25px;
 
@@ -239,8 +239,8 @@ Custom Row
     margin-right: -15px !important;
   }
 
-  & > [class*="col"],
-  & > [class*="col-"] {
+  & > [class*='col'],
+  & > [class*='col-'] {
     padding-left: 30px;
     padding-right: 30px;
 
@@ -292,8 +292,8 @@ Custom Row
     margin-right: -15px !important;
   }
 
-  & > [class*="col"],
-  & > [class*="col-"] {
+  & > [class*='col'],
+  & > [class*='col-'] {
     padding-left: 40px;
     padding-right: 40px;
 
@@ -344,8 +344,8 @@ Custom Row
     margin-right: -15px !important;
   }
 
-  & > [class*="col"],
-  & > [class*="col-"] {
+  & > [class*='col'],
+  & > [class*='col-'] {
     padding-left: 45px;
     padding-right: 45px;
 
@@ -395,8 +395,8 @@ Custom Row
     margin-right: -15px !important;
   }
 
-  & > [class*="col"],
-  & > [class*="col-"] {
+  & > [class*='col'],
+  & > [class*='col-'] {
     padding-left: 60px;
     padding-right: 60px;
 
@@ -429,25 +429,25 @@ Custom Row
 input:-moz-placeholder,
 textarea:-moz-placeholder {
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
 }
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
 }
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
   opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=100)';
 }
 
 /*=============================
@@ -477,7 +477,7 @@ textarea:-ms-input-placeholder {
 [data-black-overlay]:before,
 [data-white-overlay]:before,
 [data-gradient-overlay]:before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -507,10 +507,10 @@ textarea:-ms-input-placeholder {
 }
 
 @for $i from 1 through 10 {
-  [data-overlay="#{$i}"]:before,
-  [data-black-overlay="#{$i}"]:before,
-  [data-white-overlay="#{$i}"]:before,
-  [data-gradient-overlay="#{$i}"]:before {
+  [data-overlay='#{$i}']:before,
+  [data-black-overlay='#{$i}']:before,
+  [data-white-overlay='#{$i}']:before,
+  [data-gradient-overlay='#{$i}']:before {
     opacity: #{$i * 0.1};
   }
 }
@@ -553,7 +553,7 @@ textarea:-ms-input-placeholder {
     left: 0;
     bottom: 0;
     background: rgba(0, 2, 72, 0.1);
-    content: "";
+    content: '';
     position: absolute;
     z-index: -1;
     transform-style: preserve-3d;
@@ -563,7 +563,7 @@ textarea:-ms-input-placeholder {
   &::after {
     background: #ffffff;
     position: absolute;
-    content: "";
+    content: '';
     top: 0;
     bottom: 0;
     left: 0;
@@ -598,7 +598,7 @@ textarea:-ms-input-placeholder {
         border-width: 0 5px 7px 5px;
         border-color: transparent transparent var(--color-primary) transparent;
         position: absolute;
-        content: "";
+        content: '';
         left: 50%;
         top: 21%;
         transform: translateX(-50%);

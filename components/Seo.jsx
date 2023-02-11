@@ -1,13 +1,13 @@
-import React from "react";
-import Head from "next/head";
-import structuredData from "../utils/structuredData";
+import React from 'react';
+import Head from 'next/head';
+import structuredData from '../utils/structuredData';
 
 const Seo = () => {
   return (
     <Head>
       <meta
-        name={"description"}
-        content={"The official ride with us website."}
+        name={'description'}
+        content={'The official ride with us website.'}
       />
       <meta property="og:type" content="website" />
       <meta property="og:title" content="RIDE WITH US" />

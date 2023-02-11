@@ -2,7 +2,7 @@
   padding-bottom: 90px;
   position: relative;
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -47,7 +47,7 @@
               li {
                 position: relative;
                 &::before {
-                  content: "";
+                  content: '';
                   position: absolute;
                   top: 41%;
                   left: -14px;

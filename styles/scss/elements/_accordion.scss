@@ -40,7 +40,7 @@
           }
         }
 
-        &[aria-expanded="true"] {
+        &[aria-expanded='true'] {
           color: var(--color-primary);
           &::before {
             @extend %theme-gradient;
@@ -49,8 +49,8 @@
         }
         &::before {
           position: absolute;
-          content: "\e996";
-          font-family: "feather" !important;
+          content: '\e996';
+          font-family: 'feather' !important;
           right: -18px;
           top: 50%;
           transform: translateY(-50%);
@@ -59,7 +59,7 @@
         &.collapsed {
           color: var(--color-heading);
           &::before {
-            content: "\e9b1";
+            content: '\e9b1';
           }
         }
       }
@@ -262,7 +262,7 @@
     Accordion Color White  
 -------------------------------*/
 .rbt-accordion-color-white {
-  .rbt-accordion-style .card .card-header button[aria-expanded="true"] {
+  .rbt-accordion-style .card .card-header button[aria-expanded='true'] {
     color: var(--color-white);
   }
   .rbt-accordion-style.rbt-accordion-01 .card .card-body {
@@ -273,14 +273,14 @@
     background: var(--primary-opacity);
     box-shadow: none;
   }
-  .rbt-accordion-style .card .card-header button[aria-expanded="true"]::before {
+  .rbt-accordion-style .card .card-header button[aria-expanded='true']::before {
     color: var(--color-border-2);
   }
   .rbt-accordion-style .card .card-header button.collapsed {
     color: var(--color-white-off);
   }
 
-  .rbt-accordion-style .card .card-header button[aria-expanded="true"]::before,
+  .rbt-accordion-style .card .card-header button[aria-expanded='true']::before,
   .rbt-accordion-style .card .card-header button::before {
     background: linear-gradient(
       90deg,

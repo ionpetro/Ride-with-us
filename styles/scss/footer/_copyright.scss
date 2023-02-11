@@ -32,7 +32,7 @@
       & + li {
         &::after {
           position: absolute;
-          content: "";
+          content: '';
           height: 14px;
           width: 1px;
           background: var(--color-border);
