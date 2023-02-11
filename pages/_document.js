@@ -51,6 +51,7 @@ export default function Document() {
         <script src="/assets/js/vendor/wow.js"></script>
         <script src="/assets/js/vendor/waypoint.min.js"></script>
         <script src="/assets/js/vendor/easypie.js"></script>
+        <script src="/assets/js/vendor/bootstrap-select.min.js"></script>
         <script src="/assets/js/vendor/text-type.js"></script>
         <script src="/assets/js/vendor/jquery-one-page-nav.js"></script>
         <script src="/assets/js/vendor/jquery-ui.js"></script>

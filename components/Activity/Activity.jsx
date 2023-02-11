@@ -1,16 +1,11 @@
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
-import DatePicker, { registerLocale } from "react-datepicker";
-import styles from "./Activity.module.scss";
-import el from "date-fns/locale/el";
-registerLocale("el", el);
-
-import "react-datepicker/dist/react-datepicker.css";
 
 import React, { useMemo, useState } from "react";
+import ActivityModal from "./ActivityModal/ActivityModal";
 
 const Activity = ({ data }) => {
   const mapCenter = useMemo(() => ({ lat: data?.lat, lng: data?.lng }), []);
-  const [date, setDate] = useState();
+  const [showModal, setShowModal] = useState(false);
 
   const mapOptions =
     useMemo >
@@ -165,64 +160,31 @@ const Activity = ({ data }) => {
                         το άτομο
                       </div>
                     </div>
-                    <form>
-                      <div className="form-group">
-                        <input name="con_name" type="text" />
-                        <label>Ονοματεπώνυμο</label>
-                        <span className="focus-border" />
-                      </div>
-                      <div className="form-group">
-                        <input type="text" />
-                        <label>Τηλέφωνο</label>
-                        <span className="focus-border" />
-                      </div>
-                      <div className="form-group">
-                        <small>Άτομα</small>
-                        <div className="rbt-modern-select bg-transparent height-45">
-                          <select className="w-100">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9+</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div className={styles.date}>
-                        <small>Ημερομηνία</small>
-                        <DatePicker
-                          locale="gr"
-                          selected={date}
-                          onChange={(date) => setDate(date)}
-                        />
-                      </div>
-                      <div className="form-group mt-40">
-                        <button
-                          type="submit"
-                          className="rbt-btn btn-gradient hover-icon-reverse w-100"
-                        >
-                          <span className="icon-reverse-wrapper">
-                            <span className="btn-text">Αποστολή</span>
-                            <span className="btn-icon">
-                              <i className="feather-arrow-right" />
-                            </span>
-                            <span className="btn-icon">
-                              <i className="feather-arrow-right" />
-                            </span>
-                          </span>
-                        </button>
-
-                        <small className="rbt-link-hover text-center text-lg-start">
-                          Πατώντας αποστολή συμφωνώ με την{" "}
-                          <a href="/cancellation-policy">πολιτική ακύρωσης</a>
-                        </small>
-                      </div>
-                    </form>
+                    <div className="add-to-card-button mt--15">
+                      <a
+                        className="rbt-btn btn-gradient icon-hover w-100 d-block text-center"
+                        onClick={() => setShowModal(true)}
+                      >
+                        <span className="btn-text">Κράτηση</span>
+                        <span className="btn-icon">
+                          <i className="feather-arrow-right"></i>
+                        </span>
+                      </a>
+                    </div>
                     <div className="social-share-wrapper mt--30 text-center">
+                      <ul className="social-icon social-default transparent-with-border justify-content-center">
+                        <li>
+                          <a href="https://www.facebook.com/ridewithus2023">
+                            <i className="feather-facebook" />
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://www.instagram.com/ride_withus_/">
+                            <i className="feather-instagram" />
+                          </a>
+                        </li>
+                      </ul>
+                      <hr className="mt--20" />
                       <div className="contact-with-us text-center">
                         <p>Θέλετε περισσότερες πληροφορίες;</p>
                         <p className="rbt-badge-2 mt--10 justify-content-center w-100">
@@ -240,6 +202,7 @@ const Activity = ({ data }) => {
           </div>
         </div>
       </div>
+      {showModal && <ActivityModal setShowModal={setShowModal} data={data} />}
     </>
   );
 };
