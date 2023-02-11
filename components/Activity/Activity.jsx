@@ -34,7 +34,9 @@ const Activity = ({ data }) => {
       <div className="rbt-breadcrumb-default rbt-breadcrumb-style-3">
         <div>
           <div
-            className={'bg-gradient-11'}
+            className={
+              'bg-gradient-11 rbt-banner-area rbt-banner-7 theme-shape header-transperent-spacer'
+            }
             style={{
               height: '100%',
               width: '100%',
