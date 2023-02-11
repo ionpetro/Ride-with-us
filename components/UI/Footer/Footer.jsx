@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 const Footer = () => {
@@ -12,9 +13,11 @@ const Footer = () => {
                   <div className="footer-widget">
                     <div className="logo">
                       <a href="/">
-                        <img
+                        <Image
                           src="/assets/images/logo/logo1.svg"
                           alt="Ride with us"
+                          width={120}
+                          height={120}
                         />
                       </a>
                     </div>
