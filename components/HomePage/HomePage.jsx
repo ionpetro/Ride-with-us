@@ -5,11 +5,11 @@ import Banner from './Banner/Banner';
 import Contact from './Contact/Contact';
 import Events from './Events/Events';
 
-const HomePage = ({ activities }) => {
+const HomePage = ({ activities, events }) => {
   return (
     <>
       <Banner />
-      <Events />
+      <Events events={events} />
       <Activities activities={activities} />
       <Contact />
       <Footer />

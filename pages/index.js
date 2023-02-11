@@ -9,7 +9,7 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-export default function Home({ activities = [] }) {
+export default function Home({ activities = [], events = [] }) {
   return (
     <>
       <Head>
@@ -17,16 +17,18 @@ export default function Home({ activities = [] }) {
         <Seo />
       </Head>
       <Navbar />
-      <HomePage activities={activities} />
+      <HomePage activities={activities} events={events} />
     </>
   );
 }
 
 export async function getServerSideProps() {
-  const response = await supabase.from('activities').select();
+  const activitiesResponse = await supabase.from('activities').select();
+  const eventsResponse = await supabase.from('events').select();
   return {
     props: {
-      activities: response.data,
+      activities: activitiesResponse.data,
+      events: eventsResponse.data,
     },
   };
 }
