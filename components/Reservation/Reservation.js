@@ -11,6 +11,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 const Reservation = () => {
   const router = useRouter();
   const [activity, setActivity] = useState();
+
   const routerData = router.query;
 
   useEffect(() => {
@@ -18,7 +19,11 @@ const Reservation = () => {
       return;
     }
 
-    fetchActivity();
+    if (routerData.type === 'event') {
+      fetchEvent();
+    } else if (routerData.type === 'activity') {
+      fetchActivity();
+    }
   }, [routerData]);
 
   if (!routerData) {
@@ -36,6 +41,19 @@ const Reservation = () => {
       console.log(e);
     }
   };
+  const fetchEvent = async () => {
+    try {
+      const response = await supabase
+        .from('events')
+        .select()
+        .eq('id', routerData?.event_id);
+      setActivity(response.data[0]);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  console.log(activity?.price);
 
   return (
     <div>
@@ -46,11 +64,16 @@ const Reservation = () => {
           >
             <div className="breadcrumb-content-top text-center">
               <h1 className="title">Κράτηση σε αναμονή</h1>
+
               <p className="mb--20">
                 Έχουμε λάβει το αίτημα της κράτησής σας. Θα επιβεβαιώσουμε
-                σύντομα στο {routerData?.phone} ή στο {routerData?.email} τη
-                διαθεσιμότητα και θα σας ενημερώσουμε ώστε να προχωρήσετε σε
-                κατάθεση.
+                σύντομα στο <strong>{routerData?.phone}</strong> ή στο{' '}
+                <strong>{routerData?.email}</strong> τη διαθεσιμότητα και θα σας
+                ενημερώσουμε ώστε να προχωρήσετε σε κατάθεση.
+              </p>
+              <p className={'mt-4'}>
+                Ημερομηνία κράτησης:{' '}
+                {new Date(routerData?.created_at).toLocaleDateString('el')}
               </p>
               <ul className="page-list">
                 <li className="rbt-breadcrumb-item">
@@ -63,10 +86,6 @@ const Reservation = () => {
                 </li>
                 <li className="rbt-breadcrumb-item active">Κράτηση</li>
               </ul>
-              <p className={'mt-4'}>
-                Ημερομηνία κράτησης{' '}
-                {new Date(routerData?.created_at).toLocaleDateString('el')}
-              </p>
             </div>
           </div>
         </div>
@@ -98,17 +117,19 @@ const Reservation = () => {
                     <th>Email</th>
                     <td>{routerData?.email}</td>
                   </tr>
-                  <tr>
-                    <th>Ημερομηνία κράτησης</th>
-                    <td>
-                      {new Date(routerData?.date).toLocaleDateString('el')}
-                    </td>
-                  </tr>
+                  {routerData?.date && (
+                    <tr>
+                      <th>Ημερομηνία</th>
+                      <td>
+                        {new Date(routerData?.date).toLocaleDateString('el')}
+                      </td>
+                    </tr>
+                  )}
                 </tbody>
               </table>
               <hr className="rbt-separator my-5" />
               <h4>Τρόπος πληρωμής</h4>
-              <p>Κατάθεση σε τραπεζικό λογαριασμό</p>
+              <p>Κατάθεση {activity?.price}€ σε τραπεζικό λογαριασμό</p>
               <div className="py-2">
                 ΕΘΝΙΚΗ ΤΡΑΠΕΖΑ
                 <br />
@@ -119,10 +140,20 @@ const Reservation = () => {
                 ΔΙΚΑΙΟΥΧΟΣ: UNLIMITED ADRENALINE IKE
               </div>
               <hr className="rbt-separator my-5" />
-              <h4>Δραστηριότητα</h4>
+              {routerData?.type === 'activity' ? (
+                <h4>Δραστηριότητα</h4>
+              ) : (
+                <h4>Εκδήλωση</h4>
+              )}
               <button
                 className="rbt-btn btn-gradient hover-icon-reverse"
-                onClick={() => router.push(`/activities/${activity?.slug}`)}
+                onClick={() => {
+                  if (routerData.type === 'activity') {
+                    router.push(`/activities/${activity?.slug}`);
+                  } else {
+                    router.push(`/events/${activity?.slug}`);
+                  }
+                }}
               >
                 {activity?.title}
               </button>

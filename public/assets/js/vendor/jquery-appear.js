@@ -32,14 +32,14 @@
       t.appeared = false;
 
       if (!fn) {
-        //trigger the custom event
+        //trigger the custom events
         t.trigger('appear', settings.data);
         return;
       }
 
       var w = $(window);
 
-      //fires the appear event when appropriate
+      //fires the appear events when appropriate
       var check = function () {
         //is the element hidden?
         if (!t.is(':visible')) {
@@ -68,7 +68,7 @@
           x + tw + ax >= a &&
           x <= a + ww + ax
         ) {
-          //trigger the custom event
+          //trigger the custom events
           if (!t.appeared) t.trigger('appear', settings.data);
         } else {
           //it scrolled out of view

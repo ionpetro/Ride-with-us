@@ -440,7 +440,7 @@
         },
       });
 
-      var swiper = new Swiper('.event-activation-1', {
+      var swiper = new Swiper('.events-activation-1', {
         slidesPerView: 1,
         slidesPerGroup: 1,
         loop: true,

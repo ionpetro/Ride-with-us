@@ -1,16 +1,15 @@
 import { createClient } from '@supabase/supabase-js';
 import Head from 'next/head';
 import React from 'react';
-import Activity from '../../components/Activity/Activity';
+import Event from '../../components/Event/Event';
 import Footer from '../../components/UI/Footer/Footer';
 import ScrollableNavbar from '../../components/UI/ScrollableNavbar/ScrollableNavbar';
-import { activities } from '../../data/activities';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-const ActivityPage = ({ data }) => {
+const EventPage = ({ data }) => {
   return (
     <>
       <Head>
@@ -18,7 +17,7 @@ const ActivityPage = ({ data }) => {
       </Head>
       <div>
         <ScrollableNavbar />
-        <Activity data={data} />
+        <Event data={data} />
         <Footer />
       </div>
     </>
@@ -26,9 +25,9 @@ const ActivityPage = ({ data }) => {
 };
 
 export async function getStaticPaths() {
-  const response = await supabase.from('activities').select();
-  const paths = response.data.map((activity) => `/activities/${activity.slug}`);
-  console.log(paths);
+  const response = await supabase.from('events').select();
+  const paths = response.data.map((event) => `/events/${event.slug}`);
+
   return {
     paths,
     fallback: false,
@@ -36,15 +35,15 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const response = await supabase.from('activities').select();
+  const response = await supabase.from('events').select();
 
-  const activity = response.data.find((e) => {
+  const event = response.data.find((e) => {
     return e.slug === params.slug;
   });
   return {
     props: {
-      data: activity,
+      data: event,
     },
   };
 }
-export default ActivityPage;
+export default EventPage;

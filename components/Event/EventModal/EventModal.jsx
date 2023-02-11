@@ -1,14 +1,11 @@
 import { createClient } from '@supabase/supabase-js';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
-import Calendar from 'react-calendar';
-import styles from './ActivityModal.module.scss';
-import 'react-calendar/dist/Calendar.css';
+import styles from './EventModal.module.scss';
 
-const ActivityModal = ({ data = {}, setShowModal }) => {
+const EventModal = ({ data = {}, setShowModal }) => {
   const router = useRouter();
-  const [formData, setFormData] = useState({ date: new Date(), people: '1' });
-  const [date, setDate] = useState(new Date());
+  const [formData, setFormData] = useState({ people: '1' });
   const [loading, setLoading] = useState(false);
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -21,14 +18,14 @@ const ActivityModal = ({ data = {}, setShowModal }) => {
     try {
       setLoading(true);
       const response = await supabase
-        .from('reservations')
-        .insert({ ...formData, activity_id: data.id, activity_slug: data.slug })
+        .from('event-reservations')
+        .insert({ ...formData, event_id: data.id, event_slug: data.slug })
         .select();
       setLoading(false);
       document.body.classList.remove('hide-scroll');
       await router.push({
         pathname: '/reservation',
-        query: { ...response.data[0], type: 'activity' },
+        query: { ...response.data[0], type: 'event' },
       });
     } catch (e) {
       setLoading(false);
@@ -101,15 +98,6 @@ const ActivityModal = ({ data = {}, setShowModal }) => {
               </select>
             </div>
           </div>
-          <div className={styles.date}>
-            <small>Ημερομηνία</small>
-            <Calendar
-              minDate={new Date()}
-              locale={'el'}
-              onChange={setDate}
-              value={date}
-            />
-          </div>
           <div className="form-group mt-5 mb-0">
             <button
               type="submit"
@@ -146,4 +134,4 @@ const ActivityModal = ({ data = {}, setShowModal }) => {
   );
 };
 
-export default ActivityModal;
+export default EventModal;
