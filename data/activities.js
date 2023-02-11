@@ -106,47 +106,4 @@ export const activities = [
     lat: 40.05899854274085,
     lng: 21.083820969072452,
   },
-  //   {
-  //     slug: "pavliani",
-  //     title: "Παύλιανη",
-  //     fullTitle: "Μονοήμερη στο πάρκο της Παύλιανης",
-  //     shortDescription: "Μονοήμερη στο πάρκο της Παύλιανης",
-  //     description: `<ul>
-  //     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Μεταφορά από Αθήνα στη Παύλιανη, Αθήνα</span></li>
-  //     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Πεζοπορία </span></li>
-  //     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Οδηγός εκδρομής</span></li>
-  //     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Αναχώρηση από το σημείο επιλογής σας </span></li>
-  //     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Επιστροφή στο σημείο επιλογής σας</span><span style="font-weight: 400;" data-mce-style="font-weight: 400;"><br data-mce-bogus="1"></span></li>
-  // </ul>`,
-  //     image_url: "/assets/images/sports/pavliani.jpg",
-  //     price: 50,
-  //     lat: 38.73863437389807,
-  //     lng: 22.34094507744307,
-  //   },
-  //   {
-  //     slug: "karditsa",
-  //     title: "Καρδίτσα",
-  //     fullTitle: "Μονοήμερη στην Καρδίτσα",
-  //     shortDescription: "Μονοήμερη στην Καρδίτσα",
-  //     description: `
-  // <p><strong>Κόστος εκδρομής 130ευρώ το άτομο (minimum 8 pax)</strong></p>
-  // <ul>
-  //     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Μεταφορά από Αθήνα στη Καρδίτσα, Αθήνα</span></li>
-  //     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Πεζοπορία </span></li>
-  //     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Διαμονή 1 ημέρα στο καταφύγιο Καρδίτσας </span></li>
-  //     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Οδηγός εκδρομής</span></li>
-  //     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Αναχώρηση από το σημείο επιλογής σας </span></li>
-  //     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Επιστροφή στο σημείο επιλογής σας </span></li>
-  // </ul>
-  // <p><strong>Extra παροχές</strong></p>
-  // <ul>
-  //     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Τοξοβολία (10 ευρώ-> 12 βέλη + μάθημα)</span></li>
-  //     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Υδροποδήλατο ( 10 ευρώ </span>τα <span style="font-weight: 400;" data-mce-style="font-weight: 400;">30’ / 15 ευρώ η ώρα )</span></li>
-  //     <li style="font-weight: 400;" aria-level="1" data-mce-style="font-weight: 400;"><span style="font-weight: 400;" data-mce-style="font-weight: 400;">Γεύματα υπό συννενόηση</span></li>
-  // </ul>`,
-  //     image_url: "/assets/images/sports/karditsa.jpg",
-  //     price: 130,
-  //     lat: 39.36424317055562,
-  //     lng: 21.921474658031677,
-  //   },
 ];

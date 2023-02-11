@@ -23,7 +23,7 @@ const CancellationPolicy = () => {
         <div className="rbt-putchase-guide-area breadcrumb-style-max-width rbt-section-gapBottom">
           <div className="rbt-article-content-wrapper pt-5">
             <div className="content">
-              <p>Τελευταία επεξεργασία: February 08, 2023</p>
+              <p>Τελευταία επεξεργασία: Φλεβάρης 08, 2023</p>
               <p>
                 Ακύρωση 7 ή περισσότερες ημέρες πριν από την ημερομηνία έναρξης
                 της συμφωνηθείσας δραστηριότητας. Σας επιστρέφεται αυτόματα για

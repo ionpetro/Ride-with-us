@@ -1,16 +1,16 @@
 import React from 'react';
-import NotFound from '../components/NotFound/NotFound';
+import Reservation from '../components/Reservation/Reservation';
 import Footer from '../components/UI/Footer/Footer';
 import ScrollableNavbar from '../components/UI/ScrollableNavbar/ScrollableNavbar';
 
-const Page404 = () => {
+const ReservationPage = () => {
   return (
-    <>
+    <div>
       <ScrollableNavbar />
-      <NotFound />
+      <Reservation />
       <Footer />
-    </>
+    </div>
   );
 };
 
-export default Page404;
+export default ReservationPage;
