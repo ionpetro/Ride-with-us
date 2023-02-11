@@ -28,7 +28,6 @@ const ActivityPage = ({ data }) => {
 export async function getStaticPaths() {
   const response = await supabase.from('activities').select();
   const paths = response.data.map((activity) => `/activities/${activity.slug}`);
-  console.log(paths);
   return {
     paths,
     fallback: false,

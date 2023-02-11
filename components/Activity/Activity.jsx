@@ -36,7 +36,7 @@ const Activity = ({ data }) => {
           <div
             className={'bg-gradient-11'}
             style={{
-              height: '500px',
+              height: '100%',
               width: '100%',
               position: 'absolute',
               top: '0',

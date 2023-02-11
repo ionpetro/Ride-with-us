@@ -53,8 +53,6 @@ const Reservation = () => {
     }
   };
 
-  console.log(activity?.price);
-
   return (
     <div>
       <div className="rbt-overlay-page-wrapper">
@@ -129,15 +127,14 @@ const Reservation = () => {
               </table>
               <hr className="rbt-separator my-5" />
               <h4>Τρόπος πληρωμής</h4>
-              <p>Κατάθεση {activity?.price}€ σε τραπεζικό λογαριασμό</p>
+              <p>Κατάθεση σε τραπεζικό λογαριασμό</p>
               <div className="py-2">
-                ΕΘΝΙΚΗ ΤΡΑΠΕΖΑ
+                -
                 <br />
-                SWIFT/BIC:&nbsp;ETHNGRAA
+                -
                 <br />
-                IBAN: GR1501100750000007500640763
-                <br />
-                ΔΙΚΑΙΟΥΧΟΣ: UNLIMITED ADRENALINE IKE
+                IBAN: -
+                <br />-
               </div>
               <hr className="rbt-separator my-5" />
               {routerData?.type === 'activity' ? (
