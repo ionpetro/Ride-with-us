@@ -1,11 +1,19 @@
 import { GoogleMap, Marker, useLoadScript } from '@react-google-maps/api';
 
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import ActivityModal from './ActivityModal/ActivityModal';
 
 const Activity = ({ data }) => {
   const mapCenter = useMemo(() => ({ lat: data?.lat, lng: data?.lng }), []);
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    if (showModal) {
+      document.body.classList.add('hide-scroll');
+    } else {
+      document.body.classList.remove('hide-scroll');
+    }
+  }, [showModal]);
 
   const mapOptions =
     useMemo >
