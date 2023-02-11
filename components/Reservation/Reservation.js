@@ -13,6 +13,14 @@ const Reservation = () => {
   const [activity, setActivity] = useState();
   const routerData = router.query;
 
+  useEffect(() => {
+    if (!routerData) {
+      return;
+    }
+
+    fetchActivity();
+  }, [routerData]);
+
   if (!routerData) {
     return <NotFound />;
   }
@@ -22,19 +30,12 @@ const Reservation = () => {
       const response = await supabase
         .from('activities')
         .select()
-        .eq('id', routerData.activity_id);
+        .eq('id', routerData?.activity_id);
       setActivity(response.data[0]);
     } catch (e) {
       console.log(e);
     }
   };
-  useEffect(() => {
-    if (!routerData) {
-      return;
-    }
-
-    fetchActivity();
-  }, [routerData]);
 
   return (
     <div>

@@ -1,38 +1,6 @@
 import React from 'react';
 
-const Activities = () => {
-  const activities = [
-    {
-      title: 'Παρνασσός',
-      image_url: '/assets/images/sports/parnassos.jpg',
-      link: '/activities/parnassos',
-      price: 50,
-    },
-    {
-      title: 'Βασιλίτσα',
-      image_url: '/assets/images/sports/vasilitsa.jpg',
-      link: '/activities/vasilitsa',
-      price: 165,
-    },
-    {
-      title: 'Καλάβρυτα',
-      image_url: '/assets/images/sports/kalavrita.jpg',
-      link: '/activities/kalavrita',
-      price: 50,
-    },
-    // {
-    //   title: 'Παύλιανη',
-    //   image_url: '/assets/images/sports/pavliani.jpg',
-    //   link: '/activities/pavliani',
-    //   price: 50,
-    // },
-    // {
-    //   title: 'Καρδίτσα',
-    //   image_url: '/assets/images/sports/karditsa.jpg',
-    //   link: '/activities/karditsa',
-    //   price: 130,
-    // },
-  ];
+const Activities = ({ activities }) => {
   return (
     <>
       {/* Start Card Style */}
@@ -56,7 +24,7 @@ const Activities = () => {
           </div>
           {/* Start Card Area */}
           <div className="row g-5">
-            {activities.map(({ title, image_url, link, price }) => (
+            {activities.map(({ title, image_url, slug, price }) => (
               <div
                 className="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12"
                 data-sal-delay={150}
@@ -66,7 +34,7 @@ const Activities = () => {
               >
                 <div className="rbt-card variation-03 rbt-hover">
                   <div className="rbt-card-img">
-                    <a className="thumbnail-link" href={link}>
+                    <a className="thumbnail-link" href={`/activities/${slug}`}>
                       <img src={image_url} alt={title} />
                       <span className="rbt-btn btn-white icon-hover btn-md">
                         <span className="btn-text">Περισσότερα</span>
@@ -78,10 +46,13 @@ const Activities = () => {
                   </div>
                   <div className="rbt-card-body">
                     <h5 className="rbt-card-title">
-                      <a href={link}>{title}</a>
+                      <a href={`/activities/${slug}`}>{title}</a>
                     </h5>
                     <div className="rbt-card-bottom">
-                      <a className="transparent-button" href={link}>
+                      <a
+                        className="transparent-button"
+                        href={`/activities/${slug}`}
+                      >
                         <i>
                           <svg
                             width={17}
