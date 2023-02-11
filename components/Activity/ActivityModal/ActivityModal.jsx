@@ -3,7 +3,7 @@ import Calendar from 'react-calendar';
 import styles from './ActivityModal.module.scss';
 import 'react-calendar/dist/Calendar.css';
 
-const ActivityModal = ({ data, setShowModal }) => {
+const ActivityModal = ({ data = {}, setShowModal }) => {
   const [date, setDate] = useState(new Date());
 
   return (

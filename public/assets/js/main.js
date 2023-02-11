@@ -932,12 +932,12 @@
       $.fn.hasShowMore = function () {
         return this.each(function () {
           $(this).toggleClass('active');
-          $(this).text('Show Less');
+          $(this).text('Λιγότερα');
           $(this).parent('.has-show-more').toggleClass('active');
           if ($(this).parent('.has-show-more').hasClass('active')) {
-            $(this).text('Show Less');
+            $(this).text('Λιγότερα');
           } else {
-            $(this).text('Show More');
+            $(this).text('Περισσότερα');
           }
         });
       };

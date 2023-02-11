@@ -48,7 +48,9 @@ const Activity = ({ data }) => {
                       <i className="feather-chevron-right" />
                     </div>
                   </li>
-                  <li className="rbt-breadcrumb-item active">Δραστηριότητες</li>
+                  <li className="rbt-breadcrumb-item">
+                    <a href={'/#activities'}>Δραστηριότητες</a>
+                  </li>
                   <li>
                     <div className="icon-right">
                       <i className="feather-chevron-right" />
@@ -112,7 +114,7 @@ const Activity = ({ data }) => {
                   className="rbt-course-feature-box overview-wrapper rbt-shadow-box mt--30 has-show-more"
                   id="overview"
                 >
-                  <div className="rbt-course-feature-inner">
+                  <div className="rbt-course-feature-inner has-show-more-inner-content">
                     <div className="section-title">
                       <h4 className="rbt-title-style-3">
                         Περιγραφή δραστηριότητας
@@ -122,6 +124,7 @@ const Activity = ({ data }) => {
                       dangerouslySetInnerHTML={{ __html: data?.description }}
                     ></div>
                   </div>
+                  <div className="rbt-show-more-btn">Περισσότερα</div>
                 </div>
                 <div
                   className="rbt-course-feature-box overview-wrapper rbt-shadow-box mt--30 has-show-more"
