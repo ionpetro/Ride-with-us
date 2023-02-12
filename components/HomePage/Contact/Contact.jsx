@@ -36,8 +36,8 @@ const Contact = () => {
                 <span className="subtitle bg-white-opacity">Επικοινωνησε</span>
                 <h2 className="title color-white">Επικοινώνησε μαζί μας</h2>
                 <p className="description has-medium-font-size mt--20 mb--0 color-white opacity-7">
-                  Στείλε μας το μήνυμα σου και θα επικοινωνήσουμε μαζί σου το
-                  συντομότερο δυνατό
+                  Στείλε μας το μήνυμά σας και θα επικοινωνήσουμε μαζί σας το
+                  συντομότερο δυνατό!
                 </p>
               </div>
             </div>
