@@ -15,6 +15,17 @@ const Contact = () => {
     try {
       setLoading(true);
       await supabase.from('contact').insert(data);
+      fetch('/api/mail', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          title: 'New contact',
+          ...data,
+        }),
+      }).then((response) => response.json());
       setLoading(false);
       setIsSubmitted(true);
     } catch (e) {

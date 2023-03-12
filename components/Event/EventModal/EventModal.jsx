@@ -21,6 +21,19 @@ const EventModal = ({ data = {}, setShowModal }) => {
         .from('event-reservations')
         .insert({ ...formData, event_id: data.id, event_slug: data.slug })
         .select();
+      fetch('/api/mail', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          title: 'New event reservation',
+          ...formData,
+          event_id: data.id,
+          event_slug: data.slug,
+        }),
+      }).then((response) => response.json());
       setLoading(false);
       document.body.classList.remove('hide-scroll');
       await router.push({

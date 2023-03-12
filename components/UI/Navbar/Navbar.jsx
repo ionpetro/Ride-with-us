@@ -34,12 +34,6 @@ const Navbar = () => {
                             697 156 1249
                           </a>
                         </li>
-                        <li>
-                          <a href="tel:698 145 1491">
-                            <i className="feather-phone" />
-                            698 145 1491
-                          </a>
-                        </li>
                       </ul>
                     </div>
                   </div>
@@ -148,12 +142,6 @@ const Navbar = () => {
                 <a href="tel:697 156 1249">
                   <i className="feather-phone" />
                   697 156 1249
-                </a>
-              </li>
-              <li>
-                <a href="tel:698 145 1491">
-                  <i className="feather-phone" />
-                  698 145 1491
                 </a>
               </li>
             </ul>
